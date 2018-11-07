@@ -26,19 +26,31 @@
                                 <state key="normal" title="Quiz away!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startQuizBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xNS-EQ-oXK"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAHOO!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-XD-jEX">
-                                <rect key="frame" x="114.33333333333333" y="418" width="185.66666666666669" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAHOO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-XD-jEX">
+                                <rect key="frame" x="108.66666666666667" y="418" width="196.66666666666663" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-z7-yxF">
+                                <rect key="frame" x="48" y="92" width="318" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hwk-z7-yxF" secondAttribute="height" multiplier="1:1" id="s1E-NF-RMT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.58721264588001176" blue="0.84194334016208816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Hwk-z7-yxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="81u-aV-ITN"/>
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gvo-52-srA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="122" id="R9h-Ue-mxO"/>
+                            <constraint firstItem="Hwk-z7-yxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="YeD-qs-HW8"/>
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eKH-8j-ZjF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hwk-z7-yxF" secondAttribute="trailing" constant="48" id="elF-GT-qiH"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="ihk-to-8Wb"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qvr-XL-xzn"/>
                         </constraints>
@@ -46,11 +58,54 @@
                     </view>
                     <connections>
                         <outlet property="startQuizBtn" destination="XgZ-De-Vct" id="yex-aI-gtp"/>
+                        <outlet property="startpageImage" destination="Hwk-z7-yxF" id="Ady-D3-lOT"/>
+                        <segue destination="Us7-bq-a64" kind="show" identifier="questionSegue" id="LMq-JU-cPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.23188405797103" y="133.25892857142856"/>
+        </scene>
+        <!--Questions View Controller-->
+        <scene sceneID="Fd2-xe-6XA">
+            <objects>
+                <viewController id="Us7-bq-a64" customClass="QuestionsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4gJ-Zs-Bs6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y14-j4-MaW">
+                                <rect key="frame" x="32" y="76" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y14-j4-MaW" secondAttribute="height" multiplier="1:1" id="Sdn-w5-A2T"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-1r-6Mv">
+                                <rect key="frame" x="32" y="426" width="138" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5872126459" blue="0.84194334019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FUL-1r-6Mv" firstAttribute="top" secondItem="y14-j4-MaW" secondAttribute="bottom" id="3Mc-q1-JQd"/>
+                            <constraint firstItem="y14-j4-MaW" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="DvL-7A-R5Y"/>
+                            <constraint firstItem="FUL-1r-6Mv" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="K3f-sk-hqQ"/>
+                            <constraint firstItem="y14-j4-MaW" firstAttribute="top" secondItem="9fa-Yv-egb" secondAttribute="top" constant="32" id="KaS-uV-gQS"/>
+                            <constraint firstItem="FUL-1r-6Mv" firstAttribute="width" secondItem="4gJ-Zs-Bs6" secondAttribute="width" multiplier="1:3" id="R0l-sy-Qd8"/>
+                            <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="y14-j4-MaW" secondAttribute="trailing" constant="32" id="cq1-Ob-czg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9fa-Yv-egb"/>
+                    </view>
+                    <connections>
+                        <outlet property="owlAsker" destination="FUL-1r-6Mv" id="xsC-ul-WDp"/>
+                        <outlet property="speechBubbleImage" destination="y14-j4-MaW" id="A0t-dr-pPa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfJ-UU-PBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043.4782608695652" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>
