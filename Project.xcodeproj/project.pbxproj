@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AEC410F2193474100DA8047 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC410E2193474100DA8047 /* Extensions.swift */; };
 		652B270B2191D48200BF356B /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B270A2191D48200BF356B /* QuestionsViewController.swift */; };
 		652B27122191DD3B00BF356B /* owlSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 652B27112191DD3A00BF356B /* owlSound.wav */; };
 		CD23F1D221874144009B26C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD23F1D121874144009B26C2 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AEC410E2193474100DA8047 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		652B270A2191D48200BF356B /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		652B27112191DD3A00BF356B /* owlSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = owlSound.wav; sourceTree = "<group>"; };
 		CD23F1CE21874144009B26C2 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				CD23F1DA21874145009B26C2 /* LaunchScreen.storyboard */,
 				CD23F1DD21874145009B26C2 /* Info.plist */,
 				CD332758218DA5B7002ACD65 /* opentdb.swift */,
+				2AEC410E2193474100DA8047 /* Extensions.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEC410F2193474100DA8047 /* Extensions.swift in Sources */,
 				CD23F1D421874144009B26C2 /* ViewController.swift in Sources */,
 				CD332759218DA5B7002ACD65 /* opentdb.swift in Sources */,
 				CD23F1D221874144009B26C2 /* AppDelegate.swift in Sources */,

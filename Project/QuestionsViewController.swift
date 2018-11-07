@@ -19,6 +19,8 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBarItems()
+        
         speechBubbleImage.image = UIImage(named:"speech")
         
         owlImages = [
@@ -49,18 +51,23 @@ class QuestionsViewController: UIViewController {
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
         
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func navigationBarItems() {
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        
+        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
+        
+        let titleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        titleImageView.contentMode = .scaleAspectFit
+        
+        let navImage = UIImage(named: "owl1")
+        titleImageView.image = navImage
+        
+        navigationItem.titleView = titleImageView
     }
-    */
+
 
 }

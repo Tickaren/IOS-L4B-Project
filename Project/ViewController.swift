@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         loadSound() // load soundfunction
         
+        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
+        
         images = [
             UIImage(named: "owl1"),
             UIImage(named: "owl2"),
