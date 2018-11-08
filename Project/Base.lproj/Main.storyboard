@@ -106,20 +106,30 @@
                                     <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh6-oO-sxv">
+                                <rect key="frame" x="64" y="108" width="286" height="27.666666666666657"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5872126459" blue="0.84194334019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FUL-1r-6Mv" firstAttribute="top" secondItem="y14-j4-MaW" secondAttribute="bottom" id="3Mc-q1-JQd"/>
+                            <constraint firstItem="Qh6-oO-sxv" firstAttribute="top" secondItem="9fa-Yv-egb" secondAttribute="top" constant="64" id="5BW-Jr-slL"/>
                             <constraint firstItem="y14-j4-MaW" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="DvL-7A-R5Y"/>
                             <constraint firstItem="FUL-1r-6Mv" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="K3f-sk-hqQ"/>
                             <constraint firstItem="y14-j4-MaW" firstAttribute="top" secondItem="9fa-Yv-egb" secondAttribute="top" constant="32" id="KaS-uV-gQS"/>
                             <constraint firstItem="FUL-1r-6Mv" firstAttribute="width" secondItem="4gJ-Zs-Bs6" secondAttribute="width" multiplier="1:3" id="R0l-sy-Qd8"/>
+                            <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="Qh6-oO-sxv" secondAttribute="trailing" constant="64" id="bNq-gc-lCG"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="y14-j4-MaW" secondAttribute="trailing" constant="32" id="cq1-Ob-czg"/>
+                            <constraint firstItem="Qh6-oO-sxv" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="64" id="lad-41-Ukb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9fa-Yv-egb"/>
                     </view>
                     <connections>
                         <outlet property="owlAsker" destination="FUL-1r-6Mv" id="xsC-ul-WDp"/>
+                        <outlet property="questionLabel" destination="Qh6-oO-sxv" id="WCE-ht-DNc"/>
                         <outlet property="speechBubbleImage" destination="y14-j4-MaW" id="A0t-dr-pPa"/>
                     </connections>
                 </viewController>
