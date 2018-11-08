@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="hDr-EA-ZIa">
+            <objects>
+                <navigationController id="WWv-3v-4jU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9AB-Qj-7uh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gFs-S6-B1m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="riZ-eF-gaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-833" y="133"/>
+        </scene>
+        <!--TAHOO-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgZ-De-Vct">
-                                <rect key="frame" x="103.66666666666669" y="690" width="207" height="50"/>
+                                <rect key="frame" x="103.5" y="690" width="207" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nxd-Qu-n1h"/>
                                 </constraints>
@@ -30,32 +46,36 @@
                                     <action selector="startQuizBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xNS-EQ-oXK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAHOO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-XD-jEX">
-                                <rect key="frame" x="108.66666666666667" y="418" width="196.66666666666663" height="60"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-z7-yxF">
-                                <rect key="frame" x="48" y="92" width="318" height="318"/>
+                                <rect key="frame" x="48" y="136" width="318" height="318"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hwk-z7-yxF" secondAttribute="height" multiplier="1:1" id="s1E-NF-RMT"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAHOO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-XD-jEX">
+                                <rect key="frame" x="108.5" y="529" width="197" height="60.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5sa-XD-jEX" secondAttribute="height" multiplier="49:15" id="IXr-JU-vs0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.58721264588001176" blue="0.84194334016208816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Hwk-z7-yxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="81u-aV-ITN"/>
-                            <constraint firstItem="5sa-XD-jEX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gvo-52-srA"/>
+                            <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8v1-RP-4lb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="122" id="R9h-Ue-mxO"/>
                             <constraint firstItem="Hwk-z7-yxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="YeD-qs-HW8"/>
-                            <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eKH-8j-ZjF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hwk-z7-yxF" secondAttribute="trailing" constant="48" id="elF-GT-qiH"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="ihk-to-8Wb"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qvr-XL-xzn"/>
+                            <constraint firstItem="5sa-XD-jEX" firstAttribute="top" secondItem="Hwk-z7-yxF" secondAttribute="bottom" constant="75" id="uMZ-e6-pK3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="TAHOO" id="dNR-F5-iHw"/>
                     <connections>
                         <outlet property="startQuizBtn" destination="XgZ-De-Vct" id="yex-aI-gtp"/>
                         <outlet property="startpageImage" destination="Hwk-z7-yxF" id="Ady-D3-lOT"/>
@@ -74,14 +94,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y14-j4-MaW">
-                                <rect key="frame" x="32" y="76" width="350" height="350"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y14-j4-MaW">
+                                <rect key="frame" x="32" y="100" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="y14-j4-MaW" secondAttribute="height" multiplier="1:1" id="Sdn-w5-A2T"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-1r-6Mv">
-                                <rect key="frame" x="32" y="426" width="138" height="138"/>
+                                <rect key="frame" x="32" y="470" width="138" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
                                 </constraints>
