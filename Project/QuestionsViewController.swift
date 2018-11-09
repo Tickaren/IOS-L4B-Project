@@ -40,7 +40,10 @@ class QuestionsViewController: UIViewController {
         answer2Btn.backgroundColor = UIColor.white
         answer3Btn.backgroundColor = UIColor.white
         answer4Btn.backgroundColor = UIColor.white
-        
+        answer1Btn.titleLabel?.numberOfLines = 0
+        answer2Btn.titleLabel?.numberOfLines = 0
+        answer3Btn.titleLabel?.numberOfLines = 0
+        answer4Btn.titleLabel?.numberOfLines = 0
         
 
         let listOfQuestions = db.getQestions()
