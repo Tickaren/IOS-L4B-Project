@@ -47,10 +47,12 @@ class QuestionsViewController: UIViewController {
         if listOfQuestions.count > 0 {
             let q1 = listOfQuestions[0]
             questionLabel.text = q1.question
-            answer1Btn.setTitle(q1.correct_answer, for: .normal)
-            answer2Btn.setTitle(q1.incorrect_answers[0], for: .normal)
-            answer3Btn.setTitle(q1.incorrect_answers[1], for: .normal)
-            answer4Btn.setTitle(q1.incorrect_answers[2], for: .normal)
+            var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
+            ansArr.shuffle()
+            answer1Btn.setTitle(ansArr[0], for: .normal)
+            answer2Btn.setTitle(ansArr[1], for: .normal)
+            answer3Btn.setTitle(ansArr[2], for: .normal)
+            answer4Btn.setTitle(ansArr[3], for: .normal)
         }
         
         
