@@ -15,6 +15,8 @@ class ResultPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
 
         playAgainBtn.layer.cornerRadius = 20
         

@@ -26,9 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSound() // load soundfunction
-        
-        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
-
+        self.navigationItem.setHidesBackButton(true, animated:true);
         // starts owl animation
         startpageImage.animationImages = startOwlImage
         startpageImage.animationDuration = 2.0
