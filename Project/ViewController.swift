@@ -11,12 +11,15 @@ import AVFoundation
 
 let db = opentdb() //Skapar databasklassen
 
+let imgAnimations = imageAnimation() // calls imageAnimation class and opens it
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var startpageImage: UIImageView!
-    
     @IBOutlet weak var startQuizBtn: UIButton!
-    var images: [UIImage] = []
+
+    let startOwlImage = imgAnimations.getOwlAnimation() // calls owlArray
+    
     var owlSound: AVAudioPlayer?
     
     
@@ -25,37 +28,12 @@ class ViewController: UIViewController {
         loadSound() // load soundfunction
         
         navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
-        
-        images = [
-            UIImage(named: "owl1"),
-            UIImage(named: "owl2"),
-            UIImage(named: "owl3"),
-            UIImage(named: "owl4"),
-            UIImage(named: "owl5"),
-            UIImage(named: "owl6"),
-            UIImage(named: "owl7"),
-            UIImage(named: "owl8"),
-            UIImage(named: "owl9"),
-            UIImage(named: "owl10"),
-            UIImage(named: "owl11"),
-            UIImage(named: "owl12"),
-            UIImage(named: "owl13"),
-            UIImage(named: "owl14"),
-            UIImage(named: "owl16"),
-            UIImage(named: "owl17"),
-            UIImage(named: "owl18"),
-            UIImage(named: "owl19"),
-            UIImage(named: "owl20"),
-            UIImage(named: "owl21"),
-            UIImage(named: "owl22"),
-            UIImage(named: "owl23")
-            ] as! [UIImage]
-        startpageImage.animationImages = images
+
+        // starts owl animation
+        startpageImage.animationImages = startOwlImage
         startpageImage.animationDuration = 2.0
         startpageImage.startAnimating()
         startQuizBtn.backgroundColor = UIColor.white
-        // Do any additional setup after loading the view, typically from a nib.
-        
 
         //***************EXEMPELKOD:************************
         //Exempel på hur man skulle kunna hämta datan
