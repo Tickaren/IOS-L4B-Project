@@ -21,6 +21,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
     
+    var nrOfQuestion = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +36,7 @@ class QuestionsViewController: UIViewController {
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
         
-        let listOfQuestions = db.getQestions()
-        if listOfQuestions.count > 0 {
-            let q1 = listOfQuestions[0]
-            questionLabel.text = q1.question
-            var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
-            ansArr.shuffle()
-            answer1Btn.setTitle(ansArr[0], for: .normal)
-            answer2Btn.setTitle(ansArr[1], for: .normal)
-            answer3Btn.setTitle(ansArr[2], for: .normal)
-            answer4Btn.setTitle(ansArr[3], for: .normal)
-        }
+        putQuestions()
         
         // Answerbutton colors
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
@@ -64,10 +55,21 @@ class QuestionsViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.answer1Btn.layer.cornerRadius = self.answer1Btn.frame.width * 0.1
-//        self.answer2Btn.layer.cornerRadius = self.answer2Btn.frame.width * 0.1
-//        self.answer3Btn.layer.cornerRadius = self.answer3Btn.frame.width * 0.1
-//        self.answer4Btn.layer.cornerRadius = self.answer4Btn.frame.width * 0.1
+    }
+    
+    func putQuestions() -> Void {
+        let listOfQuestions = db.getQestions()
+        if listOfQuestions.count > 0 {
+            let q1 = listOfQuestions[nrOfQuestion]
+            questionLabel.text = q1.question
+            var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
+            ansArr.shuffle()
+            answer1Btn.setTitle(ansArr[0], for: .normal)
+            answer2Btn.setTitle(ansArr[1], for: .normal)
+            answer3Btn.setTitle(ansArr[2], for: .normal)
+            answer4Btn.setTitle(ansArr[3], for: .normal)
+        }
+        nrOfQuestion += 1
     }
     
     private func navigationBarItems() {
@@ -85,4 +87,8 @@ class QuestionsViewController: UIViewController {
     }
 
 
+    @IBAction func answer1Btn(_ sender: Any) {
+        putQuestions()
+    }
+    
 }

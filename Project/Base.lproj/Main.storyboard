@@ -122,6 +122,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="answer1Btn:" destination="Us7-bq-a64" eventType="touchUpInside" id="nlH-S4-mWn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-7J-Bbk">
                                 <rect key="frame" x="216.5" y="706" width="165.5" height="60"/>
