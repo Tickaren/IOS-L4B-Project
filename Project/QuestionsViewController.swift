@@ -36,14 +36,21 @@ class QuestionsViewController: UIViewController {
         owlAsker.startAnimating()
         
         // Answerbutton colors
-        answer1Btn.backgroundColor = UIColor.white
-        answer2Btn.backgroundColor = UIColor.white
-        answer3Btn.backgroundColor = UIColor.white
-        answer4Btn.backgroundColor = UIColor.white
-        answer1Btn.titleLabel?.numberOfLines = 0
-        answer2Btn.titleLabel?.numberOfLines = 0
-        answer3Btn.titleLabel?.numberOfLines = 0
-        answer4Btn.titleLabel?.numberOfLines = 0
+        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        for btn in listOfButtons {
+            btn?.backgroundColor = UIColor.white
+            btn?.titleLabel?.numberOfLines = 0
+            btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
+
+        }
+//        answer1Btn.backgroundColor = UIColor.white
+//        answer2Btn.backgroundColor = UIColor.white
+//        answer3Btn.backgroundColor = UIColor.white
+//        answer4Btn.backgroundColor = UIColor.white
+//        answer1Btn.titleLabel?.numberOfLines = 0
+//        answer2Btn.titleLabel?.numberOfLines = 0
+//        answer3Btn.titleLabel?.numberOfLines = 0
+//        answer4Btn.titleLabel?.numberOfLines = 0
         
 
         let listOfQuestions = db.getQestions()
@@ -64,10 +71,10 @@ class QuestionsViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.answer1Btn.layer.cornerRadius = self.answer1Btn.frame.width * 0.1
-        self.answer2Btn.layer.cornerRadius = self.answer2Btn.frame.width * 0.1
-        self.answer3Btn.layer.cornerRadius = self.answer3Btn.frame.width * 0.1
-        self.answer4Btn.layer.cornerRadius = self.answer4Btn.frame.width * 0.1
+//        self.answer1Btn.layer.cornerRadius = self.answer1Btn.frame.width * 0.1
+//        self.answer2Btn.layer.cornerRadius = self.answer2Btn.frame.width * 0.1
+//        self.answer3Btn.layer.cornerRadius = self.answer3Btn.frame.width * 0.1
+//        self.answer4Btn.layer.cornerRadius = self.answer4Btn.frame.width * 0.1
     }
     
     private func navigationBarItems() {
