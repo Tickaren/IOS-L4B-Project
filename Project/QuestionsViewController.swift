@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class QuestionsViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
@@ -20,7 +21,6 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
     
-    var owlImages: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,33 +29,12 @@ class QuestionsViewController: UIViewController {
         
         speechBubbleImage.image = UIImage(named:"speech")
         
-        owlImages = [
-            UIImage(named: "owl1"),
-            UIImage(named: "owl2"),
-            UIImage(named: "owl3"),
-            UIImage(named: "owl4"),
-            UIImage(named: "owl5"),
-            UIImage(named: "owl6"),
-            UIImage(named: "owl7"),
-            UIImage(named: "owl8"),
-            UIImage(named: "owl9"),
-            UIImage(named: "owl10"),
-            UIImage(named: "owl11"),
-            UIImage(named: "owl12"),
-            UIImage(named: "owl13"),
-            UIImage(named: "owl14"),
-            UIImage(named: "owl16"),
-            UIImage(named: "owl17"),
-            UIImage(named: "owl18"),
-            UIImage(named: "owl19"),
-            UIImage(named: "owl20"),
-            UIImage(named: "owl21"),
-            UIImage(named: "owl22"),
-            UIImage(named: "owl23")
-            ] as! [UIImage]
-        owlAsker.animationImages = owlImages
+        let owlAskImage = imgAnimations.getOwlAnimation() // calls owlArray
+
+        owlAsker.animationImages = owlAskImage
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
+        
         // Answerbutton colors
         answer1Btn.backgroundColor = UIColor.white
         answer2Btn.backgroundColor = UIColor.white
