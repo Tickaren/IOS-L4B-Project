@@ -33,7 +33,11 @@ class ViewController: UIViewController {
         startpageImage.animationImages = startOwlImage
         startpageImage.animationDuration = 2.0
         startpageImage.startAnimating()
+        
+        //button animation
         startQuizBtn.backgroundColor = UIColor.white
+        startQuizBtn.layer.cornerRadius = 20
+        startQuizBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
 
         //***************EXEMPELKOD:************************
         //Exempel på hur man skulle kunna hämta datan
@@ -41,10 +45,9 @@ class ViewController: UIViewController {
         //self.getData(db: db) //Kontrollerar om datan är hämtad
         //***************EXEMPELKOD SLUT:*******************
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.startQuizBtn.layer.cornerRadius = self.startQuizBtn.frame.width * 0.1
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//    }
     
     //**************EXEMPELFUNKTION******************
     //Kontrollerar om datan är redo rekursivt ascynk, kontroll varje 0.5s
