@@ -35,24 +35,6 @@ class QuestionsViewController: UIViewController {
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
         
-        // Answerbutton colors
-        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
-        for btn in listOfButtons {
-            btn?.backgroundColor = UIColor.white
-            btn?.titleLabel?.numberOfLines = 0
-            btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
-
-        }
-//        answer1Btn.backgroundColor = UIColor.white
-//        answer2Btn.backgroundColor = UIColor.white
-//        answer3Btn.backgroundColor = UIColor.white
-//        answer4Btn.backgroundColor = UIColor.white
-//        answer1Btn.titleLabel?.numberOfLines = 0
-//        answer2Btn.titleLabel?.numberOfLines = 0
-//        answer3Btn.titleLabel?.numberOfLines = 0
-//        answer4Btn.titleLabel?.numberOfLines = 0
-        
-
         let listOfQuestions = db.getQestions()
         if listOfQuestions.count > 0 {
             let q1 = listOfQuestions[0]
@@ -63,6 +45,17 @@ class QuestionsViewController: UIViewController {
             answer2Btn.setTitle(ansArr[1], for: .normal)
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
+        }
+        
+        // Answerbutton colors
+        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        for btn in listOfButtons {
+            btn?.backgroundColor = UIColor.white
+            btn?.titleLabel?.numberOfLines = 0
+            btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
+            btn?.titleLabel?.minimumScaleFactor = 0.5
+            btn?.titleLabel?.adjustsFontSizeToFitWidth = true
+
         }
         
         
