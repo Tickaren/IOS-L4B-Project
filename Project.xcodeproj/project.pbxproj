@@ -10,7 +10,12 @@
 		2AEC410F2193474100DA8047 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC410E2193474100DA8047 /* Extensions.swift */; };
 		652B270B2191D48200BF356B /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B270A2191D48200BF356B /* QuestionsViewController.swift */; };
 		652B27122191DD3B00BF356B /* owlSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 652B27112191DD3A00BF356B /* owlSound.wav */; };
+
 		65C4FF962195879C00F6FA87 /* imageAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4FF952195879C00F6FA87 /* imageAnimation.swift */; };
+
+		B8ECA0DE2194A8FC004CDF6B /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA0DD2194A8FC004CDF6B /* ResultPageViewController.swift */; };
+		B8ECA0E02194AA10004CDF6B /* playAgainBtnAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA0DF2194AA10004CDF6B /* playAgainBtnAnimation.swift */; };
+
 		CD23F1D221874144009B26C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD23F1D121874144009B26C2 /* AppDelegate.swift */; };
 		CD23F1D421874144009B26C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD23F1D321874144009B26C2 /* ViewController.swift */; };
 		CD23F1D721874144009B26C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD23F1D521874144009B26C2 /* Main.storyboard */; };
@@ -23,7 +28,12 @@
 		2AEC410E2193474100DA8047 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		652B270A2191D48200BF356B /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		652B27112191DD3A00BF356B /* owlSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = owlSound.wav; sourceTree = "<group>"; };
+
 		65C4FF952195879C00F6FA87 /* imageAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageAnimation.swift; sourceTree = "<group>"; };
+
+		B8ECA0DD2194A8FC004CDF6B /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
+		B8ECA0DF2194AA10004CDF6B /* playAgainBtnAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playAgainBtnAnimation.swift; sourceTree = "<group>"; };
+
 		CD23F1CE21874144009B26C2 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD23F1D121874144009B26C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD23F1D321874144009B26C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +87,8 @@
 				CD23F1D321874144009B26C2 /* ViewController.swift */,
 				652B270A2191D48200BF356B /* QuestionsViewController.swift */,
 				CD23F1D521874144009B26C2 /* Main.storyboard */,
+				B8ECA0DD2194A8FC004CDF6B /* ResultPageViewController.swift */,
+				B8ECA0DF2194AA10004CDF6B /* playAgainBtnAnimation.swift */,
 				CD23F1D821874145009B26C2 /* Assets.xcassets */,
 				CD23F1DA21874145009B26C2 /* LaunchScreen.storyboard */,
 				CD23F1DD21874145009B26C2 /* Info.plist */,
@@ -161,9 +173,14 @@
 			files = (
 				2AEC410F2193474100DA8047 /* Extensions.swift in Sources */,
 				CD23F1D421874144009B26C2 /* ViewController.swift in Sources */,
+				B8ECA0DE2194A8FC004CDF6B /* ResultPageViewController.swift in Sources */,
 				CD332759218DA5B7002ACD65 /* opentdb.swift in Sources */,
 				CD23F1D221874144009B26C2 /* AppDelegate.swift in Sources */,
+
 				65C4FF962195879C00F6FA87 /* imageAnimation.swift in Sources */,
+
+				B8ECA0E02194AA10004CDF6B /* playAgainBtnAnimation.swift in Sources */,
+
 				652B270B2191D48200BF356B /* QuestionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
