@@ -21,7 +21,9 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
     
-    var nrOfQuestion = 0
+    //***********Variables:***************
+    //Keeps teack on witch questionRound
+    private var questionRound = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,18 @@ class QuestionsViewController: UIViewController {
         owlAsker.startAnimating()
         
         putQuestions()
+        setButtonSettings()
         
-        // Answerbutton colors
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
+    private func setButtonSettings() -> Void {
+        // Answerbutton colors settings
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
         for btn in listOfButtons {
             btn?.backgroundColor = UIColor.white
@@ -46,21 +58,16 @@ class QuestionsViewController: UIViewController {
             btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
             btn?.titleLabel?.minimumScaleFactor = 0.5
             btn?.titleLabel?.adjustsFontSizeToFitWidth = true
-
+            
         }
-        
-        
-
-        // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
-    func putQuestions() -> Void {
+    
+    //Updates the questionlabel and answerbuttons with the question and answers
+    private func putQuestions() -> Void {
         let listOfQuestions = db.getQestions()
         if listOfQuestions.count > 0 {
-            let q1 = listOfQuestions[nrOfQuestion]
+            let q1 = listOfQuestions[questionRound]
             questionLabel.text = q1.question
             var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
             ansArr.shuffle()
@@ -69,8 +76,8 @@ class QuestionsViewController: UIViewController {
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
         }
-        nrOfQuestion += 1
     }
+    
     
     private func navigationBarItems() {
         self.navigationItem.setHidesBackButton(true, animated:true);
@@ -86,9 +93,84 @@ class QuestionsViewController: UIViewController {
         navigationItem.titleView = titleImageView
     }
 
-
-    @IBAction func answer1Btn(_ sender: Any) {
-        putQuestions()
+    
+    //Code that is executet at the end of each round, no parameters no return
+    private func endRound() -> Void {
+        
+        //Waits for 2 sec then changes question!
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.questionRound += 1
+            self.putQuestions()
+            self.setButtonSettings()
+        }
     }
     
+    
+    //Checks if the answer sent as parameter is correct, returns true if correct
+    private func isAnswerCorrect(answer: String) -> Bool {
+        let listOfQuestions = db.getQestions()
+        let q1 = listOfQuestions[questionRound]
+        if q1.correct_answer == answer { return true }
+        return false
+    }
+    
+    //Highlights the correct answer in green, no parameters no return
+    func highlightCorrectAnswer() -> Void {
+        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        for btn in listOfButtons {
+            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
+            {
+                btn!.backgroundColor = UIColor.green
+            }
+        }
+    }
+    
+    @IBAction func answer1Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
+        {
+            answer1Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer1Btn.backgroundColor = UIColor.red
+        }
+        highlightCorrectAnswer()
+        endRound()
+
+    }
+    
+    @IBAction func answer2Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer2Btn.titleLabel!.text!))
+        {
+            answer2Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer2Btn.backgroundColor = UIColor.red
+        }
+        highlightCorrectAnswer()
+        endRound()
+    }
+    
+    @IBAction func answer3Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer3Btn.titleLabel!.text!))
+        {
+            answer3Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer3Btn.backgroundColor = UIColor.red
+        }
+        highlightCorrectAnswer()
+        endRound()
+    }
+    
+    @IBAction func answer4Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer4Btn.titleLabel!.text!))
+        {
+            answer4Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer4Btn.backgroundColor = UIColor.red
+        }
+        highlightCorrectAnswer()
+        endRound()
+    }
 }
