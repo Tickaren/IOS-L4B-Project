@@ -21,9 +21,11 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
     
+    @IBOutlet weak var scoreLabel: UILabel!
     //***********Variables:***************
     //Keeps teack on witch questionRound
     private var questionRound = 0
+    private var scoreCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +101,7 @@ class QuestionsViewController: UIViewController {
         
         //Waits for 2 sec then changes question!
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.questionRound += 1
+            //self.questionRound += 1
             self.putQuestions()
             self.setButtonSettings()
         }
@@ -125,6 +127,16 @@ class QuestionsViewController: UIViewController {
         }
     }
     
+    func updateScore(answer: String) {
+        let listOfQuestions = db.getQestions()
+        let q1 = listOfQuestions[questionRound]
+        if q1.correct_answer == answer {
+            scoreCount += 1
+        }
+        questionRound += 1
+        scoreLabel.text = "\(scoreCount) / \(questionRound)"
+    }
+    
     @IBAction func answer1Btn(_ sender: Any) {
         if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
         {
@@ -134,6 +146,7 @@ class QuestionsViewController: UIViewController {
             answer1Btn.backgroundColor = UIColor.red
         }
         highlightCorrectAnswer()
+        updateScore(answer: answer1Btn.titleLabel!.text!)
         endRound()
 
     }
@@ -147,6 +160,7 @@ class QuestionsViewController: UIViewController {
             answer2Btn.backgroundColor = UIColor.red
         }
         highlightCorrectAnswer()
+        updateScore(answer: answer2Btn.titleLabel!.text!)
         endRound()
     }
     
@@ -159,6 +173,7 @@ class QuestionsViewController: UIViewController {
             answer3Btn.backgroundColor = UIColor.red
         }
         highlightCorrectAnswer()
+        updateScore(answer: answer3Btn.titleLabel!.text!)
         endRound()
     }
     
@@ -171,6 +186,7 @@ class QuestionsViewController: UIViewController {
             answer4Btn.backgroundColor = UIColor.red
         }
         highlightCorrectAnswer()
+        updateScore(answer: answer4Btn.titleLabel!.text!)
         endRound()
     }
 }

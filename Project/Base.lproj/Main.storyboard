@@ -156,6 +156,15 @@
                                     <constraint firstAttribute="width" secondItem="y14-j4-MaW" secondAttribute="height" multiplier="1:1" id="Sdn-w5-A2T"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-31-Om0">
+                                <rect key="frame" x="216" y="548" width="165.5" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jLb-mI-7nR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5872126459" blue="0.84194334019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -167,6 +176,8 @@
                             <constraint firstItem="Kre-7J-Bbk" firstAttribute="height" secondItem="N6I-dV-8Qu" secondAttribute="height" id="H8b-8H-0SS"/>
                             <constraint firstItem="FUL-1r-6Mv" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="K3f-sk-hqQ"/>
                             <constraint firstItem="y14-j4-MaW" firstAttribute="top" secondItem="9fa-Yv-egb" secondAttribute="top" constant="32" id="KaS-uV-gQS"/>
+                            <constraint firstItem="ezY-31-Om0" firstAttribute="leading" secondItem="FUL-1r-6Mv" secondAttribute="trailing" constant="46" id="L8a-B5-dVh"/>
+                            <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="ezY-31-Om0" secondAttribute="trailing" constant="32.5" id="PHm-f5-7fc"/>
                             <constraint firstItem="fES-FE-5ah" firstAttribute="top" secondItem="Kre-7J-Bbk" secondAttribute="bottom" constant="20" id="Pb3-IY-VgT"/>
                             <constraint firstItem="FUL-1r-6Mv" firstAttribute="width" secondItem="4gJ-Zs-Bs6" secondAttribute="width" multiplier="1:3" id="R0l-sy-Qd8"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="bottom" secondItem="93G-Nd-VNU" secondAttribute="bottom" constant="16" id="UTL-i5-GhQ"/>
@@ -178,6 +189,7 @@
                             <constraint firstItem="93G-Nd-VNU" firstAttribute="width" secondItem="4gJ-Zs-Bs6" secondAttribute="width" multiplier="1:2.5" id="e99-X2-kZy"/>
                             <constraint firstItem="Kre-7J-Bbk" firstAttribute="width" secondItem="N6I-dV-8Qu" secondAttribute="width" id="ewI-lq-8Tg"/>
                             <constraint firstItem="fES-FE-5ah" firstAttribute="width" secondItem="93G-Nd-VNU" secondAttribute="width" id="fzQ-yO-3sb"/>
+                            <constraint firstItem="ezY-31-Om0" firstAttribute="top" secondItem="y14-j4-MaW" secondAttribute="bottom" constant="78" id="glD-h5-rwC"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="Kre-7J-Bbk" secondAttribute="trailing" constant="32" id="h9o-cx-XLM"/>
                             <constraint firstItem="Qh6-oO-sxv" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="64" id="lad-41-Ukb"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="fES-FE-5ah" secondAttribute="trailing" constant="32" id="nq1-Sq-5gc"/>
@@ -193,6 +205,7 @@
                         <outlet property="answer4Btn" destination="fES-FE-5ah" id="yH4-tq-0IG"/>
                         <outlet property="owlAsker" destination="FUL-1r-6Mv" id="xsC-ul-WDp"/>
                         <outlet property="questionLabel" destination="Qh6-oO-sxv" id="WCE-ht-DNc"/>
+                        <outlet property="scoreLabel" destination="ezY-31-Om0" id="L9G-yZ-ArV"/>
                         <outlet property="speechBubbleImage" destination="y14-j4-MaW" id="A0t-dr-pPa"/>
                     </connections>
                 </viewController>
