@@ -47,7 +47,7 @@ class QuestionsViewController: UIViewController {
     }
     
     
-    func setButtonSettings() -> Void {
+    private func setButtonSettings() -> Void {
         // Answerbutton colors settings
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
         for btn in listOfButtons {
@@ -61,7 +61,7 @@ class QuestionsViewController: UIViewController {
     }
     
     
-    func putQuestions() -> Void {
+    private func putQuestions() -> Void {
         let listOfQuestions = db.getQestions()
         if listOfQuestions.count > 0 {
             let q1 = listOfQuestions[nrOfQuestion]
@@ -72,6 +72,16 @@ class QuestionsViewController: UIViewController {
             answer2Btn.setTitle(ansArr[1], for: .normal)
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
+        }
+    }
+    
+    private func endRound() -> Void {
+        
+        //Waits for 2 sec then changes question!
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.nrOfQuestion += 1
+            self.putQuestions()
+            self.setButtonSettings()
         }
     }
     
@@ -89,18 +99,24 @@ class QuestionsViewController: UIViewController {
         navigationItem.titleView = titleImageView
     }
 
+    
 
-    func isAnswerCorrect(answer: String) -> Bool {
+    private func isAnswerCorrect(answer: String) -> Bool {
         let listOfQuestions = db.getQestions()
         let q1 = listOfQuestions[nrOfQuestion]
-        if q1.correct_answer == answer {
-            print("Correct!")
-            return true
-        }
+        if q1.correct_answer == answer { return true }
         return false
     }
     
-    
+    func highlightCorrectAnswer() -> Void {
+        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        for btn in listOfButtons {
+            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
+            {
+                btn!.backgroundColor = UIColor.green
+            }
+        }
+    }
     
     @IBAction func answer1Btn(_ sender: Any) {
         if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
@@ -110,11 +126,8 @@ class QuestionsViewController: UIViewController {
         else {
             answer1Btn.backgroundColor = UIColor.red
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change     
-            self.nrOfQuestion += 1
-            self.putQuestions()
-            self.setButtonSettings()
-        }
+        highlightCorrectAnswer()
+        endRound()
 
     }
     
@@ -126,11 +139,8 @@ class QuestionsViewController: UIViewController {
         else {
             answer2Btn.backgroundColor = UIColor.red
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change
-            self.nrOfQuestion += 1
-            self.putQuestions()
-            self.setButtonSettings()
-        }
+        highlightCorrectAnswer()
+        endRound()
     }
     
     @IBAction func answer3Btn(_ sender: Any) {
@@ -141,11 +151,8 @@ class QuestionsViewController: UIViewController {
         else {
             answer3Btn.backgroundColor = UIColor.red
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change
-            self.nrOfQuestion += 1
-            self.putQuestions()
-            self.setButtonSettings()
-        }
+        highlightCorrectAnswer()
+        endRound()
     }
     
     @IBAction func answer4Btn(_ sender: Any) {
@@ -156,10 +163,7 @@ class QuestionsViewController: UIViewController {
         else {
             answer4Btn.backgroundColor = UIColor.red
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change
-            self.nrOfQuestion += 1
-            self.putQuestions()
-            self.setButtonSettings()
-        }
+        highlightCorrectAnswer()
+        endRound()
     }
 }
