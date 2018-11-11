@@ -75,15 +75,6 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    private func endRound() -> Void {
-        
-        //Waits for 2 sec then changes question!
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.nrOfQuestion += 1
-            self.putQuestions()
-            self.setButtonSettings()
-        }
-    }
     
     private func navigationBarItems() {
         self.navigationItem.setHidesBackButton(true, animated:true);
@@ -100,7 +91,19 @@ class QuestionsViewController: UIViewController {
     }
 
     
-
+    //Code that is executet at the end of each round, no parameters no return
+    private func endRound() -> Void {
+        
+        //Waits for 2 sec then changes question!
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.nrOfQuestion += 1
+            self.putQuestions()
+            self.setButtonSettings()
+        }
+    }
+    
+    
+    //Checks if the answer sent as parameter is correct, returns true if correct
     private func isAnswerCorrect(answer: String) -> Bool {
         let listOfQuestions = db.getQestions()
         let q1 = listOfQuestions[nrOfQuestion]
@@ -108,6 +111,7 @@ class QuestionsViewController: UIViewController {
         return false
     }
     
+    //Highlights the correct answer in green, no parameters no return
     func highlightCorrectAnswer() -> Void {
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
         for btn in listOfButtons {
