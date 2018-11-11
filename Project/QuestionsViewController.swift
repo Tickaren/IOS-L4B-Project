@@ -37,8 +37,18 @@ class QuestionsViewController: UIViewController {
         owlAsker.startAnimating()
         
         putQuestions()
+        setButtonSettings()
         
-        // Answerbutton colors
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
+    func setButtonSettings() -> Void {
+        // Answerbutton colors settings
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
         for btn in listOfButtons {
             btn?.backgroundColor = UIColor.white
@@ -46,16 +56,10 @@ class QuestionsViewController: UIViewController {
             btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
             btn?.titleLabel?.minimumScaleFactor = 0.5
             btn?.titleLabel?.adjustsFontSizeToFitWidth = true
-
+            
         }
-        
-        
-
-        // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+    
     
     func putQuestions() -> Void {
         let listOfQuestions = db.getQestions()
@@ -69,7 +73,6 @@ class QuestionsViewController: UIViewController {
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
         }
-        nrOfQuestion += 1
     }
     
     private func navigationBarItems() {
@@ -87,8 +90,76 @@ class QuestionsViewController: UIViewController {
     }
 
 
-    @IBAction func answer1Btn(_ sender: Any) {
-        putQuestions()
+    func isAnswerCorrect(answer: String) -> Bool {
+        let listOfQuestions = db.getQestions()
+        let q1 = listOfQuestions[nrOfQuestion]
+        if q1.correct_answer == answer {
+            print("Correct!")
+            return true
+        }
+        return false
     }
     
+    
+    
+    @IBAction func answer1Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
+        {
+            answer1Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer1Btn.backgroundColor = UIColor.red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change     
+            self.nrOfQuestion += 1
+            self.putQuestions()
+            self.setButtonSettings()
+        }
+
+    }
+    
+    @IBAction func answer2Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer2Btn.titleLabel!.text!))
+        {
+            answer2Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer2Btn.backgroundColor = UIColor.red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change
+            self.nrOfQuestion += 1
+            self.putQuestions()
+            self.setButtonSettings()
+        }
+    }
+    
+    @IBAction func answer3Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer3Btn.titleLabel!.text!))
+        {
+            answer3Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer3Btn.backgroundColor = UIColor.red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change
+            self.nrOfQuestion += 1
+            self.putQuestions()
+            self.setButtonSettings()
+        }
+    }
+    
+    @IBAction func answer4Btn(_ sender: Any) {
+        if(isAnswerCorrect(answer: answer4Btn.titleLabel!.text!))
+        {
+            answer4Btn.backgroundColor = UIColor.green
+        }
+        else {
+            answer4Btn.backgroundColor = UIColor.red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change
+            self.nrOfQuestion += 1
+            self.putQuestions()
+            self.setButtonSettings()
+        }
+    }
 }
