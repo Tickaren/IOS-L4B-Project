@@ -21,7 +21,9 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
     
-    var nrOfQuestion = 0
+    //***********Variables:***************
+    //Keeps teack on witch questionRound
+    private var questionRound = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +63,11 @@ class QuestionsViewController: UIViewController {
     }
     
     
+    //Updates the questionlabel and answerbuttons with the question and answers
     private func putQuestions() -> Void {
         let listOfQuestions = db.getQestions()
         if listOfQuestions.count > 0 {
-            let q1 = listOfQuestions[nrOfQuestion]
+            let q1 = listOfQuestions[questionRound]
             questionLabel.text = q1.question
             var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
             ansArr.shuffle()
@@ -96,7 +99,7 @@ class QuestionsViewController: UIViewController {
         
         //Waits for 2 sec then changes question!
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.nrOfQuestion += 1
+            self.questionRound += 1
             self.putQuestions()
             self.setButtonSettings()
         }
@@ -106,7 +109,7 @@ class QuestionsViewController: UIViewController {
     //Checks if the answer sent as parameter is correct, returns true if correct
     private func isAnswerCorrect(answer: String) -> Bool {
         let listOfQuestions = db.getQestions()
-        let q1 = listOfQuestions[nrOfQuestion]
+        let q1 = listOfQuestions[questionRound]
         if q1.correct_answer == answer { return true }
         return false
     }
