@@ -16,7 +16,8 @@ class ResultPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
+        // hides back-button in navigationbar
+        self.navigationItem.setHidesBackButton(true, animated:true);
 
         playAgainBtn.layer.cornerRadius = 20
         

@@ -85,8 +85,6 @@ class QuestionsViewController: UIViewController {
     private func navigationBarItems() {
         self.navigationItem.setHidesBackButton(true, animated:true);
         
-        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
-        
         let titleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         titleImageView.contentMode = .scaleAspectFit
         
