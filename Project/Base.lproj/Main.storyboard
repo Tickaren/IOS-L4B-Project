@@ -242,14 +242,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Iq-t9-txR">
+                                <rect key="frame" x="16" y="170" width="382" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="ownPink"/>
                         <constraints>
                             <constraint firstItem="aFl-HM-SBp" firstAttribute="bottom" secondItem="CN3-eW-Fbb" secondAttribute="bottom" constant="122" id="AMc-67-Opg"/>
                             <constraint firstItem="CN3-eW-Fbb" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="86" id="Cd1-oi-hLY"/>
+                            <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="16" id="HGq-Yo-Zdn"/>
                             <constraint firstItem="L4i-9F-iaI" firstAttribute="centerY" secondItem="ASK-m0-O0j" secondAttribute="centerY" id="I9j-Vw-C4C"/>
                             <constraint firstItem="L4i-9F-iaI" firstAttribute="centerX" secondItem="ASK-m0-O0j" secondAttribute="centerX" id="TxT-js-4ao"/>
+                            <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="aFl-HM-SBp" secondAttribute="top" constant="150" id="VQ5-lq-r6I"/>
                             <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="CN3-eW-Fbb" secondAttribute="trailing" constant="86" id="X4o-eo-I0W"/>
+                            <constraint firstItem="0Iq-t9-txR" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="16" id="nYv-d9-tXn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aFl-HM-SBp"/>
                     </view>
@@ -257,6 +266,7 @@
                     <connections>
                         <outlet property="finalScoreLabel" destination="L4i-9F-iaI" id="nlR-7O-zWj"/>
                         <outlet property="playAgainBtn" destination="CN3-eW-Fbb" id="bGb-u8-fct"/>
+                        <outlet property="ratingLabel" destination="0Iq-t9-txR" id="5jT-ZN-RYl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91V-H9-1jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
