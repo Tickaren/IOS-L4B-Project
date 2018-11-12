@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,13 +35,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-z7-yxF">
-                                <rect key="frame" x="48" y="112" width="318" height="318"/>
+                                <rect key="frame" x="48" y="68" width="318" height="318"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hwk-z7-yxF" secondAttribute="height" multiplier="1:1" id="s1E-NF-RMT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAHOO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-XD-jEX">
-                                <rect key="frame" x="108.66666666666669" y="504.99999999999994" width="197" height="60.333333333333314"/>
+                                <rect key="frame" x="108.66666666666669" y="461" width="197" height="60.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5sa-XD-jEX" secondAttribute="height" multiplier="49:15" id="IXr-JU-vs0"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgZ-De-Vct">
-                                <rect key="frame" x="103.66666666666669" y="597.33333333333337" width="207" height="50"/>
+                                <rect key="frame" x="103.66666666666669" y="553.33333333333337" width="207" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nxd-Qu-n1h"/>
                                 </constraints>
@@ -96,13 +96,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-1r-6Mv">
-                                <rect key="frame" x="32" y="446" width="138" height="138"/>
+                                <rect key="frame" x="32" y="402" width="138" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh6-oO-sxv">
-                                <rect key="frame" x="64" y="128" width="286" height="27.666666666666657"/>
+                                <rect key="frame" x="64" y="84" width="286" height="27.666666666666671"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,13 +151,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y14-j4-MaW">
-                                <rect key="frame" x="32" y="96" width="350" height="350"/>
+                                <rect key="frame" x="32" y="52" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="y14-j4-MaW" secondAttribute="height" multiplier="1:1" id="Sdn-w5-A2T"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-31-Om0">
-                                <rect key="frame" x="216" y="524" width="165.66666666666663" height="60"/>
+                                <rect key="frame" x="216" y="480" width="165.66666666666663" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jLb-mI-7nR"/>
                                 </constraints>
@@ -261,6 +261,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JeX-bd-z7n"/>
+        <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
 </document>
