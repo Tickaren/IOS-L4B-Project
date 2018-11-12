@@ -27,8 +27,10 @@ class QuestionsViewController: UIViewController {
     private var questionRound = 0
     private var scoreCount = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         questionRound = 0
         scoreCount = 0
         navigationBarItems()
@@ -105,12 +107,26 @@ class QuestionsViewController: UIViewController {
                 self.performSegue(withIdentifier: "playAgainSegue", sender: self)
             }
             else {
+                self.flip()
                 self.putQuestions()
                 self.setButtonSettings()
+
             }
         }
     }
-    
+    // flips speechbubble and hides question for 1 second
+    @objc func flip() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: speechBubbleImage, duration: 1.0, options: transitionOptions, animations: {
+            self.questionLabel.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                self.questionLabel.isHidden = false
+            }
+
+        })
+        
+    }
     
     //Checks if the answer sent as parameter is correct, returns true if correct
     private func isAnswerCorrect(answer: String) -> Bool {
