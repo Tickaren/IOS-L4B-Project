@@ -172,6 +172,7 @@
                             <constraint firstItem="Qh6-oO-sxv" firstAttribute="top" secondItem="9fa-Yv-egb" secondAttribute="top" constant="64" id="5BW-Jr-slL"/>
                             <constraint firstItem="93G-Nd-VNU" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="6R6-aH-Arv"/>
                             <constraint firstItem="N6I-dV-8Qu" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="9u7-2e-L2s"/>
+                            <constraint firstItem="N6I-dV-8Qu" firstAttribute="top" secondItem="FUL-1r-6Mv" secondAttribute="bottom" constant="23" id="BXh-20-GhX"/>
                             <constraint firstItem="y14-j4-MaW" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="32" id="DvL-7A-R5Y"/>
                             <constraint firstItem="93G-Nd-VNU" firstAttribute="width" secondItem="N6I-dV-8Qu" secondAttribute="width" id="GoQ-7n-FJB"/>
                             <constraint firstItem="Kre-7J-Bbk" firstAttribute="height" secondItem="N6I-dV-8Qu" secondAttribute="height" id="H8b-8H-0SS"/>
@@ -194,6 +195,7 @@
                             <constraint firstItem="Qh6-oO-sxv" firstAttribute="leading" secondItem="9fa-Yv-egb" secondAttribute="leading" constant="64" id="lad-41-Ukb"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="fES-FE-5ah" secondAttribute="trailing" constant="32" id="nq1-Sq-5gc"/>
                             <constraint firstItem="fES-FE-5ah" firstAttribute="height" secondItem="N6I-dV-8Qu" secondAttribute="height" id="qyx-pN-BCl"/>
+                            <constraint firstItem="Kre-7J-Bbk" firstAttribute="top" secondItem="ezY-31-Om0" secondAttribute="bottom" constant="10" id="whW-5M-Ctl"/>
                             <constraint firstItem="93G-Nd-VNU" firstAttribute="top" secondItem="N6I-dV-8Qu" secondAttribute="bottom" constant="20" id="x1I-Nc-BS4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9fa-Yv-egb"/>
@@ -300,6 +302,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="s1l-ur-yYM"/>
         <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
 </document>
