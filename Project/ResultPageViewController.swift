@@ -14,13 +14,22 @@ class ResultPageViewController: UIViewController {
     @IBOutlet weak var finalScoreLabel: UILabel!
     @IBOutlet weak var playAgainBtn: UIButton!
     
+    @IBOutlet weak var theOwl: UIImageView!
     
+    @IBOutlet weak var thinkingBubble: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // hides back-button in navigationbar
         self.navigationItem.setHidesBackButton(true, animated:true);
 
+        thinkingBubble.image = UIImage(named: "thoughtbubble")
+        
+        let owlThinking = imgAnimations.getOwlAnimation()
+        theOwl.animationImages = owlThinking
+        theOwl.animationDuration = 2.0
+        theOwl.startAnimating()
+        
         showRating()
         getFinalScore()
         
@@ -31,27 +40,28 @@ class ResultPageViewController: UIViewController {
     
     func getFinalScore() {
         let resultScore = UserDefaults.standard.integer(forKey: "userScore")
-        finalScoreLabel.text = ("Final Score: \(resultScore)")
+        finalScoreLabel.text = ("Final Score: \(resultScore)/10")
     }
     
     func showRating() {
         var rating = ""
-        var textColor = UIColor.black
+        
         let resultScore = UserDefaults.standard.integer(forKey: "userScore")
         if resultScore <= 2 {
-            rating = "Poor"
-            textColor = UIColor.darkGray
+            rating = "WOW! Didn't this kid go to school?"
+            
         }  else if resultScore <= 5 {
-            rating = "Average"
-            textColor = UIColor.blue
+            rating = "So Average"
+            
         } else if resultScore <= 8 {
-            rating = "Very Good"
-            textColor = UIColor.yellow
+            rating = "Impressive!"
+            
         } else if resultScore <= 10 {
-            rating = "Outstanding"
-            textColor = UIColor.red
+            rating = "Outstanding! This kid is a genius"
+            
         }
         ratingLabel.text = "\(rating)"
-        ratingLabel.textColor = textColor
+        
+       
     }
 }
