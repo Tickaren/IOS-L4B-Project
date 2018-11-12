@@ -8,8 +8,11 @@
 
 import UIKit
 
+let questionView = QuestionsViewController()
+
 class ResultPageViewController: UIViewController {
 
+    @IBOutlet weak var finalScoreLabel: UILabel!
     @IBOutlet weak var playAgainBtn: UIButton!
     
     
@@ -19,12 +22,17 @@ class ResultPageViewController: UIViewController {
         // hides back-button in navigationbar
         self.navigationItem.setHidesBackButton(true, animated:true);
 
+        //finalScoreLabel.text = ("Final score: \(questionView.scoreCount) / \(questionView.questionRound)")
+        getFinalScore()
+        
         playAgainBtn.layer.cornerRadius = 20
         
         playAgainBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
     }
     
-
-   
+    func getFinalScore() {
+        let resultScore = UserDefaults.standard.integer(forKey: "userScore")
+        finalScoreLabel.text = ("Final Score: \(resultScore)")
+    }
 
 }
