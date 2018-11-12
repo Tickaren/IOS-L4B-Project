@@ -36,4 +36,17 @@ extension UIView{
         glowAnimation.repeatCount = .infinity
         layer.add(glowAnimation, forKey: "shadowGlowingAnimation")
     }
+    func shake(count : Float = 4,for duration : TimeInterval = 0.3,withTranslation translation : Float = 5) {
+        
+        let shakeAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
+        shakeAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        shakeAnimation.repeatCount = count
+        shakeAnimation.duration = duration/TimeInterval(shakeAnimation.repeatCount)
+        shakeAnimation.autoreverses = true
+        shakeAnimation.fromValue = NSValue(cgPoint: CGPoint(x: CGFloat(-translation), y: self.center.y))
+        shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: CGFloat(translation), y: self.center.y))
+        layer.add(shakeAnimation, forKey: "shake")
+    }  
+
 }
+
