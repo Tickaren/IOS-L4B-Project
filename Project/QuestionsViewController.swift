@@ -24,13 +24,14 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     //***********Variables:***************
     //Keeps teack on witch questionRound
-    private var questionRound = 0
-    private var scoreCount = 0
+
+    var questionRound = 0
+    var scoreCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionRound = 0
-        scoreCount = 0
+        //questionRound = 0
+        //scoreCount = 0
         navigationBarItems()
         
         speechBubbleImage.image = UIImage(named:"speech")
@@ -139,6 +140,7 @@ class QuestionsViewController: UIViewController {
         }
         questionRound += 1
         scoreLabel.text = "\(scoreCount) / \(questionRound)"
+        UserDefaults.standard.set(scoreCount, forKey: "userScore")
     }
     
     @IBAction func answer1Btn(_ sender: Any) {
