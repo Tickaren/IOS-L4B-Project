@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         startQuizBtn.backgroundColor = UIColor.white
         startQuizBtn.layer.cornerRadius = 20
         startQuizBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
-
         //***************EXEMPELKOD:************************
         //Exempel på hur man skulle kunna hämta datan
         db.getQuestionsFromDB() //Hämtar 10 nya frågor ascynk
