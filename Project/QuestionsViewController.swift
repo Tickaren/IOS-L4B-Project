@@ -29,7 +29,8 @@ class QuestionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        questionRound = 0
+        scoreCount = 0
         navigationBarItems()
         
         speechBubbleImage.image = UIImage(named:"speech")
@@ -102,8 +103,13 @@ class QuestionsViewController: UIViewController {
         //Waits for 2 sec then changes question!
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             //self.questionRound += 1
-            self.putQuestions()
-            self.setButtonSettings()
+            if self.questionRound > 9 {
+                self.performSegue(withIdentifier: "playAgainSegue", sender: self)
+            }
+            else {
+                self.putQuestions()
+                self.setButtonSettings()
+            }
         }
     }
     
