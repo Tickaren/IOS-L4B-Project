@@ -112,10 +112,25 @@ class QuestionsViewController: UIViewController {
                 self.flip()
                 self.putQuestions()
                 self.setButtonSettings()
-
+                self.enableButtons()
             }
         }
     }
+    
+    func disableButtons() {
+        self.answer1Btn.isEnabled = false
+        self.answer2Btn.isEnabled = false
+        self.answer3Btn.isEnabled = false
+        self.answer4Btn.isEnabled = false
+    }
+    
+    func enableButtons() {
+        self.answer1Btn.isEnabled = true
+        self.answer2Btn.isEnabled = true
+        self.answer3Btn.isEnabled = true
+        self.answer4Btn.isEnabled = true
+    }
+    
     // flips speechbubble and hides question for 1 second
     @objc func flip() {
         let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
@@ -145,6 +160,7 @@ class QuestionsViewController: UIViewController {
             if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
             {
                 btn!.backgroundColor = UIColor.green
+                disableButtons()
             }
         }
     }
@@ -168,7 +184,6 @@ class QuestionsViewController: UIViewController {
         else {
             answer1Btn.backgroundColor = UIColor.red
             answer1Btn.shake()
-
         }
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
