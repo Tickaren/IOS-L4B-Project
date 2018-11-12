@@ -112,7 +112,10 @@ class QuestionsViewController: UIViewController {
                 self.flip()
                 self.putQuestions()
                 self.setButtonSettings()
-
+                self.answer1Btn.isEnabled = true
+                self.answer2Btn.isEnabled = true
+                self.answer3Btn.isEnabled = true
+                self.answer4Btn.isEnabled = true
             }
         }
     }
@@ -168,8 +171,8 @@ class QuestionsViewController: UIViewController {
         else {
             answer1Btn.backgroundColor = UIColor.red
             answer1Btn.shake()
-
         }
+        answer1Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
         endRound()
@@ -185,6 +188,7 @@ class QuestionsViewController: UIViewController {
             answer2Btn.backgroundColor = UIColor.red
             answer2Btn.shake()
         }
+        answer2Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer2Btn.titleLabel!.text!)
         endRound()
@@ -199,6 +203,7 @@ class QuestionsViewController: UIViewController {
             answer3Btn.backgroundColor = UIColor.red
             answer3Btn.shake()
         }
+        answer3Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer3Btn.titleLabel!.text!)
         endRound()
@@ -213,6 +218,7 @@ class QuestionsViewController: UIViewController {
             answer4Btn.backgroundColor = UIColor.red
             answer4Btn.shake()
         }
+        answer4Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer4Btn.titleLabel!.text!)
         endRound()
