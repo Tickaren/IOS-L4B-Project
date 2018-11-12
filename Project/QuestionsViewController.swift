@@ -112,13 +112,25 @@ class QuestionsViewController: UIViewController {
                 self.flip()
                 self.putQuestions()
                 self.setButtonSettings()
-                self.answer1Btn.isEnabled = true
-                self.answer2Btn.isEnabled = true
-                self.answer3Btn.isEnabled = true
-                self.answer4Btn.isEnabled = true
+                self.enableButtons()
             }
         }
     }
+    
+    func disableButtons() {
+        self.answer1Btn.isEnabled = false
+        self.answer2Btn.isEnabled = false
+        self.answer3Btn.isEnabled = false
+        self.answer4Btn.isEnabled = false
+    }
+    
+    func enableButtons() {
+        self.answer1Btn.isEnabled = true
+        self.answer2Btn.isEnabled = true
+        self.answer3Btn.isEnabled = true
+        self.answer4Btn.isEnabled = true
+    }
+    
     // flips speechbubble and hides question for 1 second
     @objc func flip() {
         let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
@@ -148,6 +160,7 @@ class QuestionsViewController: UIViewController {
             if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
             {
                 btn!.backgroundColor = UIColor.green
+                disableButtons()
             }
         }
     }
@@ -172,7 +185,6 @@ class QuestionsViewController: UIViewController {
             answer1Btn.backgroundColor = UIColor.red
             answer1Btn.shake()
         }
-        answer1Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
         endRound()
@@ -188,7 +200,6 @@ class QuestionsViewController: UIViewController {
             answer2Btn.backgroundColor = UIColor.red
             answer2Btn.shake()
         }
-        answer2Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer2Btn.titleLabel!.text!)
         endRound()
@@ -203,7 +214,6 @@ class QuestionsViewController: UIViewController {
             answer3Btn.backgroundColor = UIColor.red
             answer3Btn.shake()
         }
-        answer3Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer3Btn.titleLabel!.text!)
         endRound()
@@ -218,7 +228,6 @@ class QuestionsViewController: UIViewController {
             answer4Btn.backgroundColor = UIColor.red
             answer4Btn.shake()
         }
-        answer4Btn.isEnabled = false
         highlightCorrectAnswer()
         updateScore(answer: answer4Btn.titleLabel!.text!)
         endRound()
