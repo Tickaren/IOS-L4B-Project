@@ -11,6 +11,7 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
 
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var speechBubbleImage: UIImageView!
     
@@ -27,15 +28,15 @@ class QuestionsViewController: UIViewController {
 
     var questionRound = 0
     var scoreCount = 0
-    
+    var timer = Timer()
+    var seconds = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //questionRound = 0
-        //scoreCount = 0
-
         navigationBarItems()
+        
+        timerLabel.text = ("Time left: \(seconds)")
         
         speechBubbleImage.image = UIImage(named:"speech")
         
@@ -47,6 +48,7 @@ class QuestionsViewController: UIViewController {
         
         putQuestions()
         setButtonSettings()
+        timerCountdown()
         
     }
     
@@ -85,6 +87,26 @@ class QuestionsViewController: UIViewController {
         }
     }
     
+    func timerCountdown() {
+        seconds = 10
+        timerLabel.text = "Time Left: \(String(seconds))"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionsViewController.counter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func counter() {
+        seconds -= 1
+        timerLabel.text = "Time Left: \(String(seconds))"
+        
+        if seconds == 0 {
+            timer.invalidate()
+            disableButtons()
+            endRound()
+            questionRound += 1
+            scoreLabel.text = "\(scoreCount) / \(questionRound)"
+            
+        }
+    }
     
     private func navigationBarItems() {
         self.navigationItem.setHidesBackButton(true, animated:true);
@@ -113,6 +135,7 @@ class QuestionsViewController: UIViewController {
                 self.putQuestions()
                 self.setButtonSettings()
                 self.enableButtons()
+                self.timerCountdown()
             }
         }
     }
@@ -161,6 +184,7 @@ class QuestionsViewController: UIViewController {
             {
                 btn!.backgroundColor = UIColor.green
                 disableButtons()
+                timer.invalidate()
             }
         }
     }
