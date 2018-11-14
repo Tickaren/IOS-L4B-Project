@@ -50,6 +50,8 @@ class QuestionsViewController: UIViewController {
         setButtonSettings()
         timerCountdown()
         
+       
+        
     }
     
     
@@ -107,6 +109,8 @@ class QuestionsViewController: UIViewController {
             
         }
     }
+    
+    
     
     private func navigationBarItems() {
         self.navigationItem.setHidesBackButton(true, animated:true);

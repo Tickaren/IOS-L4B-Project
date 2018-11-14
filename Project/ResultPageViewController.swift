@@ -39,7 +39,8 @@ class ResultPageViewController: UIViewController {
     }
     
     func getFinalScore() {
-        let resultScore = UserDefaults.standard.integer(forKey: "userScore")
+        let resultScore =  UserDefaults.standard.integer(forKey: "userScore")
+        
         finalScoreLabel.text = ("Final Score: \(resultScore)/10")
     }
     
