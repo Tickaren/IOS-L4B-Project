@@ -9,40 +9,49 @@
 import UIKit
 
 class ResultPageViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var finalScoreLabel: UILabel!
     @IBOutlet weak var playAgainBtn: UIButton!
-    
     @IBOutlet weak var theOwl: UIImageView!
-    
     @IBOutlet weak var thinkingBubble: UIImageView!
+    
+    // MARK: - viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // hides back-button in navigationbar
         self.navigationItem.setHidesBackButton(true, animated:true);
-
+        
+        // thought-bubble
         thinkingBubble.image = UIImage(named: "thoughtbubble")
         
-        let owlThinking = imgAnimations.getOwlAnimation()
+        // animate owl
+        let owlThinking = imgAnimations.getOwlAnimation() // calls owlArray
         theOwl.animationImages = owlThinking
         theOwl.animationDuration = 2.0
         theOwl.startAnimating()
         
+        // show rating and score
         showRating()
         getFinalScore()
         
+        // animate play again button
         playAgainBtn.layer.cornerRadius = 20
-        
         playAgainBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
     }
     
+    // MARK: - Get final score
+    
     func getFinalScore() {
         let resultScore =  UserDefaults.standard.integer(forKey: "userScore")
-        
         finalScoreLabel.text = ("Final Score: \(resultScore)/10")
     }
+    
+    // MARK: - Show rating
     
     func showRating() {
         var rating = ""
@@ -62,7 +71,5 @@ class ResultPageViewController: UIViewController {
             
         }
         ratingLabel.text = "\(rating)"
-        
-       
     }
 }
