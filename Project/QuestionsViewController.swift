@@ -10,69 +10,58 @@ import UIKit
 
 
 class QuestionsViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var speechBubbleImage: UIImageView!
-    
     @IBOutlet weak var owlAsker: UIImageView!
-    
     @IBOutlet weak var answer1Btn: UIButton!
     @IBOutlet weak var answer2Btn: UIButton!
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
-    
     @IBOutlet weak var scoreLabel: UILabel!
-    //***********Variables:***************
-    //Keeps teack on witch questionRound
+    
+    // MARK: - Variables
 
     var questionRound = 0
     var scoreCount = 0
     var timer = Timer()
     var seconds = 10
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // navigation bar
         navigationBarItems()
         
+        // timer
         timerLabel.text = ("Time left: \(seconds)")
         
+        // speech-bubble
         speechBubbleImage.image = UIImage(named:"speech")
         
+        // animate owl
         let owlAskImage = imgAnimations.getOwlAnimation() // calls owlArray
-
         owlAsker.animationImages = owlAskImage
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
         
+        // start round
         putQuestions()
         setButtonSettings()
         timerCountdown()
-        
-       
-        
     }
     
+    // MARK: - viewDidAppear
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    
-    private func setButtonSettings() -> Void {
-        // Answerbutton colors settings
-        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
-        for btn in listOfButtons {
-            btn?.backgroundColor = UIColor.white
-            btn?.titleLabel?.numberOfLines = 0
-            btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
-            btn?.titleLabel?.minimumScaleFactor = 0.5
-            btn?.titleLabel?.adjustsFontSizeToFitWidth = true
-            
-        }
-    }
-    
+    // MARK: - Put question and answers
     
     //Updates the questionlabel and answerbuttons with the question and answers
     private func putQuestions() -> Void {
@@ -89,59 +78,18 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    func timerCountdown() {
-        seconds = 10
-        timerLabel.text = "Time Left: \(String(seconds))"
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionsViewController.counter), userInfo: nil, repeats: true)
-    }
+    // MARK: - Button settings
     
-    @objc func counter() {
-        seconds -= 1
-        timerLabel.text = "Time Left: \(String(seconds))"
-        
-        if seconds == 0 {
-            timer.invalidate()
-            disableButtons()
-            highlightCorrectAnswer()
-            endRound()
-            questionRound += 1
-            scoreLabel.text = "\(scoreCount) / \(questionRound)"
+    private func setButtonSettings() -> Void {
+        // Answerbutton colors settings
+        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        for btn in listOfButtons {
+            btn?.backgroundColor = UIColor.white
+            btn?.titleLabel?.numberOfLines = 0
+            btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
+            btn?.titleLabel?.minimumScaleFactor = 0.5
+            btn?.titleLabel?.adjustsFontSizeToFitWidth = true
             
-        }
-    }
-    
-    
-    
-    private func navigationBarItems() {
-        self.navigationItem.setHidesBackButton(true, animated:true);
-        
-        let titleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-        titleImageView.contentMode = .scaleAspectFit
-        
-        let navImage = UIImage(named: "owl1")
-        titleImageView.image = navImage
-        
-        navigationItem.titleView = titleImageView
-    }
-
-    
-    //Code that is executet at the end of each round, no parameters no return
-    private func endRound() -> Void {
-        
-        //Waits for 2 sec then changes question!
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            //self.questionRound += 1
-            if self.questionRound > 9 {
-                self.performSegue(withIdentifier: "playAgainSegue", sender: self)
-            }
-            else {
-                self.flip()
-                self.putQuestions()
-                self.setButtonSettings()
-                self.enableButtons()
-                self.timerCountdown()
-            }
         }
     }
     
@@ -159,27 +107,7 @@ class QuestionsViewController: UIViewController {
         self.answer4Btn.isEnabled = true
     }
     
-    // flips speechbubble and hides question for 1 second
-    @objc func flip() {
-        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
-        
-        UIView.transition(with: speechBubbleImage, duration: 1.0, options: transitionOptions, animations: {
-            self.questionLabel.isHidden = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                self.questionLabel.isHidden = false
-            }
-
-        })
-        
-    }
-    
-    //Checks if the answer sent as parameter is correct, returns true if correct
-    private func isAnswerCorrect(answer: String) -> Bool {
-        let listOfQuestions = db.getQestions()
-        let q1 = listOfQuestions[questionRound]
-        if q1.correct_answer == answer { return true }
-        return false
-    }
+    // MARK: - Update buttons
     
     //Highlights the correct answer in green, no parameters no return
     func highlightCorrectAnswer() -> Void {
@@ -194,17 +122,6 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    func updateScore(answer: String) {
-        let listOfQuestions = db.getQestions()
-        let q1 = listOfQuestions[questionRound]
-        if q1.correct_answer == answer {
-            scoreCount += 1
-        }
-        questionRound += 1
-        scoreLabel.text = "\(scoreCount) / \(questionRound)"
-        UserDefaults.standard.set(scoreCount, forKey: "userScore")
-    }
-    
     @IBAction func answer1Btn(_ sender: Any) {
         if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
         {
@@ -217,7 +134,7 @@ class QuestionsViewController: UIViewController {
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
         endRound()
-
+        
     }
     
     @IBAction func answer2Btn(_ sender: Any) {
@@ -261,4 +178,101 @@ class QuestionsViewController: UIViewController {
         updateScore(answer: answer4Btn.titleLabel!.text!)
         endRound()
     }
+    
+    // MARK: - Timer
+    
+    func timerCountdown() {
+        seconds = 10
+        timerLabel.text = "Time Left: \(String(seconds))"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionsViewController.counter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func counter() {
+        seconds -= 1
+        timerLabel.text = "Time Left: \(String(seconds))"
+        
+        if seconds == 0 {
+            timerLabel.text = "TIMES UP!"
+            timer.invalidate()
+            disableButtons()
+            highlightCorrectAnswer()
+            endRound()
+            questionRound += 1
+            scoreLabel.text = "\(scoreCount) / \(questionRound)"
+        }
+    }
+    
+    // MARK: - Navigation bar
+    
+    private func navigationBarItems() {
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        
+        let titleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        titleImageView.contentMode = .scaleAspectFit
+        
+        let navImage = UIImage(named: "owl1")
+        titleImageView.image = navImage
+        
+        navigationItem.titleView = titleImageView
+    }
+
+    // MARK: - End round
+    
+    //Code that is executed at the end of each round, no parameters no return
+    private func endRound() -> Void {
+        
+        //Waits for 2 sec then changes question!
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            //self.questionRound += 1
+            if self.questionRound > 9 {
+                self.performSegue(withIdentifier: "playAgainSegue", sender: self)
+            }
+            else {
+                self.flip()
+                self.putQuestions()
+                self.setButtonSettings()
+                self.enableButtons()
+                self.timerCountdown()
+            }
+        }
+    }
+
+    // MARK: - Animate question
+    
+    // flips speechbubble and hides question for 1 second
+    @objc func flip() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: speechBubbleImage, duration: 1.0, options: transitionOptions, animations: {
+            self.questionLabel.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                self.questionLabel.isHidden = false
+            }
+        })
+    }
+    
+    // MARK: - Control of answer
+    
+    //Checks if the answer sent as parameter is correct, returns true if correct
+    private func isAnswerCorrect(answer: String) -> Bool {
+        let listOfQuestions = db.getQestions()
+        let q1 = listOfQuestions[questionRound]
+        if q1.correct_answer == answer { return true }
+        return false
+    }
+    
+    // MARK: - Update the score
+    
+    func updateScore(answer: String) {
+        let listOfQuestions = db.getQestions()
+        let q1 = listOfQuestions[questionRound]
+        if q1.correct_answer == answer {
+            scoreCount += 1
+        }
+        questionRound += 1
+        scoreLabel.text = "\(scoreCount) / \(questionRound)"
+        UserDefaults.standard.set(scoreCount, forKey: "userScore")
+    }
+    
 }
