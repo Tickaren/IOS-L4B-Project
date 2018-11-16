@@ -103,6 +103,7 @@ class QuestionsViewController: UIViewController {
         if seconds == 0 {
             timer.invalidate()
             disableButtons()
+            highlightCorrectAnswer()
             endRound()
             questionRound += 1
             scoreLabel.text = "\(scoreCount) / \(questionRound)"
