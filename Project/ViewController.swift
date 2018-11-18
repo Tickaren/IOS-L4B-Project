@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+
 let db = opentdb() //Skapar databasklassen
 let imgAnimations = imageAnimation() // calls imageAnimation class and opens it
 
@@ -31,9 +32,8 @@ class ViewController: UIViewController {
         // load soundfunction
         loadSound()
         
-        // set navigation bar to pink
-        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
-        
+        // removes navbar bottom line
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         // hides back-button in navigationbar
         self.navigationItem.setHidesBackButton(true, animated:true);
         
