@@ -90,6 +90,7 @@ class QuestionsViewController: UIViewController {
             btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
             btn?.titleLabel?.minimumScaleFactor = 0.5
             btn?.titleLabel?.adjustsFontSizeToFitWidth = true
+            btn?.isExclusiveTouch = true //onley one button should be pressed!
             
         }
     }
