@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//import AVFoundation
 
 class QuestionsViewController: UIViewController {
     
@@ -130,6 +130,7 @@ class QuestionsViewController: UIViewController {
         else {
             answer1Btn.backgroundColor = UIColor.red
             answer1Btn.shake()
+            UIDevice.vibrate()
         }
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
@@ -145,6 +146,7 @@ class QuestionsViewController: UIViewController {
         else {
             answer2Btn.backgroundColor = UIColor.red
             answer2Btn.shake()
+            UIDevice.vibrate()
         }
         highlightCorrectAnswer()
         updateScore(answer: answer2Btn.titleLabel!.text!)
@@ -159,6 +161,7 @@ class QuestionsViewController: UIViewController {
         else {
             answer3Btn.backgroundColor = UIColor.red
             answer3Btn.shake()
+            UIDevice.vibrate()
         }
         highlightCorrectAnswer()
         updateScore(answer: answer3Btn.titleLabel!.text!)
@@ -173,6 +176,7 @@ class QuestionsViewController: UIViewController {
         else {
             answer4Btn.backgroundColor = UIColor.red
             answer4Btn.shake()
+            UIDevice.vibrate()
         }
         highlightCorrectAnswer()
         updateScore(answer: answer4Btn.titleLabel!.text!)
