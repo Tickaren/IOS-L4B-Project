@@ -42,5 +42,7 @@ class imageAnimation{
             ] as! [UIImage]
         return owlImage
         }
+    
+    
 }
 
