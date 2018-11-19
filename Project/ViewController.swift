@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startpageImage: UIImageView!
     @IBOutlet weak var startQuizBtn: UIButton!
-
+    @IBOutlet weak var difficultyBtn: UIButton!
+    
     // MARK: - Owl settings
     let startOwlImage = imgAnimations.getOwlAnimation() // calls owlArray
     var owlSound: AVAudioPlayer?
@@ -45,6 +46,9 @@ class ViewController: UIViewController {
         startQuizBtn.backgroundColor = UIColor.white
         startQuizBtn.layer.cornerRadius = 20
         startQuizBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
+        difficultyBtn.backgroundColor = UIColor.white
+        difficultyBtn.layer.cornerRadius = 20
+        difficultyBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
 
         //Hämtar 10 nya frågor ascynk
         db.getQuestionsFromDB()
@@ -86,7 +90,13 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "questionSegue", sender: self)
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
+
+    @IBAction func difficultyBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "difficultySegue", sender: self)
+    }
     
+    // MARK: - difficulyBtn
+
     // MARK: - Load sound
     
     // Load sound on buttonclick function in viewDidLoad
