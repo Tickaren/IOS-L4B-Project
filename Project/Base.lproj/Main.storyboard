@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAq-v3-L8k">
-                                <rect key="frame" x="103.66666666666669" y="651.33333333333337" width="207" height="50"/>
+                                <rect key="frame" x="103.66666666666669" y="654" width="207" height="50"/>
                                 <state key="normal" title="Select difficulty!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -85,8 +85,8 @@
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="ihk-to-8Wb"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="width" secondItem="XgZ-De-Vct" secondAttribute="width" id="pHH-AN-cyF"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qvr-XL-xzn"/>
-                            <constraint firstItem="ZAq-v3-L8k" firstAttribute="top" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="48" id="thn-5N-av0"/>
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="top" secondItem="Hwk-z7-yxF" secondAttribute="bottom" constant="75" id="uMZ-e6-pK3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZAq-v3-L8k" secondAttribute="bottom" constant="32" id="wdn-bP-2DN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
