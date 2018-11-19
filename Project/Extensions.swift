@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // MARK: - Extension UIColor
 extension UIColor {
@@ -57,6 +58,13 @@ extension UIView{
         shakeAnimation.fromValue = NSValue(cgPoint: CGPoint(x: CGFloat(-translation), y: self.center.y))
         shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: CGFloat(translation), y: self.center.y))
         layer.add(shakeAnimation, forKey: "shake")
+    }
+    
+}
+// MARK: - Extension UIDevice
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 }
 
