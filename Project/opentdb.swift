@@ -59,6 +59,7 @@ class opentdb {
         let nrOfQuestions = 10
         let typeOfQuestion = "multiple"
         let jsonURLAsString = opentdbURL + "amount=" + String(nrOfQuestions) + "&type=" + typeOfQuestion
+        questions = [question]()
         
         //Checking the url is ok:
         guard let url = URL(string: jsonURLAsString) else {
