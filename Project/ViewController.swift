@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 
-
 let db = opentdb() //Skapar databasklassen
 let imgAnimations = imageAnimation() // calls imageAnimation class and opens it
 
