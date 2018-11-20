@@ -50,15 +50,22 @@ class opentdb {
             return [question]()
         }
     }
-    // getQuestionsFromDB() -> Void gets 10 new questions and puts them in the class variable questions
-    //Parameters: NONE
+    // getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void gets 10 new questions and puts them in the class variable questions
+    //Parameters: category (optional): string, nrOfQuestions (optional): int, diffeculty: (optional): string
     //Return: VOID
-    public func getQuestionsFromDB() -> Void {
+    public func getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void {
         print("Opentdb: GetQuestions()")
         
-        let nrOfQuestions = 10
+//        let nrOfQuestions = 10
         let typeOfQuestion = "multiple"
-        let jsonURLAsString = opentdbURL + "amount=" + String(nrOfQuestions) + "&type=" + typeOfQuestion
+        var jsonURLAsString = opentdbURL + "amount=" + String(nrOfQuestions) + "&type=" + typeOfQuestion
+        if (category != nil) {
+            jsonURLAsString = jsonURLAsString + "&category=" + category!
+        }
+        if (difficulty != nil){
+            jsonURLAsString = jsonURLAsString + "&difficulty=" + difficulty!
+        }
+        questions = [question]()
         
         //Checking the url is ok:
         guard let url = URL(string: jsonURLAsString) else {
@@ -124,6 +131,8 @@ private let characterEntities : [ Substring : Character ] = [
     "&apos;"    : "'",
     "&lt;"      : "<",
     "&gt;"      : ">",
+    "&eaute;"   : "é",
+    "&Eaute;"   : "È",
     
     // HTML character entity references:
     "&nbsp;"    : "\u{00a0}",

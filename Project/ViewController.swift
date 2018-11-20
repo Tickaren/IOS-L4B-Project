@@ -10,26 +10,30 @@ import UIKit
 import AVFoundation
 
 let db = opentdb() //Skapar databasklassen
-
 let imgAnimations = imageAnimation() // calls imageAnimation class and opens it
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var startpageImage: UIImageView!
     @IBOutlet weak var startQuizBtn: UIButton!
-
-    let startOwlImage = imgAnimations.getOwlAnimation() // calls owlArray
+    @IBOutlet weak var difficultyBtn: UIButton!
     
+    // MARK: - Owl settings
+    let startOwlImage = imgAnimations.getOwlAnimation() // calls owlArray
     var owlSound: AVAudioPlayer?
     
+    // MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSound() // load soundfunction
         
-        // set navigationbar to pink
-        navigationController?.navigationBar.barTintColor = UIColor.BackgroundColor.pink
+        // load soundfunction
+        loadSound()
         
+        // removes navbar bottom line
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         // hides back-button in navigationbar
         self.navigationItem.setHidesBackButton(true, animated:true);
         
@@ -38,22 +42,28 @@ class ViewController: UIViewController {
         startpageImage.animationDuration = 2.0
         startpageImage.startAnimating()
         
-        //button animation
+        // button animation
         startQuizBtn.backgroundColor = UIColor.white
         startQuizBtn.layer.cornerRadius = 20
         startQuizBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
-        //***************EXEMPELKOD:************************
-        //Exempel på hur man skulle kunna hämta datan
-        db.getQuestionsFromDB() //Hämtar 10 nya frågor ascynk
+        difficultyBtn.backgroundColor = UIColor.white
+        difficultyBtn.layer.cornerRadius = 20
+        difficultyBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
+
+        //Hämtar 10 nya frågor ascynk
+        db.getQuestionsFromDB()
         //self.getData(db: db) //Kontrollerar om datan är hämtad
-        //***************EXEMPELKOD SLUT:*******************
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
     
-    //**************EXEMPELFUNKTION******************
-    //Kontrollerar om datan är redo rekursivt ascynk, kontroll varje 0.5s
+    // MARK: - viewDidAppear
+    
+    override func viewDidAppear(_ animated: Bool) {
+       super.viewDidAppear(animated)
+    }
+    
+    // MARK: - Data controlled
+    
+    // Kontrollerar om datan är redo rekursivt ascynk, kontroll varje 0.5s
     func getData(db: opentdb) -> Bool {
         if db.isQuestionsReady(){
             print("Data is ready")
@@ -61,15 +71,14 @@ class ViewController: UIViewController {
                 print(item)
             }
             return true
-//            print(db.getQestions()[0])
         }
         else {
             return false
         }
     }
-    //***************EXEMPELFUNKTION SLUT:***********
 
-
+    // MARK: - StarQuizBtn
+    
     @IBAction func startQuizBtn(_ sender: UIButton) {
         owlSound?.play() // play loaded sound on click
         while true {
@@ -79,10 +88,16 @@ class ViewController: UIViewController {
             sleep(1)
         }
         performSegue(withIdentifier: "questionSegue", sender: self)
-        //performSegue(withIdentifier: "questionSegue", sender: self)
         //self.getData(db: db) //Kontrollerar om datan är hämtad
-
     }
+
+    @IBAction func difficultyBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "difficultySegue", sender: self)
+    }
+    
+    // MARK: - difficulyBtn
+
+    // MARK: - Load sound
     
     // Load sound on buttonclick function in viewDidLoad
     func loadSound(){

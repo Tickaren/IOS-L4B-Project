@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import AVFoundation
 
+// MARK: - Extension UIColor
 extension UIColor {
     struct BackgroundColor {
         static let pink = UIColor(named: "ownPink")
     }
 }
+
+// MARK: - Extension UIView
 extension UIView{
+    
+    // MARK: Glow effect
+    
     enum GlowEffect:Float{
         case small = 0.4, normal = 2, big = 15
     }
+    
+    // MARK: Glow animation
     
     func doGlowAnimation(withColor color:UIColor, withEffect effect:GlowEffect = .normal) {
         layer.masksToBounds = false
@@ -36,6 +45,9 @@ extension UIView{
         glowAnimation.repeatCount = .infinity
         layer.add(glowAnimation, forKey: "shadowGlowingAnimation")
     }
+    
+    // MARK: Shake animation
+    
     func shake(count : Float = 4,for duration : TimeInterval = 0.3,withTranslation translation : Float = 5) {
         
         let shakeAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
@@ -47,7 +59,12 @@ extension UIView{
         shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: CGFloat(translation), y: self.center.y))
         layer.add(shakeAnimation, forKey: "shake")
     }
-
-
+    
+}
+// MARK: - Extension UIDevice
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
 }
 

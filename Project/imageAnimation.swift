@@ -13,6 +13,8 @@ var owlImage: [UIImage] = []
 
 class imageAnimation{
     
+    // MARK: - Animate owl
+    
     public func getOwlAnimation() -> [UIImage] {
         owlImage = [
             UIImage(named: "owl1"),
@@ -40,6 +42,7 @@ class imageAnimation{
             ] as! [UIImage]
         return owlImage
         }
+    
     
 }
 
