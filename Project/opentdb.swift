@@ -133,6 +133,7 @@ private let characterEntities : [ Substring : Character ] = [
     "&gt;"      : ">",
     "&eaute;"   : "é",
     "&Eaute;"   : "È",
+    "&rsquo;"   : "'",
     
     // HTML character entity references:
     "&nbsp;"    : "\u{00a0}",
