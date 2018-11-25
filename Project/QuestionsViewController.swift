@@ -50,6 +50,20 @@ class QuestionsViewController: UIViewController {
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
         
+        //Rezise text in answerbtns
+        answer1Btn.titleLabel!.minimumScaleFactor = 0.3
+        answer1Btn.titleLabel!.numberOfLines = 0
+        answer1Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        answer2Btn.titleLabel!.minimumScaleFactor = 0.3
+        answer2Btn.titleLabel!.numberOfLines = 0
+        answer2Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        answer3Btn.titleLabel!.minimumScaleFactor = 0.3
+        answer3Btn.titleLabel!.numberOfLines = 0
+        answer3Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        answer4Btn.titleLabel!.minimumScaleFactor = 0.3
+        answer4Btn.titleLabel!.numberOfLines = 0
+        answer4Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        
         // start round
         putQuestions()
         setButtonSettings()
@@ -197,6 +211,7 @@ class QuestionsViewController: UIViewController {
     @objc func counter() {
         seconds -= 1
         timerLabel.text = "Time Left: \(String(seconds))"
+        timerLabel.doGlowAnimation(withColor: UIColor.red, withEffect: .big)
         
         if seconds == 0 {
             timerLabel.text = "TIMES UP!"
