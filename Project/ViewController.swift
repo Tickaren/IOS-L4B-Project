@@ -8,9 +8,11 @@
 
 import UIKit
 import AVFoundation
+import UserNotifications
 
 let db = opentdb() //Skapar databasklassen
 let imgAnimations = imageAnimation() // calls imageAnimation class and opens it
+var trigger: Bool = false // Variable for ingame pushnotification
 
 class ViewController: UIViewController {
 
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var startpageImage: UIImageView!
     @IBOutlet weak var startQuizBtn: UIButton!
     @IBOutlet weak var difficultyBtn: UIButton!
+    
     
     // MARK: - Owl settings
     let startOwlImage = imgAnimations.getOwlAnimation() // calls owlArray
@@ -53,6 +56,27 @@ class ViewController: UIViewController {
         //Hämtar 10 nya frågor ascynk
         //db.getQuestionsFromDB()
         //self.getData(db: db) //Kontrollerar om datan är hämtad
+        
+        //Observ if app loses focus
+        let notificationFocus = NotificationCenter.default
+        notificationFocus.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+    }
+    
+    @objc func appMovedToBackground(){
+        
+        if trigger == true {
+        let content = UNMutableNotificationContent()
+        content.title = "Tahoo!"
+        content.subtitle = "Where are you going?"
+        content.body = "Cheating is no fun..."
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
     }
     
     // MARK: - viewDidAppear
@@ -80,6 +104,7 @@ class ViewController: UIViewController {
     // MARK: - StarQuizBtn
     
     @IBAction func startQuizBtn(_ sender: UIButton) {
+        trigger = true // For pushNotification
         owlSound?.play() // play loaded sound on click
         db.getQuestionsFromDB()
         while true {

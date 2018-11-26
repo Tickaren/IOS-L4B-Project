@@ -42,6 +42,7 @@ class DifficultyViewController: UIViewController {
     // MARK: - Difficulty
     
     @IBAction func easyDifficulty(_ sender: Any) {
+        trigger = true // For pushNotification
         db.getQuestionsFromDB(difficulty: "easy")
         while true {
             if vc.getData(db: db) {
@@ -52,6 +53,7 @@ class DifficultyViewController: UIViewController {
         performSegue(withIdentifier: "difficultySegue", sender: self)
     }
     @IBAction func mediumDifficulty(_ sender: Any) {
+        trigger = true // For pushNotification
         db.getQuestionsFromDB(difficulty: "medium")
         while true {
             if vc.getData(db: db) {
@@ -62,6 +64,7 @@ class DifficultyViewController: UIViewController {
         performSegue(withIdentifier: "difficultySegue", sender: self)
     }
     @IBAction func hardDifficulty(_ sender: Any) {
+        trigger = true // For pushNotification
         db.getQuestionsFromDB(difficulty: "hard")
         while true {
             if vc.getData(db: db) {
