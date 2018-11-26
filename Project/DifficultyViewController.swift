@@ -8,6 +8,8 @@
 
 import UIKit
 
+let vc = ViewController()
+
 class DifficultyViewController: UIViewController {
 
     @IBOutlet weak var easyBtn: UIButton!
@@ -45,4 +47,34 @@ class DifficultyViewController: UIViewController {
     }
     */
 
+    @IBAction func easyDifficulty(_ sender: Any) {
+        db.getQuestionsFromDB(difficulty: "easy")
+        while true {
+            if vc.getData(db: db) {
+                break
+            }
+            sleep(1)
+        }
+        performSegue(withIdentifier: "difficultySegue", sender: self)
+    }
+    @IBAction func mediumDifficulty(_ sender: Any) {
+        db.getQuestionsFromDB(difficulty: "medium")
+        while true {
+            if vc.getData(db: db) {
+                break
+            }
+            sleep(1)
+        }
+        performSegue(withIdentifier: "difficultySegue", sender: self)
+    }
+    @IBAction func hardDifficulty(_ sender: Any) {
+        db.getQuestionsFromDB(difficulty: "hard")
+        while true {
+            if vc.getData(db: db) {
+                break
+            }
+            sleep(1)
+        }
+        performSegue(withIdentifier: "difficultySegue", sender: self)
+    }
 }

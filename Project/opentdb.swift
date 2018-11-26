@@ -53,6 +53,7 @@ class opentdb {
     // getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void gets 10 new questions and puts them in the class variable questions
     //Parameters: category (optional): string, nrOfQuestions (optional): int, diffeculty: (optional): string
     //Return: VOID
+    
     public func getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void {
         print("Opentdb: GetQuestions()")
         
@@ -66,7 +67,7 @@ class opentdb {
             jsonURLAsString = jsonURLAsString + "&difficulty=" + difficulty!
         }
         questions = [question]()
-        
+
         //Checking the url is ok:
         guard let url = URL(string: jsonURLAsString) else {
             print("Opentdb: No URL")
@@ -118,9 +119,9 @@ class opentdb {
         
     }
     
-    
-
 }
+
+
 
 // Mapping from XML/HTML character entity reference to character
 // From http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
