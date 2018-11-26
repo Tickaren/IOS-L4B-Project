@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         difficultyBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
 
         //Hämtar 10 nya frågor ascynk
-        db.getQuestionsFromDB()
+        //db.getQuestionsFromDB()
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
     
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     // MARK: - Data controlled
     
     // Kontrollerar om datan är redo rekursivt ascynk, kontroll varje 0.5s
-    func getData(db: opentdb) -> Bool {
+    public func getData(db: opentdb) -> Bool {
         if db.isQuestionsReady(){
             print("Data is ready")
             for item in db.getQestions(){
@@ -81,6 +81,7 @@ class ViewController: UIViewController {
     
     @IBAction func startQuizBtn(_ sender: UIButton) {
         owlSound?.play() // play loaded sound on click
+        db.getQuestionsFromDB()
         while true {
             if self.getData(db: db) {
                 break
@@ -90,13 +91,12 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "questionSegue", sender: self)
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
-
+    
+    // MARK: - difficultyBtn
     @IBAction func difficultyBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "difficultySegue", sender: self)
     }
     
-    // MARK: - difficulyBtn
-
     // MARK: - Load sound
     
     // Load sound on buttonclick function in viewDidLoad
