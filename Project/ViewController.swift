@@ -63,6 +63,8 @@ class ViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
     
+    // MARK: - appMovedToBackground
+    //Use: If trigger == true push notification will show when app loses focus with specific message.
     @objc func appMovedToBackground(){
         
         if trigger == true {
