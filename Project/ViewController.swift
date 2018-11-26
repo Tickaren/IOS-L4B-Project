@@ -72,6 +72,7 @@ class ViewController: UIViewController {
         content.title = "Tahoo!"
         content.subtitle = "Where are you going?"
         content.body = "Cheating is no fun..."
+        content.badge = 0
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
