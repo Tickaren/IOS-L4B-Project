@@ -133,6 +133,7 @@ class QuestionsViewController: UIViewController {
             {
                 btn!.backgroundColor = UIColor.green
                 disableButtons()
+                UIDevice.vibrate()
                 timer.invalidate()
             }
         }
