@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         difficultyBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
 
         //Hämtar 10 nya frågor ascynk
-        db.getQuestionsFromDB()
+        //db.getQuestionsFromDB()
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
     
@@ -81,6 +81,7 @@ class ViewController: UIViewController {
     
     @IBAction func startQuizBtn(_ sender: UIButton) {
         owlSound?.play() // play loaded sound on click
+        db.getQuestionsFromDB()
         while true {
             if self.getData(db: db) {
                 break
