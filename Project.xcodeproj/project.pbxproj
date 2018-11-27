@@ -19,6 +19,7 @@
 		CD23F1D921874145009B26C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD23F1D821874145009B26C2 /* Assets.xcassets */; };
 		CD23F1DC21874145009B26C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD23F1DA21874145009B26C2 /* LaunchScreen.storyboard */; };
 		CD332759218DA5B7002ACD65 /* opentdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332758218DA5B7002ACD65 /* opentdb.swift */; };
+		F31324CC21ADA5DE00BCBCDB /* QuizHelperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31324CB21ADA5DE00BCBCDB /* QuizHelperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CD23F1DB21874145009B26C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD23F1DD21874145009B26C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD332758218DA5B7002ACD65 /* opentdb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opentdb.swift; sourceTree = "<group>"; };
+		F31324CB21ADA5DE00BCBCDB /* QuizHelperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHelperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				CD23F1D121874144009B26C2 /* AppDelegate.swift */,
 				CD23F1D321874144009B26C2 /* ViewController.swift */,
 				CD23F1D521874144009B26C2 /* Main.storyboard */,
+				F31324CB21ADA5DE00BCBCDB /* QuizHelperViewController.swift */,
 				652B270A2191D48200BF356B /* QuestionsViewController.swift */,
 				6529C18D21A2F59B00CC9EB0 /* DifficultyViewController.swift */,
 				B8ECA0DD2194A8FC004CDF6B /* ResultPageViewController.swift */,
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F31324CC21ADA5DE00BCBCDB /* QuizHelperViewController.swift in Sources */,
 				2AEC410F2193474100DA8047 /* Extensions.swift in Sources */,
 				CD23F1D421874144009B26C2 /* ViewController.swift in Sources */,
 				B8ECA0DE2194A8FC004CDF6B /* ResultPageViewController.swift in Sources */,
