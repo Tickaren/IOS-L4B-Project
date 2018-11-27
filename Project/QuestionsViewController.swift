@@ -16,8 +16,10 @@ class QuestionsViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
+    
     @IBOutlet weak var speechBubbleImage: UIImageView!
     @IBOutlet weak var owlAsker: UIImageView!
+    
     @IBOutlet weak var answer1Btn: UIButton!
     @IBOutlet weak var answer2Btn: UIButton!
     @IBOutlet weak var answer3Btn: UIButton!
@@ -50,19 +52,6 @@ class QuestionsViewController: UIViewController {
         owlAsker.animationDuration = 2.0
         owlAsker.startAnimating()
         
-        //Rezise text in answerbtns
-        answer1Btn.titleLabel!.minimumScaleFactor = 0.3
-        answer1Btn.titleLabel!.numberOfLines = 0
-        answer1Btn.titleLabel!.adjustsFontSizeToFitWidth = true
-        answer2Btn.titleLabel!.minimumScaleFactor = 0.3
-        answer2Btn.titleLabel!.numberOfLines = 0
-        answer2Btn.titleLabel!.adjustsFontSizeToFitWidth = true
-        answer3Btn.titleLabel!.minimumScaleFactor = 0.3
-        answer3Btn.titleLabel!.numberOfLines = 0
-        answer3Btn.titleLabel!.adjustsFontSizeToFitWidth = true
-        answer4Btn.titleLabel!.minimumScaleFactor = 0.3
-        answer4Btn.titleLabel!.numberOfLines = 0
-        answer4Btn.titleLabel!.adjustsFontSizeToFitWidth = true
         
         // start round
         putQuestions()
@@ -84,12 +73,14 @@ class QuestionsViewController: UIViewController {
         if listOfQuestions.count > 0 {
             let q1 = listOfQuestions[questionRound]
             questionLabel.text = q1.question
+            //questionLabel.fitTextToBounds()
             var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
             ansArr.shuffle()
             answer1Btn.setTitle(ansArr[0], for: .normal)
             answer2Btn.setTitle(ansArr[1], for: .normal)
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
+            titleSize()
         }
     }
     
@@ -121,6 +112,21 @@ class QuestionsViewController: UIViewController {
         self.answer2Btn.isEnabled = true
         self.answer3Btn.isEnabled = true
         self.answer4Btn.isEnabled = true
+    }
+    func titleSize(){
+        //Rezise text in answerbtns
+        self.answer1Btn.titleLabel!.minimumScaleFactor = 0.5
+        self.answer1Btn.titleLabel!.numberOfLines = 0
+        self.answer1Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        self.answer2Btn.titleLabel!.minimumScaleFactor = 0.5
+        self.answer2Btn.titleLabel!.numberOfLines = 0
+        self.answer2Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        self.answer3Btn.titleLabel!.minimumScaleFactor = 0.5
+        self.answer3Btn.titleLabel!.numberOfLines = 0
+        self.answer3Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        self.answer4Btn.titleLabel!.minimumScaleFactor = 0.5
+        self.answer4Btn.titleLabel!.numberOfLines = 0
+        self.answer4Btn.titleLabel!.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: - Update buttons
