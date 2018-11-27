@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,6 +26,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riZ-eF-gaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-717" y="136"/>
+        </scene>
+        <!--Quiz Helper-->
+        <scene sceneID="XFq-sY-mDY">
+            <objects>
+                <viewController title="Quiz Helper" id="e1R-GE-Et4" customClass="QuizHelperViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hsR-b6-fD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4X-h1-PXb">
+                                <rect key="frame" x="48.000000000000007" y="366" width="106.66666666666669" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MXu-No-854">
+                                <rect key="frame" x="48" y="67" width="279" height="279"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MXu-No-854" secondAttribute="height" multiplier="1:1" id="hph-6C-fbP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each question have four choices of answers which one is correct." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-0w-bCa">
+                                <rect key="frame" x="48" y="409" width="279" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each question has a ten second timeperiod for you to answer." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-4F-Gv7">
+                                <rect key="frame" x="48" y="469.66666666666669" width="279" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On right answer, button will turn green. On wrong answer, button will turn red." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-8A-rMJ">
+                                <rect key="frame" x="48" y="530.33333333333337" width="279" height="61"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4K-Hs-DYj">
+                                <rect key="frame" x="48" y="611.33333333333337" width="279" height="101.66666666666663"/>
+                                <string key="text">There are 3 different difficulties where you can choose which one. If none is chosen, random questions will be generated from different difficulties.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="ownPink"/>
+                        <constraints>
+                            <constraint firstItem="QtM-8A-rMJ" firstAttribute="top" secondItem="b2f-4F-Gv7" secondAttribute="bottom" constant="20" id="B3F-Qs-hNA"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="A4K-Hs-DYj" secondAttribute="trailing" constant="48" id="Gdu-fS-pTd"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="6bi-0w-bCa" secondAttribute="trailing" constant="48" id="J9m-lY-Onv"/>
+                            <constraint firstItem="MXu-No-854" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="LA3-T7-2sp"/>
+                            <constraint firstItem="MXu-No-854" firstAttribute="top" secondItem="elR-ba-sM5" secondAttribute="top" constant="23" id="TWL-ta-HzU"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="MXu-No-854" secondAttribute="trailing" constant="48" id="UOa-AG-2V4"/>
+                            <constraint firstItem="6bi-0w-bCa" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="Zzo-TJ-jJe"/>
+                            <constraint firstItem="b2f-4F-Gv7" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="d3k-Ma-gmZ"/>
+                            <constraint firstItem="g4X-h1-PXb" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="de5-Xt-OcP"/>
+                            <constraint firstItem="A4K-Hs-DYj" firstAttribute="top" secondItem="QtM-8A-rMJ" secondAttribute="bottom" constant="20" id="dpU-zC-6Sa"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="b2f-4F-Gv7" secondAttribute="trailing" constant="48" id="hRQ-tO-t6T"/>
+                            <constraint firstItem="b2f-4F-Gv7" firstAttribute="top" secondItem="6bi-0w-bCa" secondAttribute="bottom" constant="20" id="i9h-7N-nz2"/>
+                            <constraint firstItem="QtM-8A-rMJ" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="lNY-Qg-HVk"/>
+                            <constraint firstItem="A4K-Hs-DYj" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="lUG-JE-SG9"/>
+                            <constraint firstItem="g4X-h1-PXb" firstAttribute="top" secondItem="MXu-No-854" secondAttribute="bottom" constant="20" id="pAe-B6-1be"/>
+                            <constraint firstItem="6bi-0w-bCa" firstAttribute="top" secondItem="g4X-h1-PXb" secondAttribute="bottom" constant="20" id="poE-Tc-4TH"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="QtM-8A-rMJ" secondAttribute="trailing" constant="48" id="woz-I6-qyv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="elR-ba-sM5"/>
+                    </view>
+                    <connections>
+                        <outlet property="quizHelperImageView" destination="MXu-No-854" id="zrM-G9-96A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pjM-Ye-TYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120.8" y="-569.70443349753702"/>
         </scene>
         <!--TAHOO?-->
         <scene sceneID="tne-QT-ifu">
@@ -69,12 +145,21 @@
                                     <action selector="difficultyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mD7-y7-nys"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-yL-lOd">
+                                <rect key="frame" x="323" y="736" width="22" height="22"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="e1R-GE-Et4" kind="show" id="SeI-yx-Hug"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.58721264588001176" blue="0.84194334016208816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6rd-Ud-Cqs"/>
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8v1-RP-4lb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dxr-yL-lOd" secondAttribute="trailing" constant="30" id="GDc-z3-LyB"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="top" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="20.5" id="Hls-TR-tZS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dxr-yL-lOd" secondAttribute="bottom" constant="20" id="J29-Ye-crx"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="height" secondItem="XgZ-De-Vct" secondAttribute="height" id="O2g-Jo-Dw6"/>
                             <constraint firstItem="Hwk-z7-yxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="RfB-pt-SQ5"/>
                             <constraint firstItem="Hwk-z7-yxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="YeD-qs-HW8"/>
