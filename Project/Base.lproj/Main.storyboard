@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -190,17 +190,8 @@
                                     <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qh6-oO-sxv">
-                                <rect key="frame" x="63.999999999999986" y="108" width="211.66666666666663" height="26.666666666666657"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="rM9-zA-fL6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="N6I-dV-8Qu">
-                                <rect key="frame" x="32" y="622" width="132.33333333333334" height="60"/>
+                                <rect key="frame" x="32" y="622" width="150" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="RNS-Mk-jMT"/>
                                 </constraints>
@@ -214,7 +205,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-7J-Bbk">
-                                <rect key="frame" x="175.33333333333331" y="622" width="132.33333333333331" height="60"/>
+                                <rect key="frame" x="193" y="622" width="150" height="60"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button">
@@ -225,7 +216,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="93G-Nd-VNU">
-                                <rect key="frame" x="32" y="702" width="132.33333333333334" height="60"/>
+                                <rect key="frame" x="32" y="702" width="150" height="60"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
                                 <state key="normal" title="Button">
@@ -236,7 +227,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fES-FE-5ah">
-                                <rect key="frame" x="175.33333333333331" y="702" width="132.33333333333331" height="60"/>
+                                <rect key="frame" x="193" y="702" width="150" height="60"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button">
@@ -247,10 +238,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y14-j4-MaW">
-                                <rect key="frame" x="32" y="76" width="275.66666666666669" height="398"/>
+                                <rect key="frame" x="32" y="76" width="311" height="398"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qh6-oO-sxv">
+                                <rect key="frame" x="64" y="108" width="247" height="26.666666666666657"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-31-Om0">
-                                <rect key="frame" x="203" y="552" width="104.33333333333331" height="60"/>
+                                <rect key="frame" x="203" y="552" width="139.66666666666663" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jLb-mI-7nR"/>
                                 </constraints>
@@ -259,7 +256,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-fw-5Ej">
-                                <rect key="frame" x="203" y="503" width="104.66666666666669" height="41"/>
+                                <rect key="frame" x="203" y="503" width="140" height="41"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -283,9 +280,9 @@
                             <constraint firstItem="fES-FE-5ah" firstAttribute="width" secondItem="N6I-dV-8Qu" secondAttribute="width" id="TYn-Vm-zfg"/>
                             <constraint firstItem="FxO-fw-5Ej" firstAttribute="top" secondItem="y14-j4-MaW" secondAttribute="bottom" constant="29" id="UKE-um-UBL"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="bottom" secondItem="93G-Nd-VNU" secondAttribute="bottom" constant="16" id="UTL-i5-GhQ"/>
+                            <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="Qh6-oO-sxv" secondAttribute="trailing" constant="64" id="YmN-jh-T2f"/>
                             <constraint firstItem="ezY-31-Om0" firstAttribute="top" secondItem="FxO-fw-5Ej" secondAttribute="bottom" constant="8" id="bXV-dl-dfQ"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="y14-j4-MaW" secondAttribute="trailing" constant="32" id="cq1-Ob-czg"/>
-                            <constraint firstItem="9fa-Yv-egb" firstAttribute="trailing" secondItem="Qh6-oO-sxv" secondAttribute="trailing" constant="64" id="d6r-RG-clc"/>
                             <constraint firstItem="9fa-Yv-egb" firstAttribute="bottom" secondItem="fES-FE-5ah" secondAttribute="bottom" constant="16" id="d89-St-BEn"/>
                             <constraint firstItem="93G-Nd-VNU" firstAttribute="height" secondItem="N6I-dV-8Qu" secondAttribute="height" id="dn8-yf-XI4"/>
                             <constraint firstItem="Kre-7J-Bbk" firstAttribute="width" secondItem="N6I-dV-8Qu" secondAttribute="width" id="ewI-lq-8Tg"/>
@@ -318,17 +315,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfJ-UU-PBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043.4782608695652" y="136.14130434782609"/>
+            <point key="canvasLocation" x="1042.4000000000001" y="135.96059113300493"/>
         </scene>
         <!--Result Page View Controller-->
         <scene sceneID="Kcb-iQ-H92">
             <objects>
                 <viewController id="w0O-Wh-hs3" customClass="ResultPageViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ASK-m0-O0j" customClass="View">
+                    <view key="view" contentMode="scaleToFill" id="ASK-m0-O0j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-ER-JTc" customClass="thinkin">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-ER-JTc">
                                 <rect key="frame" x="32" y="76" width="311" height="394"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN3-eW-Fbb">
@@ -406,7 +403,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aIl-Y7-54E"/>
+        <segue reference="LMq-JU-cPs"/>
         <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
 </document>
