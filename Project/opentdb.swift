@@ -30,11 +30,21 @@ class opentdb {
 
     private var IsDataReady : Bool = false
     
+    private var offlineMode : Bool = false
+    
     private var offlineDataReady : Bool = false
     
     private var questions = [question]()
     
     private let opentdbURL = "https://opentdb.com/api.php?"
+    
+    public func isOfflineMode() -> Bool{
+    return offlineMode
+    }
+    
+    public func setOfflineMode(mode: Bool) -> Void{
+        offlineMode = mode
+    }
     
     // Returns true if data is ready else false
     public func isQuestionsReady() -> Bool {
@@ -45,7 +55,7 @@ class opentdb {
     //Parameters: NONE
     //Return: [question]
     func getQestions() -> [question] {
-        if IsDataReady{
+        if (IsDataReady || offlineDataReady){
             return questions
         }
         else {
@@ -181,7 +191,7 @@ class opentdb {
                     try text.write(to: fileURL, atomically: false, encoding: .utf8)
                     for q in offlineQuestions {
                         var dataString =  " : question : " + String(q.question) + " : difficulty : " + q.difficulty + " : correct_answer : " + q.correct_answer + " : category : " + q.category
-                        dataString = dataString + " : incorrect_answer1 " + q.incorrect_answers[0] + " : incorrect_answer2 " + q.incorrect_answers[1] + " : incorrect_answer3 " + q.incorrect_answers[2] + "\n"
+                        dataString = dataString + " : incorrect_answer1 : " + q.incorrect_answers[0] + " : incorrect_answer2 : " + q.incorrect_answers[1] + " : incorrect_answer3 : " + q.incorrect_answers[2] + "\n"
                         //Check if file exists
                         do {
                             let fileHandle = try FileHandle(forWritingTo: fileURL)
@@ -225,6 +235,7 @@ class opentdb {
                     var correct_answer = ""
                     var category = ""
                     
+                    print(questionItem)
                     for (index, item) in items.enumerated(){
                         if (item == "question"){
                             quest = (items[index + 1]).stringByDecodingHTMLEntities
@@ -266,7 +277,7 @@ class opentdb {
         var randomNumbers: [Int] = []
         
         var i = 0
-        while i <= 10 {
+        while i < 10 {
             let number = Int.random(in: 0 ..< totalQuestions)
             if !randomNumbers.contains(number){
                 randomNumbers.append(number)

@@ -133,6 +133,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func difficultyBtn(_ sender: UIButton) {
+        db.setOfflineMode(mode: true)
         performSegue(withIdentifier: "difficultySegue", sender: self)
     }
     
