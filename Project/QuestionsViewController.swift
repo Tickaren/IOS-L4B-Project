@@ -32,6 +32,7 @@ class QuestionsViewController: UIViewController {
     var scoreCount = 0
     var timer = Timer()
     var seconds = 10
+    var tapGesture = UITapGestureRecognizer()
     
     // MARK: - viewDidLoad
     override func viewDidLoad() {
@@ -65,6 +66,30 @@ class QuestionsViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    // MARK: - Tap Gesture
+    
+    func addTapGesture() {
+        speechBubbleImage.isUserInteractionEnabled = true
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapQuestionLabel(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        speechBubbleImage.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func tapQuestionLabel(_ sender: UITapGestureRecognizer){
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            if self.questionRound > 9 {
+                self.performSegue(withIdentifier: "playAgainSegue", sender: self)
+            }
+            else {
+                self.flip()
+                self.putQuestions()
+                self.setButtonSettings()
+                self.enableButtons()
+                self.timerCountdown()
+                self.speechBubbleImage.isUserInteractionEnabled = false
+            }
+        }
+    }
     // MARK: - Put question and answers
     
     //Updates the questionlabel and answerbuttons with the question and answers
@@ -133,6 +158,7 @@ class QuestionsViewController: UIViewController {
                 disableButtons()
                 UIDevice.vibrate()
                 timer.invalidate()
+                addTapGesture()
             }
         }
     }
@@ -147,10 +173,9 @@ class QuestionsViewController: UIViewController {
             answer1Btn.shake()
             UIDevice.vibrate()
         }
+        addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
-        endRound()
-        
     }
     
     @IBAction func answer2Btn(_ sender: Any) {
@@ -163,9 +188,9 @@ class QuestionsViewController: UIViewController {
             answer2Btn.shake()
             UIDevice.vibrate()
         }
+        addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer2Btn.titleLabel!.text!)
-        endRound()
     }
     
     @IBAction func answer3Btn(_ sender: Any) {
@@ -178,9 +203,9 @@ class QuestionsViewController: UIViewController {
             answer3Btn.shake()
             UIDevice.vibrate()
         }
+        addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer3Btn.titleLabel!.text!)
-        endRound()
     }
     
     @IBAction func answer4Btn(_ sender: Any) {
@@ -193,9 +218,9 @@ class QuestionsViewController: UIViewController {
             answer4Btn.shake()
             UIDevice.vibrate()
         }
+        addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer4Btn.titleLabel!.text!)
-        endRound()
     }
     
     // MARK: - Timer
@@ -204,20 +229,21 @@ class QuestionsViewController: UIViewController {
         seconds = 10
         timerLabel.text = "Time Left: \(String(seconds))"
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuestionsViewController.counter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter), userInfo: nil, repeats: true)
     }
     
     @objc func counter() {
         seconds -= 1
         timerLabel.text = "Time Left: \(String(seconds))"
-        timerLabel.doGlowAnimation(withColor: UIColor.red, withEffect: .big)
+        if seconds < 5 {
+            timerLabel.doGlowAnimation(withColor: UIColor.red, withEffect: .big)
+        }
         
-        if seconds == 0 {
+        if seconds <= 0 {
             timerLabel.text = "TIMES UP!"
             timer.invalidate()
             disableButtons()
             highlightCorrectAnswer()
-            endRound()
             questionRound += 1
             scoreLabel.text = "\(scoreCount) / \(questionRound)"
         }
@@ -235,27 +261,6 @@ class QuestionsViewController: UIViewController {
         titleImageView.image = navImage
         
         navigationItem.titleView = titleImageView
-    }
-
-    // MARK: - End round
-    
-    //Code that is executed at the end of each round, no parameters no return
-    private func endRound() -> Void {
-        
-        //Waits for 2 sec then changes question!
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            //self.questionRound += 1
-            if self.questionRound > 9 {
-                self.performSegue(withIdentifier: "playAgainSegue", sender: self)
-            }
-            else {
-                self.flip()
-                self.putQuestions()
-                self.setButtonSettings()
-                self.enableButtons()
-                self.timerCountdown()
-            }
-        }
     }
 
     // MARK: - Animate question
