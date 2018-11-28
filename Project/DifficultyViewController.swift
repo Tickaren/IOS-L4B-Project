@@ -20,6 +20,7 @@ class DifficultyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        vc.loadSound()
         // navigation bar
         //navigationBarItems()
         
@@ -43,6 +44,7 @@ class DifficultyViewController: UIViewController {
     
     @IBAction func easyDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
+        vc.owlSound?.play()
         db.getQuestionsFromDB(difficulty: "easy")
         while true {
             if vc.getData(db: db) {
@@ -54,6 +56,7 @@ class DifficultyViewController: UIViewController {
     }
     @IBAction func mediumDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
+        vc.owlSound?.play()
         db.getQuestionsFromDB(difficulty: "medium")
         while true {
             if vc.getData(db: db) {
@@ -65,6 +68,7 @@ class DifficultyViewController: UIViewController {
     }
     @IBAction func hardDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
+        vc.owlSound?.play()
         db.getQuestionsFromDB(difficulty: "hard")
         while true {
             if vc.getData(db: db) {
