@@ -55,7 +55,7 @@ class opentdb {
     //Return: VOID
     public func getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void {
         print("Opentdb: GetQuestions()")
-        
+        self.IsDataReady = false
 //        let nrOfQuestions = 10
         let typeOfQuestion = "multiple"
         var jsonURLAsString = opentdbURL + "amount=" + String(nrOfQuestions) + "&type=" + typeOfQuestion
@@ -75,7 +75,7 @@ class opentdb {
         
         //Retrivieng data ascync:
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            self.IsDataReady = false
+//            self.IsDataReady = false
             //If no data recieved:
             guard let data = data else {
                 print("Opentdb: No data")
