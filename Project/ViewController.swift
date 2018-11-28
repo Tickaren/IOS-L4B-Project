@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var startpageImage: UIImageView!
     @IBOutlet weak var startQuizBtn: UIButton!
     @IBOutlet weak var difficultyBtn: UIButton!
-    
+    @IBOutlet weak var offlineSwitch: UISwitch!
     
     // MARK: - Owl settings
     let startOwlImage = imgAnimations.getOwlAnimation() // calls owlArray
@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // load soundfunction
         loadSound()
         
@@ -45,6 +44,7 @@ class ViewController: UIViewController {
         startpageImage.animationDuration = 2.0
         startpageImage.startAnimating()
         
+        offlineSwitch.setOn(false, animated: false)
         // button animation
         startQuizBtn.backgroundColor = UIColor.white
         startQuizBtn.layer.cornerRadius = 20
@@ -107,14 +107,26 @@ class ViewController: UIViewController {
     // MARK: - StarQuizBtn
     
     @IBAction func startQuizBtn(_ sender: UIButton) {
+
         trigger = true // For pushNotification
         owlSound?.play() // play loaded sound on click
-        db.getQuestionsFromDB()
-        while true {
-            if self.getData(db: db) {
-                break
+        if offlineSwitch.isOn{
+            db.tenRandomOfflineQuestions()
+            while true {
+                if db.isOfflineDataReady() {
+                    break
+                }
+                sleep(1)
             }
-            sleep(1)
+        }
+        else {
+            db.getQuestionsFromDB()
+            while true {
+                if self.getData(db: db) {
+                    break
+                }
+                sleep(1)
+            }
         }
         performSegue(withIdentifier: "questionSegue", sender: self)
         //self.getData(db: db) //Kontrollerar om datan är hämtad
@@ -123,6 +135,16 @@ class ViewController: UIViewController {
     @IBAction func difficultyBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "difficultySegue", sender: self)
     }
+    
+    @IBAction func pressOfflineSwitch(_ sender: Any) {
+        if offlineSwitch.isOn{
+            print("Hämta data")
+            db.storeOffline()
+        }
+
+        
+    }
+    
     
     // MARK: - difficulyBtn
 

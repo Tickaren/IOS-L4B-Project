@@ -30,6 +30,8 @@ class opentdb {
 
     private var IsDataReady : Bool = false
     
+    private var offlineDataReady : Bool = false
+    
     private var questions = [question]()
     
     private let opentdbURL = "https://opentdb.com/api.php?"
@@ -50,13 +52,8 @@ class opentdb {
             return [question]()
         }
     }
-    // getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void gets 10 new questions and puts them in the class variable questions
-    //Parameters: category (optional): string, nrOfQuestions (optional): int, diffeculty: (optional): string
-    //Return: VOID
-    public func getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void {
-        print("Opentdb: GetQuestions()")
-        self.IsDataReady = false
-//        let nrOfQuestions = 10
+    
+    private func getUrl(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) ->  URL {
         let typeOfQuestion = "multiple"
         var jsonURLAsString = opentdbURL + "amount=" + String(nrOfQuestions) + "&type=" + typeOfQuestion
         if (category != nil) {
@@ -65,17 +62,28 @@ class opentdb {
         if (difficulty != nil){
             jsonURLAsString = jsonURLAsString + "&difficulty=" + difficulty!
         }
+        //TODO Ta bort kommentar när det är klart!
+        print(jsonURLAsString)
         questions = [question]()
         
         //Checking the url is ok:
         guard let url = URL(string: jsonURLAsString) else {
             print("Opentdb: No URL")
-            return
+            return URL(string: "")!
         }
-        
+        return url
+    }
+    
+    // getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void gets 10 new questions and puts them in the class variable questions
+    //Parameters: category (optional): string, nrOfQuestions (optional): int, diffeculty: (optional): string
+    //Return: VOID
+    public func getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void {
+        print("Opentdb: GetQuestions()")
+        self.IsDataReady = false
+//        let nrOfQuestions = 10
+        let url = self.getUrl(category: category, nrOfQuestions: nrOfQuestions, difficulty: difficulty)
         //Retrivieng data ascync:
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            self.IsDataReady = false
             //If no data recieved:
             guard let data = data else {
                 print("Opentdb: No data")
@@ -118,8 +126,166 @@ class opentdb {
         
     }
     
+    func storeOffline() -> Void {
+        print("offlinelagring")
+        var offlineQuestions = [question]()
+        let url = self.getUrl(nrOfQuestions: 50)
+        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        
+        let text = "Questions \n" //just a text
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(file)
+            //Retrivieng data ascync:
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                //If no data recieved:
+                guard let data = data else {
+                    print("Opentdb: No data")
+                    return
+                }
+                //Decoding JSON:
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] else {
+                        print("Opentdb: Något gick snett med avkodningen av json")
+                        return
+                    }
+                    let results = json["results"]
+                    //Looping through all questions recieved:
+                    for object in (results as! NSArray) {
+                        if let x : NSDictionary = object as? NSDictionary{
+                            let category = (x["category"] as! String).stringByDecodingHTMLEntities
+                            let quest = (x["question"] as! String).stringByDecodingHTMLEntities
+                            let correct_answer = (x["correct_answer"] as! String).stringByDecodingHTMLEntities
+                            let difficulty = (x["difficulty"] as! String).stringByDecodingHTMLEntities
+                            var incorrect_answers = [String]()
+                            for i in (x["incorrect_answers"] as? NSArray)!{
+                                incorrect_answers.append((i as! String).stringByDecodingHTMLEntities)
+                            }
+                            //Adding all info in the object to the question struct
+                            let structQuestion = question(difficulty: difficulty, category: category, question: quest, correct_answer: correct_answer, incorrect_answers: incorrect_answers)
+                            //Append question strukt to list of questions:
+                            offlineQuestions.append(structQuestion)
+                        }
+                        
+                    }
+                    
+                } catch{
+                    print("Opentdb: Något gick snett i datahanteringen")
+                    return
+                }
+                //DONE!
+                //writing
+                do {
+                    try text.write(to: fileURL, atomically: false, encoding: .utf8)
+                    for q in offlineQuestions {
+                        var dataString =  " : question : " + String(q.question) + " : difficulty : " + q.difficulty + " : correct_answer : " + q.correct_answer + " : category : " + q.category
+                        dataString = dataString + " : incorrect_answer1 " + q.incorrect_answers[0] + " : incorrect_answer2 " + q.incorrect_answers[1] + " : incorrect_answer3 " + q.incorrect_answers[2] + "\n"
+                        //Check if file exists
+                        do {
+                            let fileHandle = try FileHandle(forWritingTo: fileURL)
+                            fileHandle.seekToEndOfFile()
+                            fileHandle.write(dataString.data(using: .utf8)!)
+                            fileHandle.closeFile()
+                        } catch {
+                            print("Error writing to file \(error)")
+                        }
+                    }
+                }
+                catch {/* error handling here */
+                    print("Något gick snett med att skriva till fil..")
+                }
+                print("Klar med att skriva till fil")
+                
+                }.resume()
+            
+        }
+        
+    }
     
+    private func getOfflineQuestions() -> [question] {
+        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        var offlineQuestions = [question]()
 
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(file)
+        //reading
+            var questions: String
+            do {
+                questions = try String(contentsOf: fileURL, encoding: .utf8)
+                let questionsArray = questions.components(separatedBy: "\n")
+                
+                for questionItem in questionsArray {
+                    let items = questionItem.components(separatedBy: " : ")
+                    var incorrect_answers = [String]()
+                    var quest = ""
+                    var difficulty = ""
+                    var correct_answer = ""
+                    var category = ""
+                    
+                    for (index, item) in items.enumerated(){
+                        if (item == "question"){
+                            quest = (items[index + 1]).stringByDecodingHTMLEntities
+                        }
+                        else if (item == "difficulty"){
+                            difficulty = (items[index + 1]).stringByDecodingHTMLEntities
+                        }
+                        else if (item == "correct_answer"){
+                            correct_answer = (items[index + 1]).stringByDecodingHTMLEntities
+                        }
+                        else if (item == "category"){
+                            category = (items[index + 1]).stringByDecodingHTMLEntities
+                        }
+                        else if (item == "incorrect_answer1" || item == "incorrect_answer2" || item == "incorrect_answer3"){
+                            incorrect_answers.append((items[index + 1]).stringByDecodingHTMLEntities)
+                        }
+                    }
+                    
+                    if (quest != ""){
+                        let structQuestion = question(difficulty: difficulty, category: category, question: quest, correct_answer: correct_answer, incorrect_answers: incorrect_answers)
+                        offlineQuestions.append(structQuestion)
+                    }
+                    
+                }
+                return offlineQuestions
+            }
+            catch {/* error handling here */}
+        }
+        return [question]()
+    }
+    
+    public func tenRandomOfflineQuestions() -> Void {
+        offlineDataReady = false
+        var offlineQuestions: [question] = getOfflineQuestions()
+        let totalQuestions = offlineQuestions.count
+        print(totalQuestions)
+        
+        var randomQuestions : [question] = []
+        var randomNumbers: [Int] = []
+        
+        var i = 0
+        while i <= 10 {
+            let number = Int.random(in: 0 ..< totalQuestions)
+            if !randomNumbers.contains(number){
+                randomNumbers.append(number)
+                i = i + 1
+            }
+        }
+        
+        for number in randomNumbers{
+            randomQuestions.append(offlineQuestions[number])
+        }
+        print(randomQuestions)
+        self.questions = randomQuestions
+        offlineDataReady = true
+    }
+    
+    public func isOfflineDataReady() -> Bool{
+        print(offlineDataReady)
+        return offlineDataReady
+    }
 }
 
 // Mapping from XML/HTML character entity reference to character
