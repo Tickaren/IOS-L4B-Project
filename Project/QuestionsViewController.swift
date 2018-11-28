@@ -157,7 +157,6 @@ class QuestionsViewController: UIViewController {
             {
                 btn!.backgroundColor = UIColor.green
                 disableButtons()
-                UIDevice.vibrate()
                 timer.invalidate()
                 addTapGesture()
             }
@@ -243,6 +242,7 @@ class QuestionsViewController: UIViewController {
         if seconds <= 0 {
             timerLabel.text = "TIMES UP!"
             timer.invalidate()
+            UIDevice.vibrate()
             disableButtons()
             highlightCorrectAnswer()
             questionRound += 1
