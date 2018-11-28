@@ -87,6 +87,7 @@ class QuestionsViewController: UIViewController {
                 self.enableButtons()
                 self.timerCountdown()
                 self.speechBubbleImage.isUserInteractionEnabled = false
+                self.timerLabel.doGlowAnimation(withColor: UIColor.clear, withEffect: .small)
             }
         }
     }
