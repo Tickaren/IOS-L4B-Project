@@ -152,21 +152,39 @@
                                     <segue destination="e1R-GE-Et4" kind="show" id="SeI-yx-Hug"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6SA-8s-Vy4">
+                                <rect key="frame" x="310" y="44" width="51" height="31"/>
+                                <connections>
+                                    <action selector="pressOfflineSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="4AQ-YW-iee"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offlinemode" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-Fl-V4Y">
+                                <rect key="frame" x="16" y="44" width="278" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.58721264588001176" blue="0.84194334016208816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6rd-Ud-Cqs"/>
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8v1-RP-4lb"/>
+                            <constraint firstItem="bXM-Fl-V4Y" firstAttribute="height" secondItem="6SA-8s-Vy4" secondAttribute="height" id="C14-NJ-3lS"/>
+                            <constraint firstItem="bXM-Fl-V4Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FNU-Cv-Cmg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dxr-yL-lOd" secondAttribute="trailing" constant="30" id="GDc-z3-LyB"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="top" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="20.5" id="Hls-TR-tZS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dxr-yL-lOd" secondAttribute="bottom" constant="20" id="J29-Ye-crx"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="height" secondItem="XgZ-De-Vct" secondAttribute="height" id="O2g-Jo-Dw6"/>
                             <constraint firstItem="Hwk-z7-yxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="RfB-pt-SQ5"/>
+                            <constraint firstItem="6SA-8s-Vy4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XfH-po-HJK"/>
                             <constraint firstItem="Hwk-z7-yxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="YeD-qs-HW8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5sa-XD-jEX" secondAttribute="trailing" constant="16" id="aUN-C3-xoR"/>
+                            <constraint firstItem="6SA-8s-Vy4" firstAttribute="leading" secondItem="bXM-Fl-V4Y" secondAttribute="trailing" constant="16" id="bm6-Ev-YsH"/>
+                            <constraint firstItem="bXM-Fl-V4Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ecJ-iR-288"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hwk-z7-yxF" secondAttribute="trailing" constant="48" id="elF-GT-qiH"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="top" secondItem="5sa-XD-jEX" secondAttribute="bottom" constant="52" id="gFS-eh-SWH"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="ihk-to-8Wb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6SA-8s-Vy4" secondAttribute="trailing" constant="16" id="lg1-fr-DoE"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="width" secondItem="XgZ-De-Vct" secondAttribute="width" id="pHH-AN-cyF"/>
                             <constraint firstItem="XgZ-De-Vct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qvr-XL-xzn"/>
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="top" secondItem="Hwk-z7-yxF" secondAttribute="bottom" constant="55" id="uMZ-e6-pK3"/>
@@ -178,6 +196,7 @@
                     <navigationItem key="navigationItem" title="TAHOO?" id="dNR-F5-iHw"/>
                     <connections>
                         <outlet property="difficultyBtn" destination="ZAq-v3-L8k" id="Qwu-o8-ytd"/>
+                        <outlet property="offlineSwitch" destination="6SA-8s-Vy4" id="uze-pH-v7b"/>
                         <outlet property="startQuizBtn" destination="XgZ-De-Vct" id="yex-aI-gtp"/>
                         <outlet property="startpageImage" destination="Hwk-z7-yxF" id="Ady-D3-lOT"/>
                         <segue destination="Us7-bq-a64" kind="show" identifier="questionSegue" id="LMq-JU-cPs"/>
@@ -186,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.19999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="135.19999999999999" y="132.26600985221674"/>
         </scene>
         <!--Difficulty View Controller-->
         <scene sceneID="2Wh-Ib-KE3">
