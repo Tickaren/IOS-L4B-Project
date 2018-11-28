@@ -105,7 +105,7 @@ class QuestionsViewController: UIViewController {
             answer2Btn.setTitle(ansArr[1], for: .normal)
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
-            titleSize()
+            //titleSize()
         }
     }
     
@@ -140,18 +140,10 @@ class QuestionsViewController: UIViewController {
     }
     func titleSize(){
         //Rezise text in answerbtns
-        self.answer1Btn.titleLabel!.minimumScaleFactor = 0.5
-        self.answer1Btn.titleLabel!.numberOfLines = 0
-        self.answer1Btn.titleLabel!.adjustsFontSizeToFitWidth = true
-        self.answer2Btn.titleLabel!.minimumScaleFactor = 0.5
-        self.answer2Btn.titleLabel!.numberOfLines = 0
-        self.answer2Btn.titleLabel!.adjustsFontSizeToFitWidth = true
-        self.answer3Btn.titleLabel!.minimumScaleFactor = 0.5
-        self.answer3Btn.titleLabel!.numberOfLines = 0
-        self.answer3Btn.titleLabel!.adjustsFontSizeToFitWidth = true
-        self.answer4Btn.titleLabel!.minimumScaleFactor = 0.5
-        self.answer4Btn.titleLabel!.numberOfLines = 0
-        self.answer4Btn.titleLabel!.adjustsFontSizeToFitWidth = true
+        //self.answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        //self.answer2Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        //self.answer3Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        //self.answer4Btn.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: - Update buttons
