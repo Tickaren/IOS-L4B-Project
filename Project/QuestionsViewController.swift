@@ -178,8 +178,6 @@ class QuestionsViewController: UIViewController {
         addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer1Btn.titleLabel!.text!)
-        //endRound()
-        
     }
     
     @IBAction func answer2Btn(_ sender: Any) {
@@ -195,7 +193,6 @@ class QuestionsViewController: UIViewController {
         addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer2Btn.titleLabel!.text!)
-        //endRound()
     }
     
     @IBAction func answer3Btn(_ sender: Any) {
@@ -211,7 +208,6 @@ class QuestionsViewController: UIViewController {
         addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer3Btn.titleLabel!.text!)
-        //endRound()
     }
     
     @IBAction func answer4Btn(_ sender: Any) {
@@ -227,7 +223,6 @@ class QuestionsViewController: UIViewController {
         addTapGesture()
         highlightCorrectAnswer()
         updateScore(answer: answer4Btn.titleLabel!.text!)
-        //endRound()
     }
     
     // MARK: - Timer
@@ -251,7 +246,6 @@ class QuestionsViewController: UIViewController {
             timer.invalidate()
             disableButtons()
             highlightCorrectAnswer()
-            //endRound()
             questionRound += 1
             scoreLabel.text = "\(scoreCount) / \(questionRound)"
         }
@@ -270,27 +264,6 @@ class QuestionsViewController: UIViewController {
         
         navigationItem.titleView = titleImageView
     }
-
-    // MARK: - End round
-    
-    //Code that is executed at the end of each round, no parameters no return
-    /*private func endRound() -> Void {
-        
-        //Waits for 2 sec then changes question!
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            //self.questionRound += 1
-            if self.questionRound > 9 {
-                self.performSegue(withIdentifier: "playAgainSegue", sender: self)
-            }
-            else {
-                self.flip()
-                self.putQuestions()
-                self.setButtonSettings()
-                self.enableButtons()
-                self.timerCountdown()
-            }
-        }
-    }*/
 
     // MARK: - Animate question
     
