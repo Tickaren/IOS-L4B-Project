@@ -277,15 +277,6 @@ There are 3 different difficulties where you can choose which one. If none is ch
                                     <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qh6-oO-sxv">
-                                <rect key="frame" x="63.999999999999986" y="63.999999999999993" width="211.66666666666663" height="26.666666666666664"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="rM9-zA-fL6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="N6I-dV-8Qu">
 
                                 <rect key="frame" x="32" y="481" width="150" height="75"/>
