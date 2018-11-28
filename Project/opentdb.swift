@@ -30,7 +30,7 @@ class opentdb {
 
     private var IsDataReady : Bool = false
     
-    private var questions = [question]()
+    public var questions = [question]()
     
     private let opentdbURL = "https://opentdb.com/api.php?"
     
