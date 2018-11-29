@@ -42,6 +42,9 @@ class ResultPageViewController: UIViewController {
         // animate play again button
         playAgainBtn.layer.cornerRadius = 20
         playAgainBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
+        
+        //Sets pushnotification to false
+        trigger = false
     }
     
     // MARK: - Get final score
