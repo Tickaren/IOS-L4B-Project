@@ -348,8 +348,8 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-fw-5Ej">
-                                <rect key="frame" x="16" y="552.66666666666663" width="343" height="23.333333333333371"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                <rect key="frame" x="16" y="555" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -537,6 +537,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="s1l-ur-yYM"/>
         <segue reference="LMq-JU-cPs"/>
         <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
