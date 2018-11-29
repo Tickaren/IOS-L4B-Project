@@ -123,12 +123,22 @@ class ViewController: UIViewController {
         trigger = true // For pushNotification
         owlSound?.play() // play loaded sound on click
         if offlineSwitch.isOn{
-            db.tenRandomOfflineQuestions()
-            while true {
-                if db.isOfflineDataReady() {
-                    break
+            if !db.isOfflineMode(){
+                print("Något gick snett i datahanteringen!")
+                offlineSwitch.setOn(false, animated: true)
+                difficultyBtn.backgroundColor = UIColor.white
+                difficultyBtn.isEnabled = true
+                //TODO! Popup som säger att något gick snett med datahanteringen!
+            }
+            else{
+                db.tenRandomOfflineQuestions()
+                while true {
+                    if db.isOfflineDataReady() {
+                        break
+                    }
+                    sleep(1)
                 }
-                sleep(1)
+                performSegue(withIdentifier: "questionSegue", sender: self)
             }
         }
         else {
@@ -139,8 +149,8 @@ class ViewController: UIViewController {
                 }
                 sleep(1)
             }
+            performSegue(withIdentifier: "questionSegue", sender: self)
         }
-        performSegue(withIdentifier: "questionSegue", sender: self)
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
 
@@ -152,6 +162,7 @@ class ViewController: UIViewController {
     @IBAction func pressOfflineSwitch(_ sender: Any) {
         if offlineSwitch.isOn{
             difficultyBtn.isEnabled = false
+            db.setOfflineMode(mode: true)
             db.storeOffline()
             difficultyBtn.backgroundColor = UIColor.gray
         }
