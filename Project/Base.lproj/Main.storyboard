@@ -47,30 +47,45 @@
                                     <constraint firstAttribute="width" secondItem="MXu-No-854" secondAttribute="height" multiplier="1:1" id="hph-6C-fbP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-0w-bCa">
-                                <rect key="frame" x="48" y="386" width="279" height="286.66666666666674"/>
-                                <string key="text">Each question has four different answer options where one is correct.
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-bK-Vba">
+                                <rect key="frame" x="48" y="394" width="279" height="368"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-0w-bCa">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="458.33333333333331"/>
+                                        <mutableString key="text">Each question has four different answer options where one is correct.
 
 Each question has a time limit of 10 seconds for you to answer.
 
 On correct answer, button will turn green. On incorrect answer, button will turn red.
 
-There are 3 different difficulties where you can choose which ever you like. If none is chosen, random questions will be generated from different difficulties.</string>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+There are 3 different difficulties where you can choose which ever you like. If none is chosen, random questions will be generated from different difficulties.
+
+To play offline, flip the switch on the start screen, this will enable you to play without internet connection, but limits the functionality of the game. You can no longer choose difficulty, and the questions are limited. Switch back to online mode, to enable the functionality again.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6bi-0w-bCa" secondAttribute="bottom" id="FfF-7h-Z0J"/>
+                                    <constraint firstAttribute="trailing" secondItem="6bi-0w-bCa" secondAttribute="trailing" id="HfU-KI-AcF"/>
+                                    <constraint firstItem="6bi-0w-bCa" firstAttribute="top" secondItem="1ea-bK-Vba" secondAttribute="top" id="Mwc-kF-Hah"/>
+                                    <constraint firstItem="6bi-0w-bCa" firstAttribute="leading" secondItem="1ea-bK-Vba" secondAttribute="leading" id="Qji-AY-aNj"/>
+                                    <constraint firstItem="6bi-0w-bCa" firstAttribute="width" secondItem="1ea-bK-Vba" secondAttribute="width" id="tSE-2N-Zu4"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="ownPink"/>
                         <constraints>
                             <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="g4X-h1-PXb" secondAttribute="trailing" constant="48" id="4Kl-so-Nqq"/>
-                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="6bi-0w-bCa" secondAttribute="trailing" constant="48" id="J9m-lY-Onv"/>
+                            <constraint firstItem="1ea-bK-Vba" firstAttribute="top" secondItem="g4X-h1-PXb" secondAttribute="bottom" constant="16" id="6DV-li-hUX"/>
+                            <constraint firstItem="1ea-bK-Vba" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="E14-6a-mQW"/>
                             <constraint firstItem="MXu-No-854" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="LA3-T7-2sp"/>
                             <constraint firstItem="MXu-No-854" firstAttribute="top" secondItem="elR-ba-sM5" secondAttribute="top" constant="16" id="TWL-ta-HzU"/>
                             <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="MXu-No-854" secondAttribute="trailing" constant="48" id="UOa-AG-2V4"/>
-                            <constraint firstItem="6bi-0w-bCa" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="Zzo-TJ-jJe"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="trailing" secondItem="1ea-bK-Vba" secondAttribute="trailing" constant="48" id="XuK-VN-K55"/>
+                            <constraint firstItem="elR-ba-sM5" firstAttribute="bottom" secondItem="1ea-bK-Vba" secondAttribute="bottom" constant="16" id="a0Q-uj-hXn"/>
                             <constraint firstItem="g4X-h1-PXb" firstAttribute="leading" secondItem="elR-ba-sM5" secondAttribute="leading" constant="48" id="de5-Xt-OcP"/>
-                            <constraint firstItem="6bi-0w-bCa" firstAttribute="top" secondItem="g4X-h1-PXb" secondAttribute="bottom" constant="8" id="lIy-yH-K2q"/>
                             <constraint firstItem="g4X-h1-PXb" firstAttribute="top" secondItem="MXu-No-854" secondAttribute="bottom" constant="16" id="pAe-B6-1be"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="elR-ba-sM5"/>
@@ -81,7 +96,7 @@ There are 3 different difficulties where you can choose which ever you like. If 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjM-Ye-TYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120.8" y="-570.76461769115451"/>
+            <point key="canvasLocation" x="120.8" y="-571.18226600985224"/>
         </scene>
         <!--TAHOO?-->
         <scene sceneID="tne-QT-ifu">
@@ -448,7 +463,7 @@ There are 3 different difficulties where you can choose which ever you like. If 
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="324.66666666666669"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="Rating" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="0Iq-t9-txR">
-                                        <rect key="frame" x="32" y="24" width="279" height="162.33333333333334"/>
+                                        <rect key="frame" x="32" y="32" width="279" height="162.33333333333334"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -456,8 +471,8 @@ There are 3 different difficulties where you can choose which ever you like. If 
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="0Iq-t9-txR" firstAttribute="height" secondItem="dxm-ER-JTc" secondAttribute="height" multiplier="1:2" id="CZf-Ig-HrZ"/>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="24" id="Ec9-SB-gfN"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="32" id="Mq1-mx-cbg"/>
+                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="32" id="Ec9-SB-gfN"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="32" id="Mq1-mx-cbg"/>
                                     <constraint firstAttribute="bottom" secondItem="dxm-ER-JTc" secondAttribute="bottom" id="UCv-0O-q5Q"/>
                                     <constraint firstItem="dxm-ER-JTc" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" id="Vi3-Pv-1WG"/>
                                     <constraint firstAttribute="trailing" secondItem="dxm-ER-JTc" secondAttribute="trailing" id="dk2-Cs-rHg"/>
@@ -503,6 +518,7 @@ There are 3 different difficulties where you can choose which ever you like. If 
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="s1l-ur-yYM"/>
         <segue reference="LMq-JU-cPs"/>
         <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
