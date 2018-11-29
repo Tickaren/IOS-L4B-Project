@@ -46,38 +46,53 @@ class DifficultyViewController: UIViewController {
         trigger = true // For pushNotification
         vc.owlSound?.play()
         db.getQuestionsFromDB(difficulty: "easy")
-        while true {
+        var i = 0
+        while i < 4 {
             if vc.getData(db: db) {
+                performSegue(withIdentifier: "difficultySegue", sender: self)
                 break
             }
             sleep(1)
+            i = i + 1
         }
-        performSegue(withIdentifier: "difficultySegue", sender: self)
+        showAllert()
     }
     @IBAction func mediumDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
         vc.owlSound?.play()
         db.getQuestionsFromDB(difficulty: "medium")
-        while true {
+        var i = 0
+        while i < 4 {
             if vc.getData(db: db) {
+                performSegue(withIdentifier: "difficultySegue", sender: self)
                 break
             }
             sleep(1)
+            i = i + 1
         }
-        performSegue(withIdentifier: "difficultySegue", sender: self)
+        showAllert()
     }
     @IBAction func hardDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
         vc.owlSound?.play()
         db.getQuestionsFromDB(difficulty: "hard")
-        while true {
+        var i = 0
+        while i < 4 {
             if vc.getData(db: db) {
+                performSegue(withIdentifier: "difficultySegue", sender: self)
                 break
             }
             sleep(1)
+            i = i + 1
         }
-        performSegue(withIdentifier: "difficultySegue", sender: self)
+        showAllert()
     }
+    
+    func showAllert() -> Void {
+        let alert = UIAlertController(title: "Something went wrong!", message: "We couldnt get the questions from the database, please try again!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
+        self.present(alert, animated: true)       }
 
 }
 

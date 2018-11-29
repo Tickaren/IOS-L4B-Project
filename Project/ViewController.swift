@@ -128,7 +128,10 @@ class ViewController: UIViewController {
                 offlineSwitch.setOn(false, animated: true)
                 difficultyBtn.backgroundColor = UIColor.white
                 difficultyBtn.isEnabled = true
-                //TODO! Popup som säger att något gick snett med datahanteringen!
+                let alert = UIAlertController(title: "Something went wrong!", message: "We couldnt get the questions from the database, please try again!", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
+                self.present(alert, animated: true)
             }
             else{
                 db.tenRandomOfflineQuestions()
@@ -143,14 +146,19 @@ class ViewController: UIViewController {
         }
         else {
             db.getQuestionsFromDB()
-            while true {
+            var i = 0
+            while i < 4 {
                 if self.getData(db: db) {
+                    performSegue(withIdentifier: "questionSegue", sender: self)
                     break
                 }
                 sleep(1)
+                i = i + 1
             }
-            performSegue(withIdentifier: "questionSegue", sender: self)
-        }
+            let alert = UIAlertController(title: "Something went wrong!", message: "We couldnt get the questions from the database, please try again!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
+            self.present(alert, animated: true)        }
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
 
