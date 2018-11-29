@@ -38,15 +38,23 @@ class opentdb {
     
     private let opentdbURL = "https://opentdb.com/api.php?"
     
+    // isOfflineMode() Set to true if the database should use the offline questions
+    //Parameters: NONE
+    //Return: Bool
     public func isOfflineMode() -> Bool{
     return offlineMode
     }
     
+    // setOfflineMode(mode: Bool) Set to true if the database should use the offline questions
+    //Parameters: NONE
+    //Return: Void
     public func setOfflineMode(mode: Bool) -> Void{
         offlineMode = mode
     }
     
-    // Returns true if data is ready else false
+    // isQuestionsReady() Returns true if data is ready
+    //Parameters: NONE
+    //Return: Bool
     public func isQuestionsReady() -> Bool {
         return self.IsDataReady
     }
@@ -136,6 +144,9 @@ class opentdb {
         
     }
     
+    // storeOffline() -> Void gets 50 new questions and puts them in offlineQuestions.txt localy on device
+    //Parameters: none
+    //Return: VOID
     func storeOffline() -> Void {
         print("offlinelagring")
         var offlineQuestions = [question]()
@@ -147,8 +158,8 @@ class opentdb {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             
             let fileURL = dir.appendingPathComponent(file)
-            //Retrivieng data ascync:
             
+            //Retrivieng data ascync:
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 //If no data recieved:
                 guard let data = data else {
@@ -185,14 +196,14 @@ class opentdb {
                     print("Opentdb: Något gick snett i datahanteringen")
                     return
                 }
-                //DONE!
-                //writing
+
+                // Writing
                 do {
-                    try text.write(to: fileURL, atomically: false, encoding: .utf8)
+                    try text.write(to: fileURL, atomically: false, encoding: .utf8) // Creates fil if not exists
                     for q in offlineQuestions {
                         var dataString =  " : question : " + String(q.question) + " : difficulty : " + q.difficulty + " : correct_answer : " + q.correct_answer + " : category : " + q.category
                         dataString = dataString + " : incorrect_answer1 : " + q.incorrect_answers[0] + " : incorrect_answer2 : " + q.incorrect_answers[1] + " : incorrect_answer3 : " + q.incorrect_answers[2] + "\n"
-                        //Check if file exists
+                        //Check if file exists then append to file
                         do {
                             let fileHandle = try FileHandle(forWritingTo: fileURL)
                             fileHandle.seekToEndOfFile()
@@ -214,28 +225,29 @@ class opentdb {
         
     }
     
+    // getOfflineQuestions() -> [question] gets all questions from offline stored data
+    // Parameters: none
+    // Return: [question]
     private func getOfflineQuestions() -> [question] {
-        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        let file = "offlineQuestions.txt" //this is the file.
         var offlineQuestions = [question]()
 
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             
             let fileURL = dir.appendingPathComponent(file)
-        //reading
             var questions: String
             do {
-                questions = try String(contentsOf: fileURL, encoding: .utf8)
-                let questionsArray = questions.components(separatedBy: "\n")
+                questions = try String(contentsOf: fileURL, encoding: .utf8) // Reading
+                let questionsArray = questions.components(separatedBy: "\n") // Splitting the questions
                 
                 for questionItem in questionsArray {
-                    let items = questionItem.components(separatedBy: " : ")
+                    let items = questionItem.components(separatedBy: " : ") // Splitting the items in every question
                     var incorrect_answers = [String]()
                     var quest = ""
                     var difficulty = ""
                     var correct_answer = ""
                     var category = ""
                     
-                    print(questionItem)
                     for (index, item) in items.enumerated(){
                         if (item == "question"){
                             quest = (items[index + 1]).stringByDecodingHTMLEntities
@@ -262,20 +274,25 @@ class opentdb {
                 }
                 return offlineQuestions
             }
-            catch {/* error handling here */}
+            catch {/* error handling here */
+                return [question]()
+            }
         }
         return [question]()
     }
     
+    // tenRandomOfflineQuestions() -> Void gets 10 random questions from offline stored data and puts them in self.questions
+    //Parameters: none
+    //Return: Void
     public func tenRandomOfflineQuestions() -> Void {
-        offlineDataReady = false
-        var offlineQuestions: [question] = getOfflineQuestions()
+        offlineDataReady = false //So that the data is not accessable untill data read is done!
+        var offlineQuestions: [question] = getOfflineQuestions() //get all offline questions
         let totalQuestions = offlineQuestions.count
-        print(totalQuestions)
         
         var randomQuestions : [question] = []
         var randomNumbers: [Int] = []
         
+        // Gets 10 random numbers
         var i = 0
         while i < 10 {
             let number = Int.random(in: 0 ..< totalQuestions)
@@ -285,49 +302,63 @@ class opentdb {
             }
         }
         
+        // Take 10 random questions
         for number in randomNumbers{
             randomQuestions.append(offlineQuestions[number])
         }
-        print(randomQuestions)
         self.questions = randomQuestions
-        offlineDataReady = true
+        offlineDataReady = true // Data is ready to use!
     }
     
+    // isOfflineDataReady() -> Checks if the offline data is ready for use
+    // Parameters: none
+    // Return: Bool
     public func isOfflineDataReady() -> Bool{
         print(offlineDataReady)
         return offlineDataReady
     }
     
+    
+    // hasOfflineData() -> Checks if there is offline data stored on divice
+    //Parameters: none
+    //Return: Bool
     func hasOfflineData() -> Bool {
-        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        let file = "offlineQuestions.txt"
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent(file)
-            //reading
             do {
-                let text = try String(contentsOf: fileURL, encoding: .utf8)
-                print("fil: " + text)
+                //Try to reed from file
+                _ = try String(contentsOf: fileURL, encoding: .utf8)
             }
-            catch {/* error handling here */
-                print("Error in reading file")
+            catch {
+                //No file stored locally
+                print("No file found")
                 return false
             }
-            print("Hittade filen!")
+            //File found!
+            print("File found!")
             return true
         }
         return false
     }
     
+    // deleteFile() -> Deletes localy stored data
+    //Parameters: none
+    //Return: Void
     func deleteFile() -> Void {
-        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        let file = "offlineQuestions.txt"
         let fileManeger = FileManager.default
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent(file)
+            
             do{
-                try fileManeger.removeItem(at: fileURL)
+                try fileManeger.removeItem(at: fileURL) //try to delete the file
             }catch{
+                //ERROR
                 print("Kunde inte ta bort filen")
                 return
             }
+            //Sucess!
             print("De gick att ta bort filen!")
         }
     }
