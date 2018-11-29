@@ -297,6 +297,40 @@ class opentdb {
         print(offlineDataReady)
         return offlineDataReady
     }
+    
+    func hasOfflineData() -> Bool {
+        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(file)
+            //reading
+            do {
+                let text = try String(contentsOf: fileURL, encoding: .utf8)
+                print("fil: " + text)
+            }
+            catch {/* error handling here */
+                print("Error in reading file")
+                return false
+            }
+            print("Hittade filen!")
+            return true
+        }
+        return false
+    }
+    
+    func deleteFile() -> Void {
+        let file = "offlineQuestions.txt" //this is the file. we will write to and read from it
+        let fileManeger = FileManager.default
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(file)
+            do{
+                try fileManeger.removeItem(at: fileURL)
+            }catch{
+                print("Kunde inte ta bort filen")
+                return
+            }
+            print("De gick att ta bort filen!")
+        }
+    }
 }
 
 // Mapping from XML/HTML character entity reference to character

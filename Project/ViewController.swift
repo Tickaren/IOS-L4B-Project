@@ -44,7 +44,14 @@ class ViewController: UIViewController {
         startpageImage.animationDuration = 2.0
         startpageImage.startAnimating()
         
-        offlineSwitch.setOn(false, animated: false)
+        if(db.hasOfflineData()){
+            print("Filefound go offline!")
+            offlineSwitch.setOn(true, animated: false)
+        }
+        else {
+            print("No offline Mode!")
+            offlineSwitch.setOn(false, animated: false)
+        }
         // button animation
         startQuizBtn.backgroundColor = UIColor.white
         startQuizBtn.layer.cornerRadius = 20
@@ -141,6 +148,9 @@ class ViewController: UIViewController {
         if offlineSwitch.isOn{
             print("Hämta data")
             db.storeOffline()
+        }
+        else{
+            db.deleteFile()
         }
 
         
