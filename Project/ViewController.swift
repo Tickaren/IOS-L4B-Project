@@ -44,14 +44,6 @@ class ViewController: UIViewController {
         startpageImage.animationDuration = 2.0
         startpageImage.startAnimating()
         
-        if(db.hasOfflineData()){
-            print("Filefound go offline!")
-            offlineSwitch.setOn(true, animated: false)
-        }
-        else {
-            print("No offline Mode!")
-            offlineSwitch.setOn(false, animated: false)
-        }
         // button animation
         startQuizBtn.backgroundColor = UIColor.white
         startQuizBtn.layer.cornerRadius = 20
@@ -60,6 +52,19 @@ class ViewController: UIViewController {
         difficultyBtn.layer.cornerRadius = 20
         difficultyBtn.doGlowAnimation(withColor: UIColor.black, withEffect: .big)
 
+        if(db.hasOfflineData()){
+            print("Filefound go offline!")
+            offlineSwitch.setOn(true, animated: false)
+            difficultyBtn.isEnabled = false
+            difficultyBtn.backgroundColor = UIColor.gray
+        }
+        else {
+            print("No offline Mode!")
+            offlineSwitch.setOn(false, animated: false)
+            difficultyBtn.isEnabled = true
+            difficultyBtn.backgroundColor = UIColor.white
+        }
+        
         //Hämtar 10 nya frågor ascynk
         //db.getQuestionsFromDB()
         //self.getData(db: db) //Kontrollerar om datan är hämtad
@@ -146,14 +151,15 @@ class ViewController: UIViewController {
     
     @IBAction func pressOfflineSwitch(_ sender: Any) {
         if offlineSwitch.isOn{
-            print("Hämta data")
+            difficultyBtn.isEnabled = false
             db.storeOffline()
+            difficultyBtn.backgroundColor = UIColor.gray
         }
         else{
+            difficultyBtn.isEnabled = true
             db.deleteFile()
-        }
-
-        
+            difficultyBtn.backgroundColor = UIColor.white
+        }        
     }
     
     
