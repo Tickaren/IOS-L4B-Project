@@ -166,6 +166,7 @@ class opentdb {
                 //If no data recieved:
                 guard let data = data else {
                     print("Opentdb: No data")
+                    self.setOfflineMode(mode: false)
                     return
                 }
                 //Decoding JSON:
