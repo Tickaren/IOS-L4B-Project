@@ -5,7 +5,7 @@
 Quizz app for 1 player that gets questions from the opentdb and works both in online and offline mode
 
 # Interface:
-![](Mockups/userInterface.gif =250x250)
+![](Mockups/userInterface.gif)
 # Specifications:
 - 10 questions per round
 - 4 choice questions
