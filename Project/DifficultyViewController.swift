@@ -55,7 +55,9 @@ class DifficultyViewController: UIViewController {
             sleep(1)
             i = i + 1
         }
-        showAllert()
+        if i >= 4{
+            showAllert()
+        }
     }
     @IBAction func mediumDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
@@ -70,7 +72,9 @@ class DifficultyViewController: UIViewController {
             sleep(1)
             i = i + 1
         }
-        showAllert()
+        if i >= 4{
+            showAllert()
+        }
     }
     @IBAction func hardDifficulty(_ sender: Any) {
         trigger = true // For pushNotification
@@ -85,7 +89,9 @@ class DifficultyViewController: UIViewController {
             sleep(1)
             i = i + 1
         }
-        showAllert()
+        if i >= 4{
+            showAllert()
+        }
     }
     
     func showAllert() -> Void {
