@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +52,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-0w-bCa">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="458.33333333333331"/>
-                                        <mutableString key="text">Each question has four different answer options where one is correct.
+                                        <string key="text">Each question has four different answer options where one is correct.
 
 Each question has a time limit of 10 seconds for you to answer.
 
@@ -60,7 +60,7 @@ On correct answer, button will turn green. On incorrect answer, button will turn
 
 There are 3 different difficulties where you can choose which ever you like. If none is chosen, random questions will be generated from different difficulties.
 
-To play offline, flip the switch on the start screen, this will enable you to play without internet connection, but limits the functionality of the game. You can no longer choose difficulty, and the questions are limited. Switch back to online mode, to enable the functionality again.</mutableString>
+To play offline, flip the switch on the start screen, this will enable you to play without internet connection, but limits the functionality of the game. You can no longer choose difficulty, and the questions are limited. Switch back to online mode, to enable the functionality again.</string>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -141,14 +141,14 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-yL-lOd">
-                                <rect key="frame" x="337" y="52" width="22" height="22"/>
+                                <rect key="frame" x="191.33333333333337" y="52" width="167.66666666666663" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="e1R-GE-Et4" kind="show" id="SeI-yx-Hug"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offlinemode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-Fl-V4Y">
-                                <rect key="frame" x="81" y="44" width="278" height="31"/>
+                                <rect key="frame" x="81" y="44" width="94.333333333333314" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -162,12 +162,10 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.58721264588001176" blue="0.84194334016208816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-
                             <constraint firstItem="6SA-8s-Vy4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="44q-4W-c4f"/>
-                            <constraint firstItem="ZAq-v3-L8k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6rd-Ud-Cqs"/>
-                            <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8v1-RP-4lb"/>
-                            <constraint firstItem="6SA-8s-Vy4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FTS-Sz-eS5"/>
                             <constraint firstItem="Dxr-yL-lOd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="5AR-pN-eSO"/>
+                            <constraint firstItem="ZAq-v3-L8k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6rd-Ud-Cqs"/>
+                            <constraint firstItem="6SA-8s-Vy4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FTS-Sz-eS5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dxr-yL-lOd" secondAttribute="trailing" constant="16" id="GDc-z3-LyB"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="top" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="20.5" id="Hls-TR-tZS"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="height" secondItem="XgZ-De-Vct" secondAttribute="height" id="O2g-Jo-Dw6"/>
@@ -185,6 +183,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="v14-m4-csd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZAq-v3-L8k" secondAttribute="bottom" constant="32" id="wdn-bP-2DN"/>
                             <constraint firstItem="bXM-Fl-V4Y" firstAttribute="height" secondItem="6SA-8s-Vy4" secondAttribute="height" id="x9h-Wr-reN"/>
+                            <constraint firstItem="Dxr-yL-lOd" firstAttribute="leading" secondItem="bXM-Fl-V4Y" secondAttribute="trailing" constant="16" id="yYx-OK-QSP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -538,7 +537,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s1l-ur-yYM"/>
         <segue reference="LMq-JU-cPs"/>
         <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
