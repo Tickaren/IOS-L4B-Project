@@ -168,7 +168,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                             <constraint firstItem="5sa-XD-jEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8v1-RP-4lb"/>
                             <constraint firstItem="6SA-8s-Vy4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FTS-Sz-eS5"/>
                             <constraint firstItem="Dxr-yL-lOd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="5AR-pN-eSO"/>
-                            <constraint firstItem="ZAq-v3-L8k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6rd-Ud-Cqs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dxr-yL-lOd" secondAttribute="trailing" constant="16" id="GDc-z3-LyB"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="top" secondItem="XgZ-De-Vct" secondAttribute="bottom" constant="20.5" id="Hls-TR-tZS"/>
                             <constraint firstItem="ZAq-v3-L8k" firstAttribute="height" secondItem="XgZ-De-Vct" secondAttribute="height" id="O2g-Jo-Dw6"/>
