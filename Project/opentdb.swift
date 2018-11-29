@@ -36,7 +36,6 @@ class opentdb {
     
     private var questions = [question]()
 
-    public var questions = [question]()
 
     
     private let opentdbURL = "https://opentdb.com/api.php?"
