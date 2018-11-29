@@ -155,10 +155,14 @@ class ViewController: UIViewController {
                 sleep(1)
                 i = i + 1
             }
-            let alert = UIAlertController(title: "Something went wrong!", message: "We couldnt get the questions from the database, please try again!", preferredStyle: .alert)
+            if i >= 4{
+                let alert = UIAlertController(title: "Something went wrong!", message: "We couldnt get the questions from the database, please try again!", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
             
-            alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
-            self.present(alert, animated: true)        }
+        }
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
 
