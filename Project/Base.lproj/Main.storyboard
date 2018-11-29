@@ -491,7 +491,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 <constraints>
                                     <constraint firstItem="0Iq-t9-txR" firstAttribute="height" secondItem="dxm-ER-JTc" secondAttribute="height" multiplier="1:2" id="CZf-Ig-HrZ"/>
                                     <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="32" id="Ec9-SB-gfN"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="32" id="Mq1-mx-cbg"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="32" id="Mq1-mx-cbg"/>
                                     <constraint firstAttribute="bottom" secondItem="dxm-ER-JTc" secondAttribute="bottom" id="UCv-0O-q5Q"/>
                                     <constraint firstItem="dxm-ER-JTc" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" id="Vi3-Pv-1WG"/>
                                     <constraint firstAttribute="trailing" secondItem="dxm-ER-JTc" secondAttribute="trailing" id="dk2-Cs-rHg"/>
