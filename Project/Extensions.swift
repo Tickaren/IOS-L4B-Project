@@ -67,4 +67,32 @@ extension UIDevice {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 }
+//extension UIButton {
+//    @IBInspectable var adjustFontSizeToWidth: Bool {
+//        get {
+//            return (self.titleLabel?.adjustsFontSizeToFitWidth)!
+//        }
+//        set {
+//            self.titleLabel?.numberOfLines = 1
+//            self.titleLabel?.adjustsFontSizeToFitWidth = newValue;
+//            self.titleLabel?.lineBreakMode = .byClipping;
+//            self.titleLabel?.baselineAdjustment = .alignCenters
+//        }
+//    }
+//}
+extension UIButton {
+    @IBInspectable var adjustFontSizeToWidth: Bool {
+        get {
+            return titleLabel!.adjustsFontSizeToFitWidth
+        }
+        set {
+            titleLabel!.adjustsFontSizeToFitWidth = newValue
+            titleLabel!.lineBreakMode             = .byClipping
+        }
+    }
+}
+
+
+
+
 
