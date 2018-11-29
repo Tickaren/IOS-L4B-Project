@@ -54,12 +54,14 @@ class ViewController: UIViewController {
 
         if(db.hasOfflineData()){
             print("Filefound go offline!")
+            db.setOfflineMode(mode: true)
             offlineSwitch.setOn(true, animated: false)
             difficultyBtn.isEnabled = false
             difficultyBtn.backgroundColor = UIColor.gray
         }
         else {
             print("No offline Mode!")
+            db.setOfflineMode(mode: false)
             offlineSwitch.setOn(false, animated: false)
             difficultyBtn.isEnabled = true
             difficultyBtn.backgroundColor = UIColor.white
