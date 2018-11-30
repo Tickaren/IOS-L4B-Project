@@ -102,7 +102,14 @@ class QuestionsViewController: UIViewController {
             //questionLabel.fitTextToBounds()
             var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
             ansArr.shuffle()
-            answer1Btn.setTitle(ansArr[0], for: .normal)
+            
+            answer1Btn.titleLabel?.minimumScaleFactor = 0.1
+            answer1Btn.titleLabel?.numberOfLines = 1
+            answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+            answer1Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+            answer1Btn.setTitle("HEJHEJ HEJ Hejsan svejsan hoppsan och hej på dig och hej och hej och hej", for: .normal)
+            
+            //answer1Btn.setTitle(ansArr[0], for: .normal)
             answer2Btn.setTitle(ansArr[1], for: .normal)
             answer3Btn.setTitle(ansArr[2], for: .normal)
             answer4Btn.setTitle(ansArr[3], for: .normal)
@@ -141,6 +148,23 @@ class QuestionsViewController: UIViewController {
     }
     func titleSize(){
         //Rezise text in answerbtns
+//        self.answer1Btn.titleLabel?.minimumScaleFactor = 0.1
+//        self.answer1Btn.titleLabel?.numberOfLines = 1
+//        self.answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+//        self.answer1Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+//        self.answer2Btn.titleLabel?.minimumScaleFactor = 0.1
+//        self.answer2Btn.titleLabel?.numberOfLines = 1
+//        self.answer2Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+//        self.answer2Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+//        self.answer3Btn.titleLabel?.minimumScaleFactor = 0.1
+//        self.answer3Btn.titleLabel?.numberOfLines = 1
+//        self.answer3Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+//        self.answer3Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+//        self.answer4Btn.titleLabel?.minimumScaleFactor = 0.1
+//        self.answer4Btn.titleLabel?.numberOfLines = 1
+//        self.answer4Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+//        self.answer4Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        
         //self.answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
         //self.answer2Btn.titleLabel?.adjustsFontSizeToFitWidth = true
         //self.answer3Btn.titleLabel?.adjustsFontSizeToFitWidth = true

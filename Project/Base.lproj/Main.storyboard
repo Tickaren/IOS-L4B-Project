@@ -298,9 +298,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontSizeToWidth" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="answer1Btn:" destination="Us7-bq-a64" eventType="touchUpInside" id="nlH-S4-mWn"/>
                                 </connections>
@@ -312,9 +309,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontSizeToWidth" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="answer2Btn:" destination="Us7-bq-a64" eventType="touchUpInside" id="rKf-4r-Iff"/>
                                 </connections>
@@ -326,9 +320,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontSizeToWidth" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="answer3Btn:" destination="Us7-bq-a64" eventType="touchUpInside" id="sLv-ea-NI8"/>
                                 </connections>
@@ -340,9 +331,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontSizeToWidth" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="answer4Btn:" destination="Us7-bq-a64" eventType="touchUpInside" id="EUK-7D-3ba"/>
                                 </connections>
