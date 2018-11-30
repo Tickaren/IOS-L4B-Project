@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2836CF21B16E500020B7EE /* correctAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A2836CE21B16E500020B7EE /* correctAnswer.wav */; };
 		2AEC410F2193474100DA8047 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC410E2193474100DA8047 /* Extensions.swift */; };
 		6529C18E21A2F59B00CC9EB0 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6529C18D21A2F59B00CC9EB0 /* DifficultyViewController.swift */; };
 		652B270B2191D48200BF356B /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B270A2191D48200BF356B /* QuestionsViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A2836CE21B16E500020B7EE /* correctAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAnswer.wav; sourceTree = "<group>"; };
 		2AEC410E2193474100DA8047 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6529C18D21A2F59B00CC9EB0 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		652B270A2191D48200BF356B /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		652B27102191DD3A00BF356B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2A2836CE21B16E500020B7EE /* correctAnswer.wav */,
 				652B27112191DD3A00BF356B /* owlSound.wav */,
 			);
 			path = Sounds;
@@ -156,6 +159,7 @@
 			files = (
 				CD23F1DC21874145009B26C2 /* LaunchScreen.storyboard in Resources */,
 				CD23F1D921874145009B26C2 /* Assets.xcassets in Resources */,
+				2A2836CF21B16E500020B7EE /* correctAnswer.wav in Resources */,
 				CD23F1D721874144009B26C2 /* Main.storyboard in Resources */,
 				652B27122191DD3B00BF356B /* owlSound.wav in Resources */,
 			);
@@ -323,13 +327,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SQ4SJGWH9G;
+				DEVELOPMENT_TEAM = R83K237P4J;
 				INFOPLIST_FILE = Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "oscar-stenqvist";
+				PRODUCT_BUNDLE_IDENTIFIER = "anton-bs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,13 +345,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SQ4SJGWH9G;
+				DEVELOPMENT_TEAM = R83K237P4J;
 				INFOPLIST_FILE = Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "oscar-stenqvist";
+				PRODUCT_BUNDLE_IDENTIFIER = "anton-bs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
