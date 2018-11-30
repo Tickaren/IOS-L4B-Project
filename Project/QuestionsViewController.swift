@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import AVFoundation
+import AVFoundation
 
 
 class QuestionsViewController: UIViewController {
@@ -27,7 +27,8 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     // MARK: - Variables
-
+    
+    var correctAnswer: AVAudioPlayer?
     var questionRound = 0
     var scoreCount = 0
     var timer = Timer()
@@ -37,7 +38,7 @@ class QuestionsViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadSound()
         // navigation bar
         navigationBarItems()
         
@@ -167,6 +168,7 @@ class QuestionsViewController: UIViewController {
         if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
         {
             answer1Btn.backgroundColor = UIColor.green
+            correctAnswer?.play()
         }
         else {
             answer1Btn.backgroundColor = UIColor.red
@@ -182,6 +184,7 @@ class QuestionsViewController: UIViewController {
         if(isAnswerCorrect(answer: answer2Btn.titleLabel!.text!))
         {
             answer2Btn.backgroundColor = UIColor.green
+            correctAnswer?.play()
         }
         else {
             answer2Btn.backgroundColor = UIColor.red
@@ -197,6 +200,7 @@ class QuestionsViewController: UIViewController {
         if(isAnswerCorrect(answer: answer3Btn.titleLabel!.text!))
         {
             answer3Btn.backgroundColor = UIColor.green
+            correctAnswer?.play()
         }
         else {
             answer3Btn.backgroundColor = UIColor.red
@@ -212,6 +216,7 @@ class QuestionsViewController: UIViewController {
         if(isAnswerCorrect(answer: answer4Btn.titleLabel!.text!))
         {
             answer4Btn.backgroundColor = UIColor.green
+            correctAnswer?.play()
         }
         else {
             answer4Btn.backgroundColor = UIColor.red
@@ -299,6 +304,21 @@ class QuestionsViewController: UIViewController {
         questionRound += 1
         scoreLabel.text = "\(scoreCount) / \(questionRound)"
         UserDefaults.standard.set(scoreCount, forKey: "userScore")
+    }
+    
+    // MARK: - Load sound
+    
+    // Load sound on buttonclick function in viewDidLoad
+    func loadSound(){
+        do{
+            if let fileURL = Bundle.main.path(forResource: "correctAnswer", ofType: "wav"){
+                correctAnswer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+            }else{
+                print("no file with that name exists")
+            }
+        }catch let error{
+            print("cant play the audio file, failed with error \(error.localizedDescription)")
+        }
     }
     
 }
