@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w0O-Wh-hs3">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -448,12 +448,48 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN3-eW-Fbb">
-                                <rect key="frame" x="86" y="643" width="203" height="47"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knu-vy-bem">
+                                <rect key="frame" x="16" y="384.66666666666669" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="YFg-HK-pZ9"/>
+                                    <constraint firstAttribute="width" constant="125" id="e6e-uu-qAo"/>
+                                    <constraint firstAttribute="height" constant="125" id="qX5-qi-JTP"/>
                                 </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-pF-Nz9">
+                                <rect key="frame" x="16" y="60" width="343" height="324.66666666666669"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-ER-JTc">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="324.66666666666669"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="1q6-bD-rKc"/>
+                                            <constraint firstAttribute="width" constant="343" id="37R-ku-B8e"/>
+                                            <constraint firstAttribute="height" constant="324.67000000000002" id="jH7-zv-CTe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="Rating" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="0Iq-t9-txR">
+                                        <rect key="frame" x="24" y="69" width="295" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="dBV-WQ-xbb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" constant="24" id="1hU-b1-DZz"/>
+                                    <constraint firstAttribute="bottom" secondItem="dxm-ER-JTc" secondAttribute="bottom" id="9EW-fT-SJw"/>
+                                    <constraint firstItem="dxm-ER-JTc" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" id="Ibf-Ma-pgl"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="24" id="RKR-ys-971"/>
+                                    <constraint firstItem="dxm-ER-JTc" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" id="b7u-5U-hod"/>
+                                    <constraint firstItem="dxm-ER-JTc" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" id="miZ-vX-Lr1"/>
+                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="69" id="ugf-yl-npr"/>
+                                    <constraint firstAttribute="trailing" secondItem="dxm-ER-JTc" secondAttribute="trailing" id="v71-fV-mx9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN3-eW-Fbb">
+                                <rect key="frame" x="86" y="618" width="203" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
                                 <state key="normal" title="Play again">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -463,57 +499,29 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="L4i-9F-iaI">
-                                <rect key="frame" x="181" y="563" width="162" height="35"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <rect key="frame" x="197" y="448.66666666666669" width="162" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cZp-Dr-pRf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knu-vy-bem">
-                                <rect key="frame" x="32" y="486" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="KL4-d2-NJ6"/>
-                                    <constraint firstAttribute="width" constant="125" id="rZi-kW-m97"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-pF-Nz9">
-                                <rect key="frame" x="16" y="60" width="343" height="324.66666666666669"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-ER-JTc">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="324.66666666666669"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="Rating" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="0Iq-t9-txR">
-                                        <rect key="frame" x="32" y="32" width="279" height="162.33333333333334"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="height" secondItem="dxm-ER-JTc" secondAttribute="height" multiplier="1:2" id="CZf-Ig-HrZ"/>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="32" id="Ec9-SB-gfN"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Iq-t9-txR" secondAttribute="trailing" constant="32" id="Mq1-mx-cbg"/>
-                                    <constraint firstAttribute="bottom" secondItem="dxm-ER-JTc" secondAttribute="bottom" id="UCv-0O-q5Q"/>
-                                    <constraint firstItem="dxm-ER-JTc" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" id="Vi3-Pv-1WG"/>
-                                    <constraint firstAttribute="trailing" secondItem="dxm-ER-JTc" secondAttribute="trailing" id="dk2-Cs-rHg"/>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" constant="32" id="eKS-Za-hah"/>
-                                    <constraint firstItem="dxm-ER-JTc" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" id="sOu-Eg-aoA"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" name="ownPink"/>
                         <constraints>
-                            <constraint firstItem="Knu-vy-bem" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="32" id="0y6-VQ-YWt"/>
-                            <constraint firstItem="L4i-9F-iaI" firstAttribute="leading" secondItem="Knu-vy-bem" secondAttribute="trailing" constant="24" id="2S6-YC-brt"/>
+                            <constraint firstItem="aFl-HM-SBp" firstAttribute="bottom" secondItem="CN3-eW-Fbb" secondAttribute="bottom" constant="116" id="0QJ-c7-9O4"/>
                             <constraint firstItem="Zpp-pF-Nz9" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="16" id="GmP-QO-sq3"/>
+                            <constraint firstItem="L4i-9F-iaI" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="bottom" constant="64" id="IE9-Si-gaV"/>
+                            <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="CN3-eW-Fbb" secondAttribute="trailing" constant="86" id="IJN-WM-isU"/>
                             <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="Zpp-pF-Nz9" secondAttribute="trailing" constant="16" id="Ibx-YQ-fxv"/>
-                            <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="CN3-eW-Fbb" secondAttribute="trailing" constant="86" id="RtG-Id-XWC"/>
-                            <constraint firstItem="CN3-eW-Fbb" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="86" id="TgN-3K-8IF"/>
-                            <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="L4i-9F-iaI" secondAttribute="trailing" constant="32" id="Vdf-v9-KN1"/>
-                            <constraint firstItem="CN3-eW-Fbb" firstAttribute="top" secondItem="Knu-vy-bem" secondAttribute="bottom" constant="32" id="Z4G-2P-A0f"/>
+                            <constraint firstItem="Knu-vy-bem" firstAttribute="width" secondItem="ASK-m0-O0j" secondAttribute="width" multiplier="1:3" id="Kn0-dL-ERv"/>
+                            <constraint firstItem="L4i-9F-iaI" firstAttribute="leading" secondItem="Knu-vy-bem" secondAttribute="trailing" constant="56" id="Qna-en-TIS"/>
+                            <constraint firstItem="Knu-vy-bem" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="16" id="Syc-tk-K3f"/>
+                            <constraint firstItem="Knu-vy-bem" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="bottom" id="UaW-Ky-Gpp"/>
                             <constraint firstItem="Zpp-pF-Nz9" firstAttribute="top" secondItem="aFl-HM-SBp" secondAttribute="top" constant="16" id="gv1-Bn-O6R"/>
-                            <constraint firstItem="CN3-eW-Fbb" firstAttribute="top" secondItem="L4i-9F-iaI" secondAttribute="bottom" constant="45" id="ifl-O9-64O"/>
-                            <constraint firstItem="aFl-HM-SBp" firstAttribute="bottom" secondItem="CN3-eW-Fbb" secondAttribute="bottom" constant="88" id="s5U-7g-NI3"/>
-                            <constraint firstItem="Zpp-pF-Nz9" firstAttribute="height" secondItem="ASK-m0-O0j" secondAttribute="height" multiplier="1:2.5" id="tDq-nf-yei"/>
+                            <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="L4i-9F-iaI" secondAttribute="trailing" constant="16" id="rVb-cD-I7w"/>
+                            <constraint firstItem="CN3-eW-Fbb" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="86" id="spN-Cs-M5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aFl-HM-SBp"/>
                     </view>
@@ -528,7 +536,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91V-H9-1jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130.4000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2130.4000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
     <resources>
@@ -537,7 +545,6 @@ To play offline, flip the switch on the start screen, this will enable you to pl
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s1l-ur-yYM"/>
         <segue reference="LMq-JU-cPs"/>
         <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
