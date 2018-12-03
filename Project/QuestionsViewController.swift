@@ -24,7 +24,12 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer2Btn: UIButton!
     @IBOutlet weak var answer3Btn: UIButton!
     @IBOutlet weak var answer4Btn: UIButton!
+    
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var answerLabel1: UILabel!
+    @IBOutlet weak var answerLabel2: UILabel!
+    @IBOutlet weak var answerLabel3: UILabel!
+    @IBOutlet weak var answerLabel4: UILabel!
     
     // MARK: - Variables
     
@@ -100,13 +105,12 @@ class QuestionsViewController: UIViewController {
         if listOfQuestions.count > 0 {
             let q1 = listOfQuestions[questionRound]
             questionLabel.text = q1.question
-            //questionLabel.fitTextToBounds()
             var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
             ansArr.shuffle()
-            answer1Btn.setTitle(ansArr[0], for: .normal)
-            answer2Btn.setTitle(ansArr[1], for: .normal)
-            answer3Btn.setTitle(ansArr[2], for: .normal)
-            answer4Btn.setTitle(ansArr[3], for: .normal)
+            answerLabel1.text = ansArr[0]
+            answerLabel2.text = ansArr[1]
+            answerLabel3.text = ansArr[2]
+            answerLabel4.text = ansArr[3]
             //titleSize()
         }
     }
@@ -116,14 +120,17 @@ class QuestionsViewController: UIViewController {
     private func setButtonSettings() -> Void {
         // Answerbutton colors settings
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        let listOfLabels = [answerLabel1, answerLabel2, answerLabel3, answerLabel4]
+        for labl in listOfLabels{
+            labl?.backgroundColor = UIColor.white
+            labl?.layer.cornerRadius = (labl?.frame.width)! * 0.1
+            labl?.minimumScaleFactor = 0.5
+            labl?.adjustsFontSizeToFitWidth = true
+        }
         for btn in listOfButtons {
-            btn?.backgroundColor = UIColor.white
-            btn?.titleLabel?.numberOfLines = 0
+            btn?.backgroundColor = UIColor.clear
             btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
-            btn?.titleLabel?.minimumScaleFactor = 0.5
-            btn?.titleLabel?.adjustsFontSizeToFitWidth = true
             btn?.isExclusiveTouch = true //onley one button should be pressed!
-            
         }
     }
     
@@ -141,91 +148,98 @@ class QuestionsViewController: UIViewController {
         self.answer4Btn.isEnabled = true
     }
     func titleSize(){
-        //Rezise text in answerbtns
-        //self.answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.answer2Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.answer3Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.answer4Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+
     }
     
     // MARK: - Update buttons
     
     //Highlights the correct answer in green, no parameters no return
     func highlightCorrectAnswer() -> Void {
-        let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
-        for btn in listOfButtons {
-            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
+        //let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        let listOfLabels = [answerLabel1, answerLabel2, answerLabel3, answerLabel4]
+        for labl in listOfLabels {
+            if(isAnswerCorrect(answer: labl!.text!))
             {
-                btn!.backgroundColor = UIColor.green
+                labl!.backgroundColor = UIColor.green
                 disableButtons()
                 timer.invalidate()
                 addTapGesture()
             }
         }
+//        for btn in listOfButtons {
+//            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
+//            {
+//                btn!.backgroundColor = UIColor.green
+//                disableButtons()
+//                timer.invalidate()
+//                addTapGesture()
+//            }
+//        }
     }
     
     @IBAction func answer1Btn(_ sender: Any) {
-        if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
+        if(isAnswerCorrect(answer: answerLabel1.text!))
         {
-            answer1Btn.backgroundColor = UIColor.green
+            answerLabel1.backgroundColor = UIColor.green
             correctAnswer?.play()
         }
         else {
-            answer1Btn.backgroundColor = UIColor.red
-            answer1Btn.shake()
+            answerLabel1.backgroundColor = UIColor.red
+            answerLabel1.shake()
             UIDevice.vibrate()
         }
         addTapGesture()
         highlightCorrectAnswer()
-        updateScore(answer: answer1Btn.titleLabel!.text!)
+        updateScore(answer: answerLabel1.text!)
     }
     
     @IBAction func answer2Btn(_ sender: Any) {
-        if(isAnswerCorrect(answer: answer2Btn.titleLabel!.text!))
+        if(isAnswerCorrect(answer: answerLabel2.text!))
         {
-            answer2Btn.backgroundColor = UIColor.green
+            answerLabel2.backgroundColor = UIColor.green
             correctAnswer?.play()
         }
         else {
-            answer2Btn.backgroundColor = UIColor.red
-            answer2Btn.shake()
+            answerLabel2.backgroundColor = UIColor.red
+            //answer2Btn.backgroundColor = UIColor.red
+            answerLabel2.shake()
             UIDevice.vibrate()
         }
         addTapGesture()
         highlightCorrectAnswer()
-        updateScore(answer: answer2Btn.titleLabel!.text!)
+        updateScore(answer: answerLabel2.text!)
     }
     
     @IBAction func answer3Btn(_ sender: Any) {
-        if(isAnswerCorrect(answer: answer3Btn.titleLabel!.text!))
+        if(isAnswerCorrect(answer: answerLabel3.text!))
         {
-            answer3Btn.backgroundColor = UIColor.green
+            answerLabel3.backgroundColor = UIColor.green
             correctAnswer?.play()
         }
         else {
-            answer3Btn.backgroundColor = UIColor.red
-            answer3Btn.shake()
+            answerLabel3.backgroundColor = UIColor.red
+            answerLabel3.shake()
             UIDevice.vibrate()
         }
         addTapGesture()
         highlightCorrectAnswer()
-        updateScore(answer: answer3Btn.titleLabel!.text!)
+        updateScore(answer: answerLabel3.text!)
     }
     
     @IBAction func answer4Btn(_ sender: Any) {
-        if(isAnswerCorrect(answer: answer4Btn.titleLabel!.text!))
+        if(isAnswerCorrect(answer: answerLabel4.text!))
         {
-            answer4Btn.backgroundColor = UIColor.green
+            answerLabel4.backgroundColor = UIColor.green
             correctAnswer?.play()
         }
         else {
-            answer4Btn.backgroundColor = UIColor.red
-            answer4Btn.shake()
+            answerLabel4.backgroundColor = UIColor.red
+            answerLabel4.shake()
             UIDevice.vibrate()
         }
         addTapGesture()
         highlightCorrectAnswer()
-        updateScore(answer: answer4Btn.titleLabel!.text!)
+        updateScore(answer: answerLabel4.text!)
     }
     
     // MARK: - Timer
