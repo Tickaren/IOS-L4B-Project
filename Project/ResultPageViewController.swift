@@ -27,7 +27,7 @@ class ResultPageViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated:true);
         
         // thought-bubble
-        thinkingBubble.image = UIImage(named: "thoughtbubble")
+        thinkingBubble.image = UIImage(named: "speech")
         
         // animate owl
         let owlThinking = imgAnimations.getOwlAnimation() // calls owlArray
@@ -61,16 +61,16 @@ class ResultPageViewController: UIViewController {
         
         let resultScore = UserDefaults.standard.integer(forKey: "userScore")
         if resultScore <= 2 {
-            rating = "WOW! Didn't this kid go to school?"
+            rating = "Back to school!"
             
         }  else if resultScore <= 5 {
-            rating = "So Average"
+            rating = "So Average!"
             
         } else if resultScore <= 8 {
-            rating = "Impressive!"
+            rating = "I'm impressed!"
             
         } else if resultScore <= 10 {
-            rating = "Outstanding! This kid is a genius"
+            rating = "Outstanding! You must be a genius"
             
         }
         ratingLabel.text = "\(rating)"
