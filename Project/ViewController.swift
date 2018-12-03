@@ -77,7 +77,14 @@ class ViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
     
-    // MARK: - appMovedToBackground
+    // MARK: - viewDidAppear
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    // MARK: - Push notification
+    
     //Use: If trigger == true push notification will show when app loses focus with specific message.
     @objc func appMovedToBackground(){
         
@@ -94,12 +101,6 @@ class ViewController: UIViewController {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
-    }
-    
-    // MARK: - viewDidAppear
-    
-    override func viewDidAppear(_ animated: Bool) {
-       super.viewDidAppear(animated)
     }
     
     // MARK: - Data controlled
@@ -167,6 +168,7 @@ class ViewController: UIViewController {
         }
         //self.getData(db: db) //Kontrollerar om datan är hämtad
     }
+    // MARK: - difficultyBtn
 
     @IBAction func difficultyBtn(_ sender: UIButton) {
         db.setOfflineMode(mode: true)
@@ -186,9 +188,6 @@ class ViewController: UIViewController {
             difficultyBtn.backgroundColor = UIColor.white
         }        
     }
-    
-    
-    // MARK: - difficulyBtn
 
     // MARK: - Load sound
     
