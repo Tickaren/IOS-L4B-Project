@@ -26,6 +26,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer4Btn: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var answerLabel1: UILabel!
     // MARK: - Variables
 
     var questionRound = 0
@@ -99,16 +100,10 @@ class QuestionsViewController: UIViewController {
         if listOfQuestions.count > 0 {
             let q1 = listOfQuestions[questionRound]
             questionLabel.text = q1.question
-            //questionLabel.fitTextToBounds()
             var ansArr = [q1.correct_answer, q1.incorrect_answers[0], q1.incorrect_answers[1], q1.incorrect_answers[2]]
             ansArr.shuffle()
-            
-            answer1Btn.titleLabel?.minimumScaleFactor = 0.1
-            answer1Btn.titleLabel?.numberOfLines = 1
-            answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-            answer1Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
-            answer1Btn.setTitle("HEJHEJ HEJ Hejsan svejsan hoppsan och hej på dig och hej och hej och hej", for: .normal)
-            
+            //answerLabel1.text = ansArr[0]
+            answerLabel1.text = "HEJHEJHEJHEJEJEJE HEJEJEHDJED HDEJlkadlasl lasdljasd lkasd asldkna lasndlas lasdljasd ljasdljashd lasdljasd"
             //answer1Btn.setTitle(ansArr[0], for: .normal)
             answer2Btn.setTitle(ansArr[1], for: .normal)
             answer3Btn.setTitle(ansArr[2], for: .normal)
@@ -122,14 +117,17 @@ class QuestionsViewController: UIViewController {
     private func setButtonSettings() -> Void {
         // Answerbutton colors settings
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
+        let listOfLabels = [answerLabel1]
+        for labl in listOfLabels{
+            labl?.backgroundColor = UIColor.white
+            labl?.layer.cornerRadius = (labl?.frame.width)! * 0.1
+            labl?.minimumScaleFactor = 0.5
+            labl?.adjustsFontSizeToFitWidth = true
+        }
         for btn in listOfButtons {
-            btn?.backgroundColor = UIColor.white
-            btn?.titleLabel?.numberOfLines = 0
+            btn?.backgroundColor = UIColor.clear
             btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
-            btn?.titleLabel?.minimumScaleFactor = 0.5
-            btn?.titleLabel?.adjustsFontSizeToFitWidth = true
             btn?.isExclusiveTouch = true //onley one button should be pressed!
-            
         }
     }
     
@@ -147,28 +145,7 @@ class QuestionsViewController: UIViewController {
         self.answer4Btn.isEnabled = true
     }
     func titleSize(){
-        //Rezise text in answerbtns
-//        self.answer1Btn.titleLabel?.minimumScaleFactor = 0.1
-//        self.answer1Btn.titleLabel?.numberOfLines = 1
-//        self.answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-//        self.answer1Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
-//        self.answer2Btn.titleLabel?.minimumScaleFactor = 0.1
-//        self.answer2Btn.titleLabel?.numberOfLines = 1
-//        self.answer2Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-//        self.answer2Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
-//        self.answer3Btn.titleLabel?.minimumScaleFactor = 0.1
-//        self.answer3Btn.titleLabel?.numberOfLines = 1
-//        self.answer3Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-//        self.answer3Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
-//        self.answer4Btn.titleLabel?.minimumScaleFactor = 0.1
-//        self.answer4Btn.titleLabel?.numberOfLines = 1
-//        self.answer4Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-//        self.answer4Btn.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
-        
-        //self.answer1Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.answer2Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.answer3Btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.answer4Btn.titleLabel?.adjustsFontSizeToFitWidth = true
+
     }
     
     // MARK: - Update buttons
@@ -176,25 +153,37 @@ class QuestionsViewController: UIViewController {
     //Highlights the correct answer in green, no parameters no return
     func highlightCorrectAnswer() -> Void {
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
-        for btn in listOfButtons {
-            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
+        let listOfLabels = [answerLabel1]
+        for labl in listOfLabels {
+            if(isAnswerCorrect(answer: labl!.text!))
             {
-                btn!.backgroundColor = UIColor.green
+                labl!.backgroundColor = UIColor.green
                 disableButtons()
                 timer.invalidate()
                 addTapGesture()
             }
         }
+//        for btn in listOfButtons {
+//            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
+//            {
+//                btn!.backgroundColor = UIColor.green
+//                disableButtons()
+//                timer.invalidate()
+//                addTapGesture()
+//            }
+//        }
     }
     
     @IBAction func answer1Btn(_ sender: Any) {
-        if(isAnswerCorrect(answer: answer1Btn.titleLabel!.text!))
+        if(isAnswerCorrect(answer: answerLabel1.text!))
         {
-            answer1Btn.backgroundColor = UIColor.green
+            answerLabel1.backgroundColor = UIColor.green
+            //answer1Btn.backgroundColor = UIColor.green
         }
         else {
-            answer1Btn.backgroundColor = UIColor.red
-            answer1Btn.shake()
+            answerLabel1.backgroundColor = UIColor.red
+            //answer1Btn.backgroundColor = UIColor.red
+            answerLabel1.shake()
             UIDevice.vibrate()
         }
         addTapGesture()
