@@ -111,14 +111,13 @@ class QuestionsViewController: UIViewController {
             answerLabel2.text = ansArr[1]
             answerLabel3.text = ansArr[2]
             answerLabel4.text = ansArr[3]
-            //titleSize()
         }
     }
     
-    // MARK: - Button settings
+    // MARK: - Button and label settings
     
     private func setButtonSettings() -> Void {
-        // Answerbutton colors settings
+        // Answerbutton/answerlabel apperance settings
         let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
         let listOfLabels = [answerLabel1, answerLabel2, answerLabel3, answerLabel4]
         for labl in listOfLabels{
@@ -130,7 +129,7 @@ class QuestionsViewController: UIViewController {
         for btn in listOfButtons {
             btn?.backgroundColor = UIColor.clear
             btn?.layer.cornerRadius = (btn?.frame.width)! * 0.1
-            btn?.isExclusiveTouch = true //onley one button should be pressed!
+            btn?.isExclusiveTouch = true //only one button should be pressed!
         }
     }
     
@@ -147,15 +146,11 @@ class QuestionsViewController: UIViewController {
         self.answer3Btn.isEnabled = true
         self.answer4Btn.isEnabled = true
     }
-    func titleSize(){
-
-    }
     
     // MARK: - Update buttons
     
     //Highlights the correct answer in green, no parameters no return
     func highlightCorrectAnswer() -> Void {
-        //let listOfButtons = [answer1Btn, answer2Btn, answer3Btn, answer4Btn]
         let listOfLabels = [answerLabel1, answerLabel2, answerLabel3, answerLabel4]
         for labl in listOfLabels {
             if(isAnswerCorrect(answer: labl!.text!))
@@ -166,15 +161,6 @@ class QuestionsViewController: UIViewController {
                 addTapGesture()
             }
         }
-//        for btn in listOfButtons {
-//            if(isAnswerCorrect(answer: btn!.titleLabel!.text!))
-//            {
-//                btn!.backgroundColor = UIColor.green
-//                disableButtons()
-//                timer.invalidate()
-//                addTapGesture()
-//            }
-//        }
     }
     
     @IBAction func answer1Btn(_ sender: Any) {
