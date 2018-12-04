@@ -28,6 +28,7 @@ struct question {
  */
 class opentdb {
 
+    // MARK: -Variables
     private var IsDataReady : Bool = false
     
     private var offlineMode : Bool = false
@@ -36,10 +37,10 @@ class opentdb {
     
     private var questions = [question]()
 
-
-    
     private let opentdbURL = "https://opentdb.com/api.php?"
     
+    
+    //MARK: -isOfflineMode
     // isOfflineMode() Set to true if the database should use the offline questions
     //Parameters: NONE
     //Return: Bool
@@ -47,6 +48,8 @@ class opentdb {
     return offlineMode
     }
     
+    
+    //MARK: -setOfflineMode
     // setOfflineMode(mode: Bool) Set to true if the database should use the offline questions
     //Parameters: NONE
     //Return: Void
@@ -61,6 +64,8 @@ class opentdb {
         return self.IsDataReady
     }
     
+    
+    //MARK: -getQestions
     // getQuestions() returns list of questions if data is ready else returns empty list
     //Parameters: NONE
     //Return: [question]
@@ -73,6 +78,11 @@ class opentdb {
         }
     }
     
+    
+    //MARK: -getUrl
+    // getUrl() Returns the url for the database
+    //Parameters: category (optional): string, nrOfQuestions (optional): int, diffeculty: (optional): string
+    //Return: URL
     private func getUrl(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) ->  URL {
         let typeOfQuestion = "multiple"
         var jsonURLAsString = opentdbURL + "amount=" + String(nrOfQuestions) + "&type=" + typeOfQuestion
@@ -94,13 +104,14 @@ class opentdb {
         return url
     }
     
+    
+    //MARK: -getQuestionsFromDB
     // getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void gets 10 new questions and puts them in the class variable questions
     //Parameters: category (optional): string, nrOfQuestions (optional): int, diffeculty: (optional): string
     //Return: VOID
     public func getQuestionsFromDB(category: String? = nil, nrOfQuestions: Int = 10, difficulty: String? = nil) -> Void {
         print("Opentdb: GetQuestions()")
         self.IsDataReady = false
-//        let nrOfQuestions = 10
         let url = self.getUrl(category: category, nrOfQuestions: nrOfQuestions, difficulty: difficulty)
         //Retrivieng data ascync:
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -146,6 +157,8 @@ class opentdb {
         
     }
     
+    
+    //MARK: -storeOffline
     // storeOffline() -> Void gets 50 new questions and puts them in offlineQuestions.txt localy on device
     //Parameters: none
     //Return: VOID
@@ -228,6 +241,8 @@ class opentdb {
         
     }
     
+    
+    // MARK: -getOfflineQuestions
     // getOfflineQuestions() -> [question] gets all questions from offline stored data
     // Parameters: none
     // Return: [question]
@@ -284,6 +299,8 @@ class opentdb {
         return [question]()
     }
     
+    
+    // MARK: -tenRandomOfflineQuestions
     // tenRandomOfflineQuestions() -> Void gets 10 random questions from offline stored data and puts them in self.questions
     //Parameters: none
     //Return: Void
@@ -313,6 +330,8 @@ class opentdb {
         offlineDataReady = true // Data is ready to use!
     }
     
+    
+    // MARK: -isOfflineDataReady
     // isOfflineDataReady() -> Checks if the offline data is ready for use
     // Parameters: none
     // Return: Bool
@@ -322,6 +341,7 @@ class opentdb {
     }
     
     
+    // MARK: -hasOfflineData
     // hasOfflineData() -> Checks if there is offline data stored on divice
     //Parameters: none
     //Return: Bool
@@ -345,6 +365,8 @@ class opentdb {
         return false
     }
     
+    
+    // MARK: -deleteFile
     // deleteFile() -> Deletes localy stored data
     //Parameters: none
     //Return: Void
@@ -367,6 +389,11 @@ class opentdb {
     }
 }
 
+
+
+//MARK: - String extension
+// Everything below is an solution taken from Stackowerflow to decode the the incoming data
+// Link to Stackoverflow: https://stackoverflow.com/a/30141700/7193923
 // Mapping from XML/HTML character entity reference to character
 // From http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
 private let characterEntities : [ Substring : Character ] = [
@@ -379,6 +406,8 @@ private let characterEntities : [ Substring : Character ] = [
     "&eaute;"   : "é",
     "&Eaute;"   : "È",
     "&rsquo;"   : "'",
+    "&percent;" : "%",
+    "&equal;"   : "=",
     
     // HTML character entity references:
     "&nbsp;"    : "\u{00a0}",
