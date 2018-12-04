@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,23 +32,23 @@
             <objects>
                 <viewController title="Quiz Helper" id="e1R-GE-Et4" customClass="QuizHelperViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsR-b6-fD4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4X-h1-PXb">
-                                <rect key="frame" x="48" y="311" width="279" height="22"/>
+                                <rect key="frame" x="48" y="355" width="279" height="22"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MXu-No-854">
-                                <rect key="frame" x="48" y="16" width="279" height="279"/>
+                                <rect key="frame" x="48" y="60" width="279" height="279"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MXu-No-854" secondAttribute="height" multiplier="1:1" id="hph-6C-fbP"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-bK-Vba">
-                                <rect key="frame" x="48" y="349" width="279" height="325"/>
+                                <rect key="frame" x="48" y="393" width="279" height="369"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-0w-bCa">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="458.33333333333331"/>
@@ -103,23 +103,23 @@ To play offline, flip the switch on the start screen, this will enable you to pl
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-z7-yxF">
-                                <rect key="frame" x="48" y="23" width="279" height="279"/>
+                                <rect key="frame" x="48" y="67" width="279" height="279"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hwk-z7-yxF" secondAttribute="height" multiplier="1:1" id="s1E-NF-RMT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAHOO?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-XD-jEX">
-                                <rect key="frame" x="16" y="358" width="343" height="127.66666666666669"/>
+                                <rect key="frame" x="16" y="402" width="343" height="171.66666666666663"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgZ-De-Vct">
-                                <rect key="frame" x="93.666666666666671" y="537.66666666666663" width="187.66666666666663" height="50"/>
+                                <rect key="frame" x="93.666666666666671" y="625.66666666666663" width="187.66666666666663" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nxd-Qu-n1h"/>
                                 </constraints>
@@ -132,7 +132,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAq-v3-L8k">
-                                <rect key="frame" x="93.666666666666671" y="608" width="187.66666666666663" height="50"/>
+                                <rect key="frame" x="93.666666666666671" y="696" width="187.66666666666663" height="50"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <state key="normal" title="Select difficulty!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,19 +142,19 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offlinemode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-Fl-V4Y">
-                                <rect key="frame" x="81" y="0.0" width="278" height="31"/>
+                                <rect key="frame" x="81" y="44" width="278" height="31"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6SA-8s-Vy4">
-                                <rect key="frame" x="16" y="0.0" width="51" height="31"/>
+                                <rect key="frame" x="16" y="44" width="51" height="31"/>
                                 <connections>
                                     <action selector="pressOfflineSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="4AQ-YW-iee"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-yL-lOd" userLabel="InfoBtn">
-                                <rect key="frame" x="337" y="8" width="22" height="22"/>
+                                <rect key="frame" x="337" y="52" width="22" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="e1R-GE-Et4" kind="show" id="SeI-yx-Hug"/>
@@ -207,17 +207,17 @@ To play offline, flip the switch on the start screen, this will enable you to pl
             <objects>
                 <viewController id="yJg-kr-4kS" customClass="DifficultyViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMF-fQ-aVR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select difficulty!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvV-4n-oaU">
-                                <rect key="frame" x="16" y="76.666666666666657" width="343" height="35"/>
+                                <rect key="frame" x="16" y="120.66666666666669" width="343" height="35"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oD7-Ig-Ez5">
-                                <rect key="frame" x="92" y="211.66666666666669" width="190" height="47"/>
+                                <rect key="frame" x="92" y="255.66666666666663" width="190" height="47"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <state key="normal" title="Easy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,7 +227,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2L-y0-qv4">
-                                <rect key="frame" x="92" y="338.66666666666669" width="190" height="47"/>
+                                <rect key="frame" x="92" y="382.66666666666669" width="190" height="47"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <state key="normal" title="Medium">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -237,7 +237,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-FN-Nxd">
-                                <rect key="frame" x="92" y="465.66666666666663" width="190" height="47"/>
+                                <rect key="frame" x="92" y="509.66666666666674" width="190" height="47"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                 <state key="normal" title="Hard">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,7 +280,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
             <objects>
                 <viewController id="Us7-bq-a64" customClass="QuestionsViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gJ-Zs-Bs6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-zY-cP2" userLabel="Answer Label4">
@@ -302,13 +302,13 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-1r-6Mv">
-                                <rect key="frame" x="16" y="305.66666666666669" width="125" height="125"/>
+                                <rect key="frame" x="16" y="384.66666666666669" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FUL-1r-6Mv" secondAttribute="height" multiplier="1:1" id="afV-bq-YrE"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="N6I-dV-8Qu">
-                                <rect key="frame" x="32" y="504" width="150" height="75"/>
+                                <rect key="frame" x="32" y="592" width="150" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="RNS-Mk-jMT"/>
                                 </constraints>
@@ -322,7 +322,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-7J-Bbk">
-                                <rect key="frame" x="193" y="504" width="150" height="75"/>
+                                <rect key="frame" x="193" y="592" width="150" height="75"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button">
@@ -333,7 +333,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="93G-Nd-VNU">
-                                <rect key="frame" x="32" y="599" width="150" height="75"/>
+                                <rect key="frame" x="32" y="687" width="150" height="75"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
                                 <state key="normal" title="Button">
@@ -344,7 +344,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fES-FE-5ah">
-                                <rect key="frame" x="193" y="599" width="150" height="75"/>
+                                <rect key="frame" x="193" y="687" width="150" height="75"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button">
@@ -355,19 +355,19 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-fw-5Ej">
-                                <rect key="frame" x="16" y="467" width="343" height="21"/>
+                                <rect key="frame" x="16" y="555" width="343" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9P-GV-yVH">
-                                <rect key="frame" x="16" y="16" width="343" height="289.66666666666669"/>
+                                <rect key="frame" x="16" y="60" width="343" height="324.66666666666669"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y14-j4-MaW">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="289.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="324.66666666666669"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Qh6-oO-sxv">
-                                        <rect key="frame" x="24" y="24" width="295" height="144.66666666666666"/>
+                                        <rect key="frame" x="24" y="24" width="295" height="162.33333333333334"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -377,17 +377,15 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                     <constraint firstAttribute="bottom" secondItem="y14-j4-MaW" secondAttribute="bottom" id="3Ye-Xc-qZc"/>
                                     <constraint firstItem="y14-j4-MaW" firstAttribute="leading" secondItem="m9P-GV-yVH" secondAttribute="leading" id="6er-fi-71C"/>
                                     <constraint firstItem="Qh6-oO-sxv" firstAttribute="top" secondItem="m9P-GV-yVH" secondAttribute="top" constant="24" id="FIo-kt-khd"/>
-                                    <constraint firstItem="y14-j4-MaW" firstAttribute="width" secondItem="m9P-GV-yVH" secondAttribute="width" id="cuC-kw-FBP"/>
                                     <constraint firstAttribute="trailing" secondItem="y14-j4-MaW" secondAttribute="trailing" id="f6P-dh-bjy"/>
                                     <constraint firstItem="y14-j4-MaW" firstAttribute="top" secondItem="m9P-GV-yVH" secondAttribute="top" id="ltN-cz-51U"/>
                                     <constraint firstAttribute="trailing" secondItem="Qh6-oO-sxv" secondAttribute="trailing" constant="24" id="nWD-6d-JUA"/>
                                     <constraint firstItem="Qh6-oO-sxv" firstAttribute="height" secondItem="y14-j4-MaW" secondAttribute="height" multiplier="1:2" id="oJv-2Y-rQw"/>
                                     <constraint firstItem="Qh6-oO-sxv" firstAttribute="leading" secondItem="m9P-GV-yVH" secondAttribute="leading" constant="24" id="w9K-I0-ehk"/>
-                                    <constraint firstItem="y14-j4-MaW" firstAttribute="height" secondItem="m9P-GV-yVH" secondAttribute="height" id="xuF-8x-O0D"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-31-Om0">
-                                <rect key="frame" x="197" y="369.66666666666669" width="162" height="40"/>
+                                <rect key="frame" x="197" y="448.66666666666669" width="162" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Dxt-q2-o81"/>
                                 </constraints>
@@ -485,32 +483,25 @@ To play offline, flip the switch on the start screen, this will enable you to pl
             <objects>
                 <viewController id="w0O-Wh-hs3" customClass="ResultPageViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASK-m0-O0j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knu-vy-bem">
-                                <rect key="frame" x="16" y="340.66666666666669" width="125" height="125"/>
+                                <rect key="frame" x="16" y="384.66666666666669" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="e6e-uu-qAo"/>
-                                    <constraint firstAttribute="height" constant="125" id="qX5-qi-JTP"/>
+                                    <constraint firstAttribute="width" secondItem="Knu-vy-bem" secondAttribute="height" multiplier="1:1" id="XcL-BX-7y4"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-pF-Nz9">
-                                <rect key="frame" x="16" y="16" width="343" height="324.66666666666669"/>
+                                <rect key="frame" x="16" y="60" width="343" height="324.66666666666669"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-ER-JTc">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="324.66666666666669"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="343" id="1q6-bD-rKc"/>
-                                            <constraint firstAttribute="width" constant="343" id="37R-ku-B8e"/>
-                                            <constraint firstAttribute="height" constant="324.67000000000002" id="jH7-zv-CTe"/>
-                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="Rating" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="0Iq-t9-txR">
-                                        <rect key="frame" x="32" y="32" width="279" height="162"/>
+                                        <rect key="frame" x="32" y="24" width="279" height="162"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="162" id="YpA-dS-hKU"/>
-
+                                            <constraint firstAttribute="height" constant="162" id="gZg-Sc-QLS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <nil key="textColor"/>
@@ -518,17 +509,17 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="32" id="23J-hE-2YM"/>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" constant="32" id="E0S-Eu-rny"/>
+                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" constant="24" id="CcN-rD-X5Z"/>
+                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" constant="32" id="F6l-l8-3G8"/>
                                     <constraint firstAttribute="bottom" secondItem="dxm-ER-JTc" secondAttribute="bottom" id="UCv-0O-q5Q"/>
                                     <constraint firstItem="dxm-ER-JTc" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="top" id="Vi3-Pv-1WG"/>
+                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="centerX" secondItem="dxm-ER-JTc" secondAttribute="centerX" id="av6-1L-hnx"/>
                                     <constraint firstAttribute="trailing" secondItem="dxm-ER-JTc" secondAttribute="trailing" id="dk2-Cs-rHg"/>
-                                    <constraint firstItem="0Iq-t9-txR" firstAttribute="centerX" secondItem="dxm-ER-JTc" secondAttribute="centerX" id="hMZ-bI-lvW"/>
                                     <constraint firstItem="dxm-ER-JTc" firstAttribute="leading" secondItem="Zpp-pF-Nz9" secondAttribute="leading" id="sOu-Eg-aoA"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN3-eW-Fbb">
-                                <rect key="frame" x="86" y="530" width="203" height="44"/>
+                                <rect key="frame" x="86" y="618" width="203" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
                                 <state key="normal" title="Play again">
@@ -539,7 +530,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="L4i-9F-iaI">
-                                <rect key="frame" x="197" y="404.66666666666669" width="162" height="40"/>
+                                <rect key="frame" x="197" y="448.66666666666669" width="162" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cZp-Dr-pRf"/>
                                 </constraints>
@@ -560,6 +551,7 @@ To play offline, flip the switch on the start screen, this will enable you to pl
                             <constraint firstItem="Knu-vy-bem" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="16" id="Syc-tk-K3f"/>
                             <constraint firstItem="Knu-vy-bem" firstAttribute="top" secondItem="Zpp-pF-Nz9" secondAttribute="bottom" id="UaW-Ky-Gpp"/>
                             <constraint firstItem="Zpp-pF-Nz9" firstAttribute="top" secondItem="aFl-HM-SBp" secondAttribute="top" constant="16" id="gv1-Bn-O6R"/>
+                            <constraint firstItem="Zpp-pF-Nz9" firstAttribute="height" secondItem="ASK-m0-O0j" secondAttribute="height" multiplier="1:2.5" id="mej-Il-kmw"/>
                             <constraint firstItem="aFl-HM-SBp" firstAttribute="trailing" secondItem="L4i-9F-iaI" secondAttribute="trailing" constant="16" id="rVb-cD-I7w"/>
                             <constraint firstItem="CN3-eW-Fbb" firstAttribute="leading" secondItem="aFl-HM-SBp" secondAttribute="leading" constant="86" id="spN-Cs-M5g"/>
                         </constraints>
@@ -585,8 +577,9 @@ To play offline, flip the switch on the start screen, this will enable you to pl
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="s1l-ur-yYM"/>
         <segue reference="LMq-JU-cPs"/>
-        <segue reference="JeX-bd-z7n"/>
+        <segue reference="9q3-YU-Pav"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
