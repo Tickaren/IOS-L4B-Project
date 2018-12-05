@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w0O-Wh-hs3">
-
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWv-3v-4jU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -53,7 +52,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-0w-bCa">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="534.66666666666663"/>
-                                        <mutableString key="text">Each question has four different answer options where one is correct.
+                                        <string key="text">Each question has four different answer options where one is correct.
 
 Each question has a time limit of 10 seconds for you to answer.
 
@@ -63,7 +62,7 @@ When you’ve answered a question, press the speech-bubble to get a new one.
 
 There are 3 different difficulties where you can choose which ever you like. If none is chosen, random questions will be generated from different difficulties.
 
-To play offline, flip the switch on the start screen, this will enable you to play without internet connection, but limits the functionality of the game. You can no longer choose difficulty, and the questions are limited. Switch back to online mode, to enable the functionality again.</mutableString>
+To play offline, flip the switch on the start screen, this will enable you to play without internet connection, but limits the functionality of the game. You can no longer choose difficulty, and the questions are limited. Switch back to online mode, to enable the functionality again.</string>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
