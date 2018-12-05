@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ResultPageViewController: UIViewController {
     
     // MARK: - Outlets
@@ -27,7 +28,7 @@ class ResultPageViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated:true);
         
         // thought-bubble
-        thinkingBubble.image = UIImage(named: "speech")
+        thinkingBubble.image = UIImage(named: "thoughtbubble")
         
         // animate owl
         let owlThinking = imgAnimations.getOwlAnimation() // calls owlArray
@@ -60,17 +61,18 @@ class ResultPageViewController: UIViewController {
         var rating = ""
         
         let resultScore = UserDefaults.standard.integer(forKey: "userScore")
+        
         if resultScore <= 2 {
-            rating = "Back to school!"
+            rating = "Ouch..Back to school..."
             
         }  else if resultScore <= 5 {
-            rating = "So Average!"
+            rating = "Sooo average..."
             
         } else if resultScore <= 8 {
-            rating = "I'm impressed!"
+            rating = "I'm impressed..."
             
         } else if resultScore <= 10 {
-            rating = "Outstanding! You must be a genius"
+            rating = "Is he back? Stephen Hawking?"
             
         }
         ratingLabel.text = "\(rating)"
