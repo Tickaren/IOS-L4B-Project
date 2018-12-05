@@ -48,19 +48,18 @@ extension UIView{
     
     // MARK: Shake animation
     
-    func shake(count : Float = 4,for duration : TimeInterval = 0.3,withTranslation translation : Float = 5) {
-        
-        let shakeAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
-        shakeAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        shakeAnimation.repeatCount = count
-        shakeAnimation.duration = duration/TimeInterval(shakeAnimation.repeatCount)
-        shakeAnimation.autoreverses = true
-        shakeAnimation.fromValue = NSValue(cgPoint: CGPoint(x: CGFloat(-translation), y: self.center.y))
-        shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: CGFloat(translation), y: self.center.y))
-        layer.add(shakeAnimation, forKey: "shake")
+    func shakeByX() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 3
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 6, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 6, y: self.center.y))
+        self.layer.add(animation, forKey: "shake")
     }
     
 }
+
 // MARK: - Extension UIDevice
 extension UIDevice {
     static func vibrate() {

@@ -171,7 +171,7 @@ class QuestionsViewController: UIViewController {
         }
         else {
             answerLabel1.backgroundColor = UIColor.red
-            answerLabel1.shake()
+            answerLabel1.shakeByX()
             UIDevice.vibrate()
         }
         addTapGesture()
@@ -187,8 +187,7 @@ class QuestionsViewController: UIViewController {
         }
         else {
             answerLabel2.backgroundColor = UIColor.red
-            //answer2Btn.backgroundColor = UIColor.red
-            answerLabel2.shake()
+            answerLabel2.shakeByX()
             UIDevice.vibrate()
         }
         addTapGesture()
@@ -204,7 +203,7 @@ class QuestionsViewController: UIViewController {
         }
         else {
             answerLabel3.backgroundColor = UIColor.red
-            answerLabel3.shake()
+            answerLabel3.shakeByX()
             UIDevice.vibrate()
         }
         addTapGesture()
@@ -220,7 +219,7 @@ class QuestionsViewController: UIViewController {
         }
         else {
             answerLabel4.backgroundColor = UIColor.red
-            answerLabel4.shake()
+            answerLabel4.shakeByX()
             UIDevice.vibrate()
         }
         addTapGesture()
