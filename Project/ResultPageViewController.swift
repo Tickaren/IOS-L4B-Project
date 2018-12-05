@@ -27,7 +27,7 @@ class ResultPageViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated:true);
         
         // thought-bubble
-        thinkingBubble.image = UIImage(named: "speech")
+        thinkingBubble.image = UIImage(named: "thoughtbubble")
         
         // animate owl
         let owlThinking = imgAnimations.getOwlAnimation() // calls owlArray
