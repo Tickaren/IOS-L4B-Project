@@ -102,6 +102,8 @@ private let characterEntities : [ Substring : Character ] = [
     "&aelig;"   : "æ",
     "&Oslash;"  : "Ø",
     "&oslash;"  : "ø",
+    "&Uuml;"    : "Ü",
+    "&uuml;"    : "ü",
 
     
     // HTML character entity references:
