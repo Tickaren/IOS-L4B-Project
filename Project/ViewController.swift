@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         
         if trigger == true {
         let content = UNMutableNotificationContent()
-        content.title = "Tahoo!"
+        content.title = "TAHOO?"
         content.subtitle = "Where are you going?"
         content.body = "Cheating is no fun..."
         content.badge = 0
